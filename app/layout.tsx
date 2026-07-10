@@ -1,20 +1,24 @@
 import type React from "react"
 import type { Metadata } from "next"
 import { Geist, Geist_Mono, Space_Grotesk } from "next/font/google"
-import { Analytics } from "@vercel/analytics/next"
+import { cookies } from "next/headers"
 import "./globals.css"
+import { CartProvider } from "@/context/cart-context"
+import { LanguageProvider } from "@/context/language-context"
+import { LOCALE_COOKIE } from "@/lib/i18n"
 
-const _geist = Geist({ subsets: ["latin"] })
-const _geistMono = Geist_Mono({ subsets: ["latin"] })
-// <CHANGE> Added Space Grotesk font for the display text
-const _spaceGrotesk = Space_Grotesk({ subsets: ["latin"] })
+const geist = Geist({ subsets: ["latin"], variable: "--font-geist" })
+const geistMono = Geist_Mono({ subsets: ["latin"], variable: "--font-geist-mono" })
+const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], variable: "--font-space-grotesk" })
 
 export const metadata: Metadata = {
-  // <CHANGE> Updated metadata for the glow.co skincare brand
-  title: "glow.co - Skincare for the Main Character",
+  title: {
+    default: "Carthage - Premium Cosmetic & Pigmentation | Made in Germany",
+    template: "%s | Carthage",
+  },
   description:
-    "High-performance botanical formulas designed for your skin barrier. 100% Vegan, Cruelty-free, and radically transparent.",
-  generator: "v0.app",
+    "Professional-grade PMU products, custom formulations, and certified education. ISO & GMP certified quality from Germany for permanent makeup artists worldwide.",
+  keywords: "PMU, permanent makeup, cosmetic, pigmentation, needles, Carthage, made in Germany",
   icons: {
     icon: [
       {
@@ -34,16 +38,20 @@ export const metadata: Metadata = {
   },
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const cookieStore = await cookies()
+  const initialLocale = cookieStore.get(LOCALE_COOKIE)?.value
+
   return (
-    <html lang="en">
-      <body className={`font-sans antialiased`}>
-        {children}
-        <Analytics />
+    <html lang={initialLocale === "fr" || initialLocale === "de" ? initialLocale : "en"}>
+      <body className={`${geist.variable} ${geistMono.variable} ${spaceGrotesk.variable} font-sans antialiased`}>
+        <LanguageProvider initialLocale={initialLocale}>
+          <CartProvider>{children}</CartProvider>
+        </LanguageProvider>
       </body>
     </html>
   )

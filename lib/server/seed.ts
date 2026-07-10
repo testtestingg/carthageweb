@@ -1,0 +1,346 @@
+import type { Category, Product } from "@/lib/types"
+
+const now = "2026-07-09T09:00:00.000Z"
+
+export const seedCategories: Category[] = [
+  {
+    id: "pigments",
+    icon: "droplet",
+    translations: {
+      en: { name: "PMU Pigments", description: "Professional-grade lip, brow & eyeliner pigments" },
+      fr: { name: "Pigments PMU", description: "Pigments professionnels pour lèvres, sourcils et eyeliner" },
+      de: { name: "PMU-Pigmente", description: "Professionelle Pigmente für Lippen, Brauen & Eyeliner" },
+    },
+  },
+  {
+    id: "needles",
+    icon: "pen-tool",
+    translations: {
+      en: { name: "Cartridge Needles", description: "Precision-engineered silicone tattoo needles" },
+      fr: { name: "Aiguilles à cartouche", description: "Aiguilles de précision avec grip en silicone" },
+      de: { name: "Modulnadeln", description: "Präzisionsgefertigte Nadeln mit Silikongriff" },
+    },
+  },
+  {
+    id: "skincare",
+    icon: "sparkles",
+    translations: {
+      en: { name: "Skincare", description: "Post-procedure care and daily skincare essentials" },
+      fr: { name: "Soins de la peau", description: "Soins post-procédure et essentiels du quotidien" },
+      de: { name: "Hautpflege", description: "Pflege nach der Behandlung und tägliche Essentials" },
+    },
+  },
+  {
+    id: "academy",
+    icon: "graduation-cap",
+    translations: {
+      en: { name: "Academy & Training", description: "Certified professional PMU education" },
+      fr: { name: "Académie & Formation", description: "Formation PMU professionnelle certifiée" },
+      de: { name: "Akademie & Schulung", description: "Zertifizierte professionelle PMU-Ausbildung" },
+    },
+  },
+]
+
+export const seedProducts: Product[] = [
+  {
+    id: "limited-edition-lips-pigment",
+    price: 89,
+    currency: "EUR",
+    image: "/0476c5bd-60bd-4601-b0f5-a80cb878c173.JPG",
+    categoryId: "pigments",
+    badge: "limited",
+    keywords: ["pigment", "lips", "pmu", "permanent makeup", "lip blush", "color"],
+    inStock: true,
+    featured: true,
+    createdAt: now,
+    updatedAt: now,
+    translations: {
+      en: {
+        name: "Limited Edition Lips Pigment",
+        subtitle: "Premium PMU Pigment",
+        description:
+          "Carthage Limited Edition Lips Pigment, made in Germany. A professional-grade PMU pigment crafted for precision lip work. 10ml / 0.35fl.oz.",
+        features: [
+          "Made in Germany",
+          "10ml / 0.35fl.oz",
+          "Professional-grade formula",
+          "Long-lasting results",
+          "Vegan & Cruelty-free",
+        ],
+      },
+      fr: {
+        name: "Pigment Lèvres Édition Limitée",
+        subtitle: "Pigment PMU haut de gamme",
+        description:
+          "Pigment lèvres Édition Limitée Carthage, fabriqué en Allemagne. Un pigment PMU de qualité professionnelle conçu pour un travail des lèvres d'une grande précision. 10 ml / 0,35 fl. oz.",
+        features: [
+          "Fabriqué en Allemagne",
+          "10 ml / 0,35 fl. oz",
+          "Formule de qualité professionnelle",
+          "Résultats longue durée",
+          "Végane et non testé sur les animaux",
+        ],
+      },
+      de: {
+        name: "Limited Edition Lippenpigment",
+        subtitle: "Premium-PMU-Pigment",
+        description:
+          "Carthage Limited Edition Lippenpigment, hergestellt in Deutschland. Ein professionelles PMU-Pigment für präzise Lippenarbeit. 10 ml / 0,35 fl. oz.",
+        features: [
+          "Hergestellt in Deutschland",
+          "10 ml / 0,35 fl. oz",
+          "Professionelle Formel",
+          "Langanhaltende Ergebnisse",
+          "Vegan & tierversuchsfrei",
+        ],
+      },
+    },
+  },
+  {
+    id: "v6-pink-silicone-tattoo-needle",
+    price: 42,
+    currency: "EUR",
+    image: "/IMG_6444.JPG",
+    categoryId: "needles",
+    badge: "bestseller",
+    keywords: ["needle", "cartridge", "v6", "silicone", "tattoo", "pmu", "lining", "shading"],
+    inStock: true,
+    featured: true,
+    createdAt: now,
+    updatedAt: now,
+    translations: {
+      en: {
+        name: "V6 Pink Silicone Tattoo Needle",
+        subtitle: "Precision Cartridge Needle",
+        description:
+          "Engineered for artists who demand precision and comfort. The V6 Pink combines innovative design with premium materials to elevate every session. Features silicone grip, EO gas sterilized, and universal fit for most cartridge machines.",
+        features: [
+          "Silicone Grip - Soft, ergonomic and anti-slip",
+          "Precise & Stable - Smooth ink flow",
+          "Safety First - EO gas sterilized",
+          "Universal Fit - Compatible with most cartridge machines",
+          "Perfect for Lining, Shading & Color Packing",
+        ],
+      },
+      fr: {
+        name: "Aiguille V6 Pink à grip silicone",
+        subtitle: "Cartouche de précision",
+        description:
+          "Conçue pour les artistes qui exigent précision et confort. La V6 Pink associe un design innovant à des matériaux haut de gamme pour sublimer chaque séance. Grip en silicone, stérilisée au gaz EO et compatible avec la plupart des machines à cartouche.",
+        features: [
+          "Grip silicone – doux, ergonomique et antidérapant",
+          "Précise et stable – flux d'encre régulier",
+          "Sécurité avant tout – stérilisée au gaz EO",
+          "Compatibilité universelle – s'adapte à la plupart des machines",
+          "Idéale pour le tracé, l'ombrage et le remplissage",
+        ],
+      },
+      de: {
+        name: "V6 Pink Silikon-Tätowiernadel",
+        subtitle: "Präzisions-Modulnadel",
+        description:
+          "Entwickelt für Artists, die Präzision und Komfort verlangen. Die V6 Pink vereint innovatives Design mit hochwertigen Materialien für jede Session. Mit Silikongriff, EO-gassterilisiert und universell passend für die meisten Cartridge-Maschinen.",
+        features: [
+          "Silikongriff – weich, ergonomisch, rutschfest",
+          "Präzise & stabil – gleichmäßiger Farbfluss",
+          "Sicherheit zuerst – EO-gassterilisiert",
+          "Universell passend – kompatibel mit den meisten Maschinen",
+          "Perfekt für Linien, Schattierungen & Farbfüllung",
+        ],
+      },
+    },
+  },
+  {
+    id: "v6-pink-needle-pro",
+    price: 48,
+    currency: "EUR",
+    image: "/IMG_6447.JPG",
+    categoryId: "needles",
+    keywords: ["needle", "cartridge", "v6", "pro", "pmu", "tattoo", "silicone"],
+    inStock: true,
+    featured: true,
+    createdAt: now,
+    updatedAt: now,
+    translations: {
+      en: {
+        name: "V6 Pink Needle - Pro Edition",
+        subtitle: "Advanced PMU Cartridge",
+        description:
+          "Engineered for artists who demand precision, comfort and reliability. Every detail, made to perfect your art. Compatible with most cartridge machines and grips. Features advanced engineering for consistent results.",
+        features: [
+          "Premium Materials",
+          "Advanced Engineering",
+          "Consistent Results",
+          "Made for Artists",
+          "Silicone grip for superior comfort",
+        ],
+      },
+      fr: {
+        name: "Aiguille V6 Pink – Édition Pro",
+        subtitle: "Cartouche PMU avancée",
+        description:
+          "Conçue pour les artistes qui exigent précision, confort et fiabilité. Chaque détail est pensé pour perfectionner votre art. Compatible avec la plupart des machines et grips à cartouche, pour des résultats constants.",
+        features: [
+          "Matériaux haut de gamme",
+          "Ingénierie avancée",
+          "Résultats constants",
+          "Pensée pour les artistes",
+          "Grip silicone pour un confort supérieur",
+        ],
+      },
+      de: {
+        name: "V6 Pink Nadel – Pro Edition",
+        subtitle: "Fortschrittliche PMU-Cartridge",
+        description:
+          "Für Artists entwickelt, die Präzision, Komfort und Zuverlässigkeit fordern. Jedes Detail perfektioniert Ihre Kunst. Kompatibel mit den meisten Cartridge-Maschinen und Grips – für konstante Ergebnisse.",
+        features: [
+          "Hochwertige Materialien",
+          "Fortschrittliche Technik",
+          "Konstante Ergebnisse",
+          "Gemacht für Artists",
+          "Silikongriff für höchsten Komfort",
+        ],
+      },
+    },
+  },
+  {
+    id: "glow-tonic-exfoliator",
+    price: 24,
+    currency: "EUR",
+    image: "/minimalist-rose-pink-toner-bottle-on-white-backgro.jpg",
+    categoryId: "skincare",
+    keywords: ["toner", "exfoliator", "glow", "skincare", "pores", "tonic"],
+    inStock: true,
+    featured: true,
+    createdAt: now,
+    updatedAt: now,
+    translations: {
+      en: {
+        name: "Glow Tonic",
+        subtitle: "Exfoliator",
+        description:
+          "A professional-grade exfoliating toner that gently removes dead skin cells and refines pores. Designed for aesthetic professionals and their clients.",
+        features: [],
+      },
+      fr: {
+        name: "Glow Tonic",
+        subtitle: "Exfoliant",
+        description:
+          "Lotion tonique exfoliante de qualité professionnelle qui élimine en douceur les cellules mortes et resserre les pores. Conçue pour les professionnels de l'esthétique et leurs clients.",
+        features: [],
+      },
+      de: {
+        name: "Glow Tonic",
+        subtitle: "Peeling-Toner",
+        description:
+          "Professioneller Peeling-Toner, der abgestorbene Hautzellen sanft entfernt und die Poren verfeinert. Entwickelt für Beauty-Profis und ihre Kundinnen.",
+        features: [],
+      },
+    },
+  },
+  {
+    id: "vitc-booster-brightening",
+    price: 42,
+    currency: "EUR",
+    image: "/vitamin-c-serum-collection-glossier-style-flatlay-.jpg",
+    categoryId: "skincare",
+    keywords: ["serum", "vitamin c", "brightening", "skincare", "booster", "glow"],
+    inStock: true,
+    featured: false,
+    createdAt: now,
+    updatedAt: now,
+    translations: {
+      en: {
+        name: "Vit-C Booster",
+        subtitle: "Brightening Serum",
+        description:
+          "High-performance vitamin C serum for brightening and skin rejuvenation. Formulated for post-procedure care and daily professional use.",
+        features: [],
+      },
+      fr: {
+        name: "Booster Vit-C",
+        subtitle: "Sérum éclat",
+        description:
+          "Sérum à la vitamine C haute performance pour illuminer et régénérer la peau. Formulé pour les soins post-procédure et un usage professionnel quotidien.",
+        features: [],
+      },
+      de: {
+        name: "Vit-C Booster",
+        subtitle: "Aufhellendes Serum",
+        description:
+          "Hochwirksames Vitamin-C-Serum für strahlende, regenerierte Haut. Entwickelt für die Pflege nach Behandlungen und den täglichen professionellen Gebrauch.",
+        features: [],
+      },
+    },
+  },
+  {
+    id: "barrier-repair-moisturizer",
+    price: 38,
+    currency: "EUR",
+    image: "/luxurious-cream-moisturizer-jar-minimal-clean-beau.jpg",
+    categoryId: "skincare",
+    keywords: ["moisturizer", "cream", "barrier", "repair", "hydration", "skincare"],
+    inStock: true,
+    featured: false,
+    createdAt: now,
+    updatedAt: now,
+    translations: {
+      en: {
+        name: "Barrier Repair",
+        subtitle: "Moisturizer",
+        description:
+          "Luxurious cream moisturizer that repairs and strengthens the skin barrier. Ideal for post-treatment recovery and daily hydration.",
+        features: [],
+      },
+      fr: {
+        name: "Barrier Repair",
+        subtitle: "Crème hydratante",
+        description:
+          "Crème hydratante luxueuse qui répare et renforce la barrière cutanée. Idéale pour la récupération post-traitement et l'hydratation quotidienne.",
+        features: [],
+      },
+      de: {
+        name: "Barrier Repair",
+        subtitle: "Feuchtigkeitscreme",
+        description:
+          "Luxuriöse Feuchtigkeitscreme, die die Hautbarriere repariert und stärkt. Ideal für die Regeneration nach Behandlungen und die tägliche Pflege.",
+        features: [],
+      },
+    },
+  },
+  {
+    id: "invisible-shield-spf50",
+    price: 30,
+    currency: "EUR",
+    image: "/modern-sunscreen-tube-spf-50-clean-minimal-skincar.jpg",
+    categoryId: "skincare",
+    keywords: ["sunscreen", "spf", "spf50", "sun protection", "shield", "skincare"],
+    inStock: true,
+    featured: false,
+    createdAt: now,
+    updatedAt: now,
+    translations: {
+      en: {
+        name: "Invisible Shield",
+        subtitle: "SPF 50 Sunscreen",
+        description:
+          "Lightweight, invisible sunscreen with SPF 50 protection. Essential for protecting freshly treated skin and maintaining results.",
+        features: [],
+      },
+      fr: {
+        name: "Invisible Shield",
+        subtitle: "Crème solaire SPF 50",
+        description:
+          "Protection solaire légère et invisible avec SPF 50. Indispensable pour protéger la peau fraîchement traitée et préserver les résultats.",
+        features: [],
+      },
+      de: {
+        name: "Invisible Shield",
+        subtitle: "Sonnenschutz LSF 50",
+        description:
+          "Leichter, unsichtbarer Sonnenschutz mit LSF 50. Unverzichtbar zum Schutz frisch behandelter Haut und zum Erhalt der Ergebnisse.",
+        features: [],
+      },
+    },
+  },
+]

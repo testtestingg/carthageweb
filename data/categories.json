@@ -1,0 +1,74 @@
+[
+  {
+    "id": "pigments",
+    "icon": "droplet",
+    "translations": {
+      "en": {
+        "name": "PMU Pigments",
+        "description": "Professional-grade lip, brow & eyeliner pigments"
+      },
+      "fr": {
+        "name": "Pigments PMU",
+        "description": "Pigments professionnels pour lèvres, sourcils et eyeliner"
+      },
+      "de": {
+        "name": "PMU-Pigmente",
+        "description": "Professionelle Pigmente für Lippen, Brauen & Eyeliner"
+      }
+    }
+  },
+  {
+    "id": "needles",
+    "icon": "pen-tool",
+    "translations": {
+      "en": {
+        "name": "Cartridge Needles",
+        "description": "Precision-engineered silicone tattoo needles"
+      },
+      "fr": {
+        "name": "Aiguilles à cartouche",
+        "description": "Aiguilles de précision avec grip en silicone"
+      },
+      "de": {
+        "name": "Modulnadeln",
+        "description": "Präzisionsgefertigte Nadeln mit Silikongriff"
+      }
+    }
+  },
+  {
+    "id": "skincare",
+    "icon": "sparkles",
+    "translations": {
+      "en": {
+        "name": "Skincare",
+        "description": "Post-procedure care and daily skincare essentials"
+      },
+      "fr": {
+        "name": "Soins de la peau",
+        "description": "Soins post-procédure et essentiels du quotidien"
+      },
+      "de": {
+        "name": "Hautpflege",
+        "description": "Pflege nach der Behandlung und tägliche Essentials"
+      }
+    }
+  },
+  {
+    "id": "academy",
+    "icon": "graduation-cap",
+    "translations": {
+      "en": {
+        "name": "Academy & Training",
+        "description": "Certified professional PMU education"
+      },
+      "fr": {
+        "name": "Académie & Formation",
+        "description": "Formation PMU professionnelle certifiée"
+      },
+      "de": {
+        "name": "Akademie & Schulung",
+        "description": "Zertifizierte professionelle PMU-Ausbildung"
+      }
+    }
+  }
+]
