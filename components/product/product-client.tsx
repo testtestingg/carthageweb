@@ -36,7 +36,7 @@ export function ProductClient({
 
   return (
     <SiteShell>
-      <div className="pt-24 pb-16 px-4 md:px-12 max-w-[1400px] mx-auto">
+      <div className="pt-24 pb-16 px-4 md:px-12 max-w-[1240px] mx-auto">
         {/* Breadcrumb */}
         <nav className="flex items-center gap-2 text-sm text-[#888] mb-8 flex-wrap" aria-label="Breadcrumb">
           <Link href="/" className="hover:text-black transition-colors">

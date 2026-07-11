@@ -43,7 +43,7 @@ export function AdminLoginForm() {
       <div className="w-full max-w-sm">
         <div className="text-center mb-8">
           <span className="font-display font-bold text-3xl tracking-[-0.03em]">
-            carthage<span className="text-[#ff4d8c]">.</span>
+            carthage<span className="text-[#c9a96e]">.</span>
           </span>
           <p className="text-sm text-[#888] mt-2">Admin Panel</p>
         </div>
@@ -69,7 +69,7 @@ export function AdminLoginForm() {
                   onChange={(e) => setUsername(e.target.value)}
                   autoComplete="username"
                   required
-                  className="w-full pl-11 pr-4 py-3 rounded-2xl border border-[#e5e5e5] bg-white text-sm focus:outline-none focus:border-[#ff4d8c] focus:ring-2 focus:ring-[rgba(255,77,140,0.1)] transition-all"
+                  className="w-full pl-11 pr-4 py-3 rounded-2xl border border-[#e5e5e5] bg-white text-sm focus:outline-none focus:border-[#c9a96e] focus:ring-2 focus:ring-[rgba(201,169,110,0.12)] transition-all"
                 />
               </div>
             </div>
@@ -87,7 +87,7 @@ export function AdminLoginForm() {
                   onChange={(e) => setPassword(e.target.value)}
                   autoComplete="current-password"
                   required
-                  className="w-full pl-11 pr-4 py-3 rounded-2xl border border-[#e5e5e5] bg-white text-sm focus:outline-none focus:border-[#ff4d8c] focus:ring-2 focus:ring-[rgba(255,77,140,0.1)] transition-all"
+                  className="w-full pl-11 pr-4 py-3 rounded-2xl border border-[#e5e5e5] bg-white text-sm focus:outline-none focus:border-[#c9a96e] focus:ring-2 focus:ring-[rgba(201,169,110,0.12)] transition-all"
                 />
               </div>
             </div>

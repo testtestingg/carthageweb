@@ -73,13 +73,13 @@ export default function ContactPage() {
     `w-full px-4 py-3 rounded-2xl border bg-white text-sm focus:outline-none focus:ring-2 transition-all ${
       errors[field]
         ? "border-red-400 focus:border-red-400 focus:ring-red-100"
-        : "border-[#e5e5e5] focus:border-[#ff4d8c] focus:ring-[rgba(255,77,140,0.1)]"
+        : "border-[#e5e5e5] focus:border-[#c9a96e] focus:ring-[rgba(201,169,110,0.12)]"
     }`
 
   const infoCards = [
     {
       icon: MapPin,
-      iconColor: "text-[#ff4d8c]",
+      iconColor: "text-[#c9a96e]",
       iconBg: "bg-[#fef2f2]",
       title: t.contact.office,
       content: (
@@ -123,7 +123,7 @@ export default function ContactPage() {
 
   return (
     <SiteShell>
-      <div className="pt-24 pb-16 px-4 md:px-12 max-w-[1400px] mx-auto">
+      <div className="pt-24 pb-16 px-4 md:px-12 max-w-[1240px] mx-auto">
         {/* Breadcrumb */}
         <div className="flex items-center gap-2 text-sm text-[#888] mb-8">
           <Link href="/" className="hover:text-black transition-colors">
@@ -135,17 +135,13 @@ export default function ContactPage() {
 
         {/* Hero */}
         <div className="mb-12">
-          <div className="inline-flex items-center px-4 py-2 bg-white border border-[#ffe0eb] rounded-full text-xs font-semibold uppercase tracking-wider mb-6 shadow-[0_4px_12px_rgba(255,77,140,0.08)]">
-            <span className="w-2 h-2 bg-[#ff4d8c] rounded-full mr-2" />
-            {t.contact.badge}
-          </div>
-          <h1 className="font-display text-4xl md:text-5xl font-semibold tracking-[-0.03em] mb-4">
+          <h1 className="font-display text-3xl md:text-4xl font-semibold tracking-[-0.03em] mb-3">
             {t.contact.title}{" "}
-            <span className="italic font-normal bg-gradient-to-r from-[#ff4d8c] to-[#ff8f70] bg-clip-text text-transparent">
+            <span className="italic font-normal bg-gradient-to-r from-[#c9a96e] to-[#e8c97a] bg-clip-text text-transparent">
               {t.contact.titleAccent}
             </span>
           </h1>
-          <p className="text-base md:text-lg text-[#666] max-w-[600px] leading-relaxed">{t.contact.subtitle}</p>
+          <p className="text-[15px] md:text-base text-[#666] max-w-[600px] leading-relaxed">{t.contact.subtitle}</p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-10">

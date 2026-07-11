@@ -11,7 +11,7 @@ export default function NotFound() {
     <SiteShell>
       <div className="min-h-[80vh] flex items-center justify-center px-4">
         <div className="text-center py-24">
-          <p className="font-display text-[80px] font-bold leading-none mb-4 bg-gradient-to-r from-[#ff4d8c] to-[#ff8f70] bg-clip-text text-transparent">
+          <p className="font-display text-[80px] font-bold leading-none mb-4 bg-gradient-to-r from-[#c9a96e] to-[#e8c97a] bg-clip-text text-transparent">
             404
           </p>
           <h1 className="font-display text-3xl font-semibold mb-4">{t.product.notFoundTitle}</h1>

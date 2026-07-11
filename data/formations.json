@@ -1,0 +1,83 @@
+[
+  {
+    "id": "pmu-fundamentals",
+    "image": "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=1200&q=80",
+    "category": "Beginner",
+    "duration": "10 days",
+    "price": 2900,
+    "published": true,
+    "createdAt": "2026-07-11T09:00:00.000Z",
+    "updatedAt": "2026-07-11T09:00:00.000Z",
+    "translations": {
+      "en": {
+        "name": "PMU Fundamentals: Brows & Lips",
+        "description": "The complete entry into permanent makeup. Ten days of supervised practice covering skin theory, color science, machine handling, brows and lip blush - from your first stroke on practice skin to your first supervised work on a live model.",
+        "details": "Includes starter kit with Carthage pigments and needles, certification exam, and 6 months of post-course mentoring. Max. 6 students per cohort."
+      },
+      "fr": {
+        "name": "Fondamentaux PMU : sourcils & lèvres",
+        "description": "L'entrée complète dans le maquillage permanent. Dix jours de pratique encadrée : théorie de la peau, science des couleurs, prise en main de la machine, sourcils et lip blush - de vos premiers tracés sur peau d'entraînement à votre premier travail supervisé sur modèle.",
+        "details": "Comprend un kit de démarrage avec pigments et aiguilles Carthage, l'examen de certification et 6 mois de mentorat après la formation. 6 élèves maximum par session."
+      },
+      "de": {
+        "name": "PMU-Grundausbildung: Brauen & Lippen",
+        "description": "Der komplette Einstieg ins Permanent Make-up. Zehn Tage begleitete Praxis: Hauttheorie, Farblehre, Maschinenführung, Brauen und Lip Blush - vom ersten Strich auf Übungshaut bis zur ersten betreuten Arbeit am Modell.",
+        "details": "Inklusive Starter-Kit mit Carthage-Pigmenten und -Nadeln, Zertifizierungsprüfung und 6 Monaten Mentoring nach dem Kurs. Max. 6 Teilnehmerinnen pro Gruppe."
+      }
+    }
+  },
+  {
+    "id": "lip-blush-masterclass",
+    "image": "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=1200&q=80",
+    "category": "Advanced",
+    "duration": "2 days",
+    "price": 1200,
+    "published": true,
+    "createdAt": "2026-07-11T09:05:00.000Z",
+    "updatedAt": "2026-07-11T09:05:00.000Z",
+    "translations": {
+      "en": {
+        "name": "Lip Blush Masterclass",
+        "description": "Two intensive days for working artists who want lips to become their signature. Advanced color correction for dark and uneven lips, layering techniques for long-lasting gradients, and live demonstrations on two models.",
+        "details": "For artists with existing PMU certification. Includes the Carthage Limited Edition lip pigment set and a recorded reference session."
+      },
+      "fr": {
+        "name": "Masterclass Lip Blush",
+        "description": "Deux journées intensives pour les artistes en activité qui veulent faire des lèvres leur signature. Correction colorimétrique avancée des lèvres foncées ou irrégulières, techniques de superposition pour des dégradés durables, et démonstrations en direct sur deux modèles.",
+        "details": "Réservée aux artistes déjà certifiés en PMU. Comprend le coffret de pigments lèvres Carthage Édition Limitée et une session de référence filmée."
+      },
+      "de": {
+        "name": "Lip-Blush-Masterclass",
+        "description": "Zwei intensive Tage für praktizierende Artists, die Lippen zu ihrer Signatur machen wollen. Fortgeschrittene Farbkorrektur bei dunklen und ungleichmäßigen Lippen, Schichttechniken für langlebige Verläufe und Live-Demonstrationen an zwei Modellen.",
+        "details": "Für Artists mit bestehender PMU-Zertifizierung. Inklusive Carthage Limited Edition Lippenpigment-Set und einer aufgezeichneten Referenz-Session."
+      }
+    }
+  },
+  {
+    "id": "nano-brows-microblading",
+    "image": "https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=1200&q=80",
+    "category": "Intermediate",
+    "duration": "3 days",
+    "price": 1600,
+    "published": true,
+    "createdAt": "2026-07-11T09:10:00.000Z",
+    "updatedAt": "2026-07-11T09:10:00.000Z",
+    "translations": {
+      "en": {
+        "name": "Nano Brows & Microblading",
+        "description": "Hair-stroke brows with machine and blade. Three days on stroke mapping, symmetry systems, healed-result planning and skin-type diagnostics - so your strokes still look crisp twelve months later, not just on the day.",
+        "details": "Suited to artists switching from classic shading or beauticians with steady hands-on experience. Includes brow mapping tools and practice materials."
+      },
+      "fr": {
+        "name": "Nano Brows & Microblading",
+        "description": "Le sourcil poil à poil, à la machine et à la lame. Trois jours consacrés au tracé des poils, aux systèmes de symétrie, à l'anticipation du résultat cicatrisé et au diagnostic des types de peau - pour des sourcils encore nets douze mois plus tard, pas seulement le jour même.",
+        "details": "Pour les artistes venant de l'ombrage classique ou les esthéticiennes avec une solide expérience pratique. Outils de mapping et matériel d'entraînement inclus."
+      },
+      "de": {
+        "name": "Nano Brows & Microblading",
+        "description": "Härchenzeichnung mit Maschine und Blade. Drei Tage zu Strichführung, Symmetriesystemen, Planung des verheilten Ergebnisses und Hauttyp-Diagnostik - damit die Härchen auch nach zwölf Monaten noch präzise wirken, nicht nur am Behandlungstag.",
+        "details": "Geeignet für Artists mit Shading-Erfahrung oder Kosmetikerinnen mit solider Praxis. Mapping-Werkzeuge und Übungsmaterial inklusive."
+      }
+    }
+  }
+]

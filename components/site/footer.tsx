@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { Instagram, Facebook } from "lucide-react"
 import { useLanguage } from "@/context/language-context"
 
@@ -9,13 +10,13 @@ export function SiteFooter() {
 
   return (
     <footer className="relative mt-16 bg-gradient-to-br from-[#111] to-[#1a1a1a] text-white pt-16 pb-8 px-4 md:px-12 overflow-hidden">
-      <div className="absolute top-0 right-[20%] w-[400px] h-[400px] rounded-full opacity-10 blur-[80px] bg-[radial-gradient(circle,rgb(255,77,140)_0%,rgba(255,255,255,0)_70%)]" />
+      <div className="absolute top-0 right-[20%] w-[400px] h-[400px] rounded-full opacity-10 blur-[80px] bg-[radial-gradient(circle,rgb(201,169,110)_0%,rgba(255,255,255,0)_70%)]" />
 
-      <div className="relative max-w-[1400px] mx-auto">
+      <div className="relative max-w-[1240px] mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
           <div>
-            <div className="font-display font-bold text-2xl tracking-[-0.03em] mb-4">
-              carthage<span className="text-[#ff4d8c]">.</span>
+            <div className="mb-4">
+              <Image src="/logo-carthage.png" alt="Carthage" width={56} height={56} className="h-14 w-auto" />
             </div>
             <p className="text-sm text-[#999] leading-relaxed mb-6">{t.footer.tagline}</p>
             <div className="flex gap-3">
@@ -24,7 +25,7 @@ export function SiteFooter() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
-                className="w-9 h-9 rounded-full bg-[rgba(255,255,255,0.1)] flex items-center justify-center transition-all hover:bg-[rgba(255,77,140,0.2)] hover:scale-110"
+                className="w-9 h-9 rounded-full bg-[rgba(255,255,255,0.1)] flex items-center justify-center transition-all hover:bg-[rgba(201,169,110,0.2)] hover:scale-110"
               >
                 <Instagram className="w-4 h-4" />
               </a>
@@ -33,7 +34,7 @@ export function SiteFooter() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
-                className="w-9 h-9 rounded-full bg-[rgba(255,255,255,0.1)] flex items-center justify-center transition-all hover:bg-[rgba(255,77,140,0.2)] hover:scale-110"
+                className="w-9 h-9 rounded-full bg-[rgba(255,255,255,0.1)] flex items-center justify-center transition-all hover:bg-[rgba(201,169,110,0.2)] hover:scale-110"
               >
                 <Facebook className="w-4 h-4" />
               </a>
@@ -60,7 +61,12 @@ export function SiteFooter() {
               </li>
               <li>
                 <Link href="/shop?category=skincare" className="text-sm text-[#999] hover:text-white transition-colors">
-                  Skincare
+                  Skincare &amp; Cosmetics
+                </Link>
+              </li>
+              <li>
+                <Link href="/shop?category=stonepaper" className="text-sm text-[#999] hover:text-white transition-colors">
+                  Stone Paper
                 </Link>
               </li>
             </ul>
@@ -80,14 +86,14 @@ export function SiteFooter() {
                 </Link>
               </li>
               <li>
-                <a
-                  href="https://www.rypmu.de/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm text-[#999] hover:text-white transition-colors"
-                >
+                <Link href="/academy" className="text-sm text-[#999] hover:text-white transition-colors">
                   {t.footer.academy}
-                </a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/stone-paper" className="text-sm text-[#999] hover:text-white transition-colors">
+                  {t.nav.stonePaper}
+                </Link>
               </li>
             </ul>
           </div>
@@ -119,13 +125,13 @@ export function SiteFooter() {
             &copy; {new Date().getFullYear()} Carthage Cosmetic &amp; Pigmentation. {t.footer.rights}
           </p>
           <div className="flex gap-6">
-            <Link href="/contact" className="text-xs text-[#666] hover:text-white transition-colors">
+            <Link href="/privacy" className="text-xs text-[#666] hover:text-white transition-colors">
               {t.footer.privacy}
             </Link>
-            <Link href="/contact" className="text-xs text-[#666] hover:text-white transition-colors">
+            <Link href="/terms" className="text-xs text-[#666] hover:text-white transition-colors">
               {t.footer.terms}
             </Link>
-            <Link href="/contact" className="text-xs text-[#666] hover:text-white transition-colors">
+            <Link href="/impressum" className="text-xs text-[#666] hover:text-white transition-colors">
               {t.footer.imprint}
             </Link>
           </div>

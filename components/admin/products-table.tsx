@@ -80,7 +80,7 @@ export function ProductsTable({ products, categories }: { products: Product[]; c
           value={filter}
           onChange={(e) => setFilter(e.target.value)}
           placeholder="Filter products..."
-          className="w-full pl-11 pr-4 py-2.5 rounded-full border border-[#e5e5e5] bg-white text-sm focus:outline-none focus:border-[#ff4d8c] transition-all"
+          className="w-full pl-11 pr-4 py-2.5 rounded-full border border-[#e5e5e5] bg-white text-sm focus:outline-none focus:border-[#c9a96e] transition-all"
         />
       </div>
 
@@ -131,7 +131,7 @@ export function ProductsTable({ products, categories }: { products: Product[]; c
                         {product.inStock ? "In stock" : "Out of stock"}
                       </span>
                       {product.featured && (
-                        <span className="inline-block px-2.5 py-0.5 rounded-full text-xs font-medium bg-[#fff5f9] text-[#ff4d8c]">
+                        <span className="inline-block px-2.5 py-0.5 rounded-full text-xs font-medium bg-[#faf6ee] text-[#c9a96e]">
                           Featured
                         </span>
                       )}

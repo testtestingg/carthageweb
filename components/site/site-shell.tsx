@@ -18,9 +18,9 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
   }, [])
 
   return (
-    <div className="relative min-h-screen bg-[#fafafa] text-[#111] overflow-x-hidden">
+    <div className="relative min-h-screen bg-white text-[#111] overflow-x-hidden">
       <div className="fixed top-[-10%] left-[-10%] w-[500px] h-[500px] rounded-full opacity-60 blur-[80px] -z-10 bg-[radial-gradient(circle,rgb(224,231,255)_0%,rgba(255,255,255,0)_70%)]" />
-      <div className="fixed bottom-0 right-[-10%] w-[600px] h-[600px] rounded-full opacity-60 blur-[80px] -z-10 bg-[radial-gradient(circle,rgb(255,228,230)_0%,rgba(255,255,255,0)_70%)]" />
+      <div className="fixed bottom-0 right-[-10%] w-[600px] h-[600px] rounded-full opacity-60 blur-[80px] -z-10 bg-[radial-gradient(circle,rgb(253,246,236)_0%,rgba(255,255,255,0)_70%)]" />
 
       <SiteHeader />
       <CartDrawer />
@@ -36,7 +36,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
         }`}
         aria-label={t.common.scrollTop}
       >
-        <ArrowUp className="w-5 h-5 text-[#ff4d8c]" />
+        <ArrowUp className="w-5 h-5 text-[#c9a96e]" />
       </button>
     </div>
   )

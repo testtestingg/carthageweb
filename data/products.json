@@ -293,6 +293,239 @@
     }
   },
   {
+    "id": "soothing-aftercare-oil",
+    "price": 26,
+    "currency": "EUR",
+    "image": "https://images.unsplash.com/photo-1617897903246-719242758050?w=1200&q=80",
+    "categoryId": "skincare",
+    "badge": "new",
+    "keywords": [
+      "aftercare",
+      "oil",
+      "recovery",
+      "cosmetics",
+      "pmu aftercare",
+      "soothing"
+    ],
+    "inStock": true,
+    "featured": false,
+    "createdAt": "2026-07-11T09:00:00.000Z",
+    "updatedAt": "2026-07-11T09:00:00.000Z",
+    "translations": {
+      "en": {
+        "name": "Soothing Aftercare Oil",
+        "subtitle": "Post-PMU Recovery",
+        "description": "A lightweight facial oil formulated to calm freshly pigmented skin. Supports healing after PMU procedures, reduces dryness during the flaking phase and helps preserve pigment retention. 15ml dropper bottle.",
+        "features": [
+          "Formulated for post-PMU skin",
+          "15ml with precision dropper",
+          "Fragrance-free, non-comedogenic",
+          "Supports pigment retention",
+          "Vegan & Cruelty-free"
+        ]
+      },
+      "fr": {
+        "name": "Huile apaisante post-soin",
+        "subtitle": "Récupération post-PMU",
+        "description": "Une huile visage légère formulée pour apaiser la peau fraîchement pigmentée. Favorise la cicatrisation après les procédures PMU, réduit la sécheresse pendant la phase de desquamation et aide à préserver la rétention du pigment. Flacon compte-gouttes de 15 ml.",
+        "features": [
+          "Formulée pour la peau post-PMU",
+          "15 ml avec compte-gouttes de précision",
+          "Sans parfum, non comédogène",
+          "Préserve la rétention du pigment",
+          "Végane et non testée sur les animaux"
+        ]
+      },
+      "de": {
+        "name": "Beruhigendes Aftercare-Öl",
+        "subtitle": "Post-PMU-Regeneration",
+        "description": "Ein leichtes Gesichtsöl zur Beruhigung frisch pigmentierter Haut. Unterstützt die Heilung nach PMU-Behandlungen, mindert Trockenheit in der Schuppungsphase und hilft, die Pigmenthaltbarkeit zu bewahren. 15-ml-Flasche mit Pipette.",
+        "features": [
+          "Formuliert für Haut nach PMU",
+          "15 ml mit Präzisionspipette",
+          "Parfümfrei, nicht komedogen",
+          "Unterstützt die Pigmenthaltbarkeit",
+          "Vegan & tierversuchsfrei"
+        ]
+      }
+    }
+  },
+  {
+    "id": "stone-paper-notebook-a5",
+    "price": 19,
+    "currency": "EUR",
+    "image": "/stone-paper/paper-1.jpg",
+    "categoryId": "stonepaper",
+    "badge": "new",
+    "keywords": [
+      "stone paper",
+      "notebook",
+      "a5",
+      "tree-free",
+      "stationery",
+      "waterproof",
+      "golden bridge"
+    ],
+    "inStock": true,
+    "featured": true,
+    "createdAt": "2026-07-11T09:05:00.000Z",
+    "updatedAt": "2026-07-11T09:05:00.000Z",
+    "translations": {
+      "en": {
+        "name": "Stone Paper Notebook A5",
+        "subtitle": "Tree-Free Hardcover",
+        "description": "A5 hardcover notebook with 192 pages of mineral stone paper. Waterproof, tear-resistant pages with an exceptionally smooth writing surface - no trees, water or bleach used in production. Made by Golden Bridge, the Carthage stone paper division.",
+        "features": [
+          "192 pages, 120 gsm stone paper",
+          "Waterproof & tear-resistant",
+          "Lay-flat thread binding",
+          "Produced tree-free in Germany",
+          "Custom branding available for B2B"
+        ]
+      },
+      "fr": {
+        "name": "Carnet en papier de pierre A5",
+        "subtitle": "Couverture rigide sans arbre",
+        "description": "Carnet A5 à couverture rigide de 192 pages en papier de pierre minéral. Pages imperméables et résistantes à la déchirure, avec une surface d'écriture exceptionnellement lisse - sans arbre, sans eau ni chlore. Fabriqué par Golden Bridge, la division papier de pierre de Carthage.",
+        "features": [
+          "192 pages, papier de pierre 120 g/m²",
+          "Imperméable et indéchirable",
+          "Reliure cousue à ouverture à plat",
+          "Produit sans arbre en Allemagne",
+          "Personnalisation disponible en B2B"
+        ]
+      },
+      "de": {
+        "name": "Steinpapier-Notizbuch A5",
+        "subtitle": "Baumfreier Hardcover",
+        "description": "A5-Hardcover-Notizbuch mit 192 Seiten aus mineralischem Steinpapier. Wasserfeste, reißfeste Seiten mit außergewöhnlich glatter Schreiboberfläche - ohne Bäume, Wasser oder Bleiche produziert. Gefertigt von Golden Bridge, der Steinpapier-Division von Carthage.",
+        "features": [
+          "192 Seiten, 120 g/m² Steinpapier",
+          "Wasserfest & reißfest",
+          "Fadenbindung, liegt flach auf",
+          "Baumfrei produziert in Deutschland",
+          "Individuelle Veredelung für B2B"
+        ]
+      }
+    }
+  },
+  {
+    "id": "stone-paper-bags-sample-pack",
+    "price": 49,
+    "currency": "EUR",
+    "image": "/stone-paper/paper-9.jpg",
+    "categoryId": "stonepaper",
+    "keywords": [
+      "stone paper",
+      "bags",
+      "packaging",
+      "sample",
+      "b2b",
+      "waterproof",
+      "industrial"
+    ],
+    "inStock": true,
+    "featured": false,
+    "createdAt": "2026-07-11T09:10:00.000Z",
+    "updatedAt": "2026-07-11T09:10:00.000Z",
+    "translations": {
+      "en": {
+        "name": "Stone Paper Bags - Sample Pack",
+        "subtitle": "25 Units, Assorted Sizes",
+        "description": "Evaluation pack of 25 stone paper bags in assorted sizes. Naturally waterproof without coatings, with 2-3x the tear resistance of conventional paper and a bright white surface that takes exceptional print. For testing before B2B volume orders.",
+        "features": [
+          "25 bags in three sizes",
+          "Naturally waterproof - no coating",
+          "2-3x tear resistance of paper",
+          "FDA-compliant food contact",
+          "Volume pricing on request"
+        ]
+      },
+      "fr": {
+        "name": "Sacs en papier de pierre - Pack d'essai",
+        "subtitle": "25 unités, tailles assorties",
+        "description": "Pack d'évaluation de 25 sacs en papier de pierre en tailles assorties. Naturellement imperméables sans enduction, avec une résistance à la déchirure 2 à 3 fois supérieure au papier classique et une surface d'un blanc éclatant offrant une impression exceptionnelle. Pour tester avant les commandes en volume B2B.",
+        "features": [
+          "25 sacs en trois tailles",
+          "Naturellement imperméables - sans enduction",
+          "Résistance à la déchirure 2-3x supérieure",
+          "Contact alimentaire conforme FDA",
+          "Tarifs volume sur demande"
+        ]
+      },
+      "de": {
+        "name": "Steinpapier-Säcke - Musterpaket",
+        "subtitle": "25 Stück, verschiedene Größen",
+        "description": "Testpaket mit 25 Steinpapier-Säcken in verschiedenen Größen. Von Natur aus wasserfest ohne Beschichtung, mit 2-3-facher Reißfestigkeit von herkömmlichem Papier und einer strahlend weißen Oberfläche für exzellente Druckergebnisse. Zum Testen vor B2B-Volumenbestellungen.",
+        "features": [
+          "25 Säcke in drei Größen",
+          "Von Natur aus wasserfest - ohne Beschichtung",
+          "2-3-fache Reißfestigkeit von Papier",
+          "FDA-konformer Lebensmittelkontakt",
+          "Volumenpreise auf Anfrage"
+        ]
+      }
+    }
+  },
+  {
+    "id": "pp-woven-sacks-sample-pack",
+    "price": 29,
+    "currency": "EUR",
+    "image": "/stone-paper/paper-11.jpg",
+    "categoryId": "stonepaper",
+    "keywords": [
+      "pp woven",
+      "polypropylene",
+      "sacks",
+      "packaging",
+      "sample",
+      "b2b",
+      "agriculture"
+    ],
+    "inStock": true,
+    "featured": false,
+    "createdAt": "2026-07-11T09:15:00.000Z",
+    "updatedAt": "2026-07-11T09:15:00.000Z",
+    "translations": {
+      "en": {
+        "name": "PP Woven Sacks - Sample Pack",
+        "subtitle": "10 Units, 25-50 kg Rated",
+        "description": "Evaluation pack of 10 woven polypropylene sacks rated for 25-50 kg loads. UV-stabilised for outdoor storage, available laminated or ventilated, engineered for heavy filling, stacking and rough transport in agriculture, construction and chemicals.",
+        "features": [
+          "10 sacks, 25 kg and 50 kg rated",
+          "UV-stabilised for outdoor storage",
+          "Laminated & ventilated variants",
+          "Up to 8-colour flexo printing",
+          "Volume pricing on request"
+        ]
+      },
+      "fr": {
+        "name": "Sacs tissés PP - Pack d'essai",
+        "subtitle": "10 unités, charge 25-50 kg",
+        "description": "Pack d'évaluation de 10 sacs en polypropylène tissé, conçus pour des charges de 25 à 50 kg. Stabilisés UV pour le stockage extérieur, disponibles laminés ou ventilés, pensés pour le remplissage lourd, l'empilage et le transport intensif en agriculture, construction et chimie.",
+        "features": [
+          "10 sacs, charges de 25 kg et 50 kg",
+          "Stabilisés UV pour stockage extérieur",
+          "Variantes laminées et ventilées",
+          "Impression flexo jusqu'à 8 couleurs",
+          "Tarifs volume sur demande"
+        ]
+      },
+      "de": {
+        "name": "PP-Gewebesäcke - Musterpaket",
+        "subtitle": "10 Stück, 25-50 kg Tragkraft",
+        "description": "Testpaket mit 10 Säcken aus gewebtem Polypropylen, ausgelegt für Lasten von 25-50 kg. UV-stabilisiert für Außenlagerung, laminiert oder belüftet erhältlich, entwickelt für schwere Befüllung, Stapelung und rauen Transport in Landwirtschaft, Bau und Chemie.",
+        "features": [
+          "10 Säcke, 25 kg und 50 kg Tragkraft",
+          "UV-stabilisiert für Außenlagerung",
+          "Laminierte & belüftete Varianten",
+          "Bis zu 8-farbiger Flexodruck",
+          "Volumenpreise auf Anfrage"
+        ]
+      }
+    }
+  },
+  {
     "id": "invisible-shield-spf50",
     "price": 30,
     "currency": "EUR",

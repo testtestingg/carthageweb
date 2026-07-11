@@ -40,7 +40,7 @@ export function SettingsForm({ username }: { username: string }) {
   }
 
   const inputClass =
-    "w-full px-4 py-2.5 rounded-xl border border-[#e5e5e5] bg-white text-sm focus:outline-none focus:border-[#ff4d8c] focus:ring-2 focus:ring-[rgba(255,77,140,0.1)] transition-all"
+    "w-full px-4 py-2.5 rounded-xl border border-[#e5e5e5] bg-white text-sm focus:outline-none focus:border-[#c9a96e] focus:ring-2 focus:ring-[rgba(201,169,110,0.12)] transition-all"
 
   return (
     <div className="max-w-lg">
@@ -51,7 +51,7 @@ export function SettingsForm({ username }: { username: string }) {
 
       <div className="bg-white rounded-[18px] border border-[#eee] p-6">
         <div className="flex items-center gap-2 mb-5">
-          <KeyRound className="w-4 h-4 text-[#ff4d8c]" />
+          <KeyRound className="w-4 h-4 text-[#c9a96e]" />
           <h2 className="font-semibold text-sm">Change Password</h2>
         </div>
 

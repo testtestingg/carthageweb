@@ -21,7 +21,7 @@ export default function CartPage() {
 
   return (
     <SiteShell>
-      <div className="pt-24 pb-16 px-4 md:px-12 max-w-[1400px] mx-auto min-h-[70vh]">
+      <div className="pt-24 pb-16 px-4 md:px-12 max-w-[1240px] mx-auto min-h-[70vh]">
         {/* Breadcrumb */}
         <div className="flex items-center gap-2 text-sm text-[#888] mb-6">
           <Link href="/" className="hover:text-black transition-colors">

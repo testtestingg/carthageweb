@@ -30,6 +30,7 @@ next-env.d.ts
 /data/admin-user.json
 /data/.auth-secret
 /data/messages.json
+/data/enrollments.json
 
 # admin image uploads
 /public/uploads/*

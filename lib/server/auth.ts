@@ -8,6 +8,7 @@ import {
   type ScryptOptions,
 } from "node:crypto"
 import { cookies } from "next/headers"
+import { getSupabase, isSupabaseConfigured } from "./supabase"
 
 function scryptAsync(password: string, salt: Buffer, keylen: number, options: ScryptOptions): Promise<Buffer> {
   return new Promise((resolve, reject) => {
@@ -65,20 +66,44 @@ export async function verifyPassword(password: string, stored: string): Promise<
 }
 
 // ---------- Admin user ----------
+// Stored in the Supabase admin_users table when Supabase is configured,
+// otherwise in data/admin-user.json. Either way the row is bootstrapped
+// on first access from ADMIN_USERNAME / ADMIN_PASSWORD (or the defaults).
+
+async function bootstrapAdminUser(): Promise<AdminUser> {
+  const username = process.env.ADMIN_USERNAME?.trim() || DEFAULT_USERNAME
+  const password = process.env.ADMIN_PASSWORD || DEFAULT_PASSWORD
+  return {
+    username,
+    passwordHash: await hashPassword(password),
+    updatedAt: new Date().toISOString(),
+  }
+}
 
 export async function getAdminUser(): Promise<AdminUser> {
+  if (isSupabaseConfigured()) {
+    const sb = getSupabase()
+    const { data, error } = await sb.from("admin_users").select("*").limit(1).maybeSingle()
+    if (error) throw new Error(`Failed to read admin user: ${error.message}`)
+    if (data) {
+      return { username: data.username, passwordHash: data.password_hash, updatedAt: data.updated_at }
+    }
+    const user = await bootstrapAdminUser()
+    const { error: insertError } = await sb.from("admin_users").insert({
+      username: user.username,
+      password_hash: user.passwordHash,
+      updated_at: user.updatedAt,
+    })
+    if (insertError) throw new Error(`Failed to bootstrap admin user: ${insertError.message}`)
+    return user
+  }
+
   try {
     const raw = await fs.readFile(ADMIN_FILE, "utf8")
     return JSON.parse(raw) as AdminUser
   } catch (err: unknown) {
     if ((err as NodeJS.ErrnoException).code !== "ENOENT") throw err
-    const username = process.env.ADMIN_USERNAME?.trim() || DEFAULT_USERNAME
-    const password = process.env.ADMIN_PASSWORD || DEFAULT_PASSWORD
-    const user: AdminUser = {
-      username,
-      passwordHash: await hashPassword(password),
-      updatedAt: new Date().toISOString(),
-    }
+    const user = await bootstrapAdminUser()
     await fs.mkdir(DATA_DIR, { recursive: true })
     await fs.writeFile(ADMIN_FILE, JSON.stringify(user, null, 2), { mode: 0o600 })
     return user
@@ -92,6 +117,14 @@ export async function updateAdminPassword(newPassword: string): Promise<void> {
     passwordHash: await hashPassword(newPassword),
     updatedAt: new Date().toISOString(),
   }
+  if (isSupabaseConfigured()) {
+    const { error } = await getSupabase()
+      .from("admin_users")
+      .update({ password_hash: updated.passwordHash, updated_at: updated.updatedAt })
+      .eq("username", user.username)
+    if (error) throw new Error(`Failed to update admin password: ${error.message}`)
+    return
+  }
   await fs.writeFile(ADMIN_FILE, JSON.stringify(updated, null, 2), { mode: 0o600 })
 }
 
@@ -104,6 +137,15 @@ async function getSessionSecret(): Promise<Buffer> {
   const fromEnv = process.env.AUTH_SECRET
   if (fromEnv && fromEnv.length >= 32) {
     cachedSecret = Buffer.from(fromEnv, "utf8")
+    return cachedSecret
+  }
+  // On serverless hosts the data/ directory doesn't persist between cold
+  // starts, so when Supabase is configured derive a stable secret from the
+  // service key instead of a throwaway file. Setting AUTH_SECRET explicitly
+  // is still the recommended production setup.
+  const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY
+  if (serviceKey) {
+    cachedSecret = createHmac("sha256", serviceKey).update("carthage-session-secret").digest()
     return cachedSecret
   }
   try {

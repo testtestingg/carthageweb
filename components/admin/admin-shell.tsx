@@ -3,11 +3,13 @@
 import { useState } from "react"
 import Link from "next/link"
 import { usePathname, useRouter } from "next/navigation"
-import { Package, FolderTree, Settings, LogOut, ExternalLink, Menu, X } from "lucide-react"
+import { Package, FolderTree, GraduationCap, UserPlus, Settings, LogOut, ExternalLink, Menu, X } from "lucide-react"
 
 const NAV_ITEMS = [
   { href: "/admin", label: "Products", icon: Package },
   { href: "/admin/categories", label: "Categories", icon: FolderTree },
+  { href: "/admin/formations", label: "Formations", icon: GraduationCap },
+  { href: "/admin/enrollments", label: "Enrollments", icon: UserPlus },
   { href: "/admin/settings", label: "Settings", icon: Settings },
 ]
 
@@ -44,14 +46,14 @@ export function AdminShell({ username, children }: { username: string; children:
   )
 
   return (
-    <div className="min-h-screen bg-[#fafafa] text-[#111]">
+    <div className="min-h-screen bg-white text-[#111]">
       {/* Mobile top bar */}
       <div className="md:hidden sticky top-0 z-40 bg-white border-b border-[#eee] px-4 h-14 flex items-center justify-between">
         <button onClick={() => setMobileNavOpen(!mobileNavOpen)} aria-label="Toggle admin menu">
           {mobileNavOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
         </button>
         <span className="font-display font-bold text-lg">
-          carthage<span className="text-[#ff4d8c]">.</span> <span className="font-normal text-sm text-[#888]">admin</span>
+          carthage<span className="text-[#c9a96e]">.</span> <span className="font-normal text-sm text-[#888]">admin</span>
         </span>
         <button onClick={handleLogout} aria-label="Log out">
           <LogOut className="w-5 h-5 text-[#888]" />
@@ -66,7 +68,7 @@ export function AdminShell({ username, children }: { username: string; children:
         {/* Sidebar */}
         <aside className="hidden md:flex w-60 min-h-screen bg-white border-r border-[#eee] flex-col p-5 sticky top-0 max-h-screen">
           <Link href="/admin" className="font-display font-bold text-xl tracking-[-0.03em] mb-1 px-2">
-            carthage<span className="text-[#ff4d8c]">.</span>
+            carthage<span className="text-[#c9a96e]">.</span>
           </Link>
           <p className="text-xs text-[#999] mb-8 px-2">Admin Panel</p>
 

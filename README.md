@@ -1,14 +1,16 @@
 # Carthage — Cosmetic & Pigmentation Storefront
 
-E-commerce storefront for professional PMU (permanent makeup) products, built with Next.js 16, React 19 and Tailwind CSS 4.
+E-commerce storefront for professional PMU (permanent makeup) products, built with Next.js 16, React 19, Tailwind CSS 4 and Supabase.
 
 ## Features
 
 - **Product catalog** with category filtering, live header search (title, keywords, all languages), sorting and per-product pages
 - **Multi-language**: English, French and German across the whole storefront; language switcher in the header
 - **Cart & checkout** with client-side validation, persistent cart (localStorage), free-shipping threshold and VAT display
-- **Hidden admin panel** at `/admin` — product CRUD, image upload, category management, per-language content editing, password management
-- **Contact page** with validated form; messages are stored in `data/messages.json`
+- **Hidden admin panel** at `/admin` — product CRUD, image upload, category management, formations, per-language content editing, password management
+- **Contact page** with validated form
+- **Stone paper division** at `/stone-paper` — Golden Bridge industrial packaging line (stone paper bags, PP woven bags, notebooks) under the same roof
+- **Supabase backend** (PostgreSQL + Storage) with automatic fallback to a local JSON store for zero-setup development
 
 ## Getting started
 
@@ -17,7 +19,18 @@ pnpm install
 pnpm dev
 ```
 
-The JSON data store in `data/` is seeded automatically on first run.
+With no configuration the app runs on the local JSON store in `data/` (seeded automatically on first run).
+
+## Supabase setup (production backend)
+
+1. Create a project at [supabase.com](https://supabase.com)
+2. Open **SQL Editor** in the dashboard, paste the contents of [`supabase/schema.sql`](supabase/schema.sql) and run it once. This creates all tables, row-level-security policies, the `product-images` storage bucket and seeds the catalog.
+3. Copy `.env.example` to `.env.local` and fill in (Settings → API):
+   - `NEXT_PUBLIC_SUPABASE_URL` — the project URL
+   - `SUPABASE_SERVICE_ROLE_KEY` — the `service_role` secret key
+4. Restart the dev server. That's it — products, categories, formations, contact messages, the admin account and image uploads now live in Supabase.
+
+The `service_role` key is only ever used server-side (API routes / server components). Do not expose it in client code.
 
 ## Admin panel
 
@@ -36,7 +49,9 @@ from `robots.txt`.
 
 ## Data & persistence
 
-All content lives in flat JSON files under `data/` (created on demand):
+**With Supabase configured**: everything is stored in Postgres (`products`, `categories`, `formations`, `contact_messages`, `admin_users`) and uploaded images go to the public `product-images` storage bucket. Nothing below applies.
+
+**Without Supabase** (local fallback), content lives in flat JSON files under `data/` (created on demand):
 
 | File | Contents | Committed? |
 |---|---|---|

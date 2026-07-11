@@ -38,5 +38,34 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
     ...allProducts.filter((p) => p.id !== product.id && p.categoryId !== product.categoryId),
   ].slice(0, 4)
 
-  return <ProductClient product={product} category={category ?? null} relatedProducts={related} />
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://carthage.de"
+  const info = product.translations.en
+  const productJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: info.name,
+    description: info.description,
+    image: product.image.startsWith("http") ? product.image : `${siteUrl}${product.image}`,
+    url: `${siteUrl}/product/${product.id}`,
+    brand: { "@type": "Brand", name: "Carthage" },
+    offers: {
+      "@type": "Offer",
+      price: product.price,
+      priceCurrency: product.currency,
+      availability: product.inStock
+        ? "https://schema.org/InStock"
+        : "https://schema.org/OutOfStock",
+      url: `${siteUrl}/product/${product.id}`,
+    },
+  }
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
+      />
+      <ProductClient product={product} category={category ?? null} relatedProducts={related} />
+    </>
+  )
 }

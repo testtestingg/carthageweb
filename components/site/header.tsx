@@ -116,7 +116,7 @@ export function SiteHeader() {
   }
 
   return (
-    <header className="fixed top-0 z-[1000] w-full h-16 md:h-[72px] flex justify-between items-center px-4 md:px-12 bg-[rgba(250,250,250,0.85)] backdrop-blur-xl border-b border-[rgba(0,0,0,0.03)]">
+    <header className="fixed top-0 z-[1000] w-full h-16 md:h-[72px] flex justify-between items-center px-4 md:px-12 bg-[rgba(255,255,255,0.88)] backdrop-blur-xl border-b border-[rgba(0,0,0,0.04)]">
       {/* Mobile Menu Button */}
       <button
         className="md:hidden transition-transform hover:scale-110"
@@ -131,6 +131,8 @@ export function SiteHeader() {
       <nav className="hidden md:block">
         <ul className="flex gap-7 list-none">
           <li>{navLink("/shop", t.nav.shop)}</li>
+          <li>{navLink("/academy", t.nav.academy)}</li>
+          <li>{navLink("/stone-paper", t.nav.stonePaper)}</li>
           <li>{navLink("/about", t.nav.about)}</li>
           <li>{navLink("/contact", t.nav.contact)}</li>
         </ul>
@@ -139,9 +141,16 @@ export function SiteHeader() {
       {/* Logo */}
       <Link
         href="/"
-        className="font-display font-bold text-xl md:text-2xl tracking-[-0.03em] absolute left-1/2 -translate-x-1/2 md:relative md:left-auto md:translate-x-0"
+        className="absolute left-1/2 -translate-x-1/2 md:relative md:left-auto md:translate-x-0"
       >
-        carthage<span className="text-[#ff4d8c]">.</span>
+        <Image
+          src="/logo-carthage.png"
+          alt="Carthage - Cosmetic & Pigmentation"
+          width={64}
+          height={64}
+          className="h-[52px] w-auto md:h-[62px]"
+          priority
+        />
       </Link>
 
       <div className="flex gap-3 md:gap-4 items-center">
@@ -194,7 +203,7 @@ export function SiteHeader() {
         >
           <ShoppingBag className="w-5 h-5" />
           {totalItems > 0 && (
-            <span className="absolute -top-1 -right-2 bg-[#ff4d8c] text-white text-[10px] min-w-4 h-4 px-0.5 rounded-full flex items-center justify-center font-bold">
+            <span className="absolute -top-1 -right-2 bg-[#c9a96e] text-white text-[10px] min-w-4 h-4 px-0.5 rounded-full flex items-center justify-center font-bold">
               {totalItems}
             </span>
           )}
@@ -213,7 +222,7 @@ export function SiteHeader() {
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder={t.search.placeholder}
-                className="w-full pl-11 pr-10 py-3 rounded-full border border-[#e5e5e5] bg-[#fafafa] text-sm focus:outline-none focus:border-[#ff4d8c] focus:ring-2 focus:ring-[rgba(255,77,140,0.1)] transition-all"
+                className="w-full pl-11 pr-10 py-3 rounded-full border border-[#e5e5e5] bg-[#fafafa] text-sm focus:outline-none focus:border-[#c9a96e] focus:ring-2 focus:ring-[rgba(201,169,110,0.1)] transition-all"
                 aria-label={t.search.placeholder}
               />
               {searching && (
@@ -232,7 +241,7 @@ export function SiteHeader() {
                     <Link
                       href="/shop"
                       onClick={() => setSearchOpen(false)}
-                      className="inline-block text-sm font-semibold text-[#ff4d8c] hover:underline"
+                      className="inline-block text-sm font-semibold text-[#c9a96e] hover:underline"
                     >
                       {t.search.browseAll}
                     </Link>
@@ -261,7 +270,7 @@ export function SiteHeader() {
                     </ul>
                     <button
                       onClick={() => submitSearch()}
-                      className="w-full mt-2 py-2.5 text-sm font-semibold text-[#ff4d8c] hover:bg-[#fff5f9] rounded-xl transition-colors"
+                      className="w-full mt-2 py-2.5 text-sm font-semibold text-[#c9a96e] hover:bg-[#faf6ee] rounded-xl transition-colors"
                     >
                       {t.search.viewAll}
                     </button>
@@ -275,10 +284,12 @@ export function SiteHeader() {
 
       {/* Mobile Navigation Menu */}
       {mobileMenuOpen && !searchOpen && (
-        <div className="absolute top-full left-0 right-0 bg-[rgba(250,250,250,0.98)] backdrop-blur-xl border-b border-[rgba(0,0,0,0.03)] md:hidden">
+        <div className="absolute top-full left-0 right-0 bg-[rgba(255,255,255,0.98)] backdrop-blur-xl border-b border-[rgba(0,0,0,0.04)] md:hidden">
           <nav className="px-4 py-5">
             <ul className="flex flex-col gap-3 list-none">
               <li>{navLink("/shop", t.nav.shop, true)}</li>
+              <li>{navLink("/academy", t.nav.academy, true)}</li>
+              <li>{navLink("/stone-paper", t.nav.stonePaper, true)}</li>
               <li>{navLink("/about", t.nav.about, true)}</li>
               <li>{navLink("/contact", t.nav.contact, true)}</li>
               <li className="pt-2 border-t border-[rgba(0,0,0,0.05)]">

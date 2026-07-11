@@ -9,6 +9,7 @@ import { useCart } from "@/context/cart-context"
 import { useLanguage } from "@/context/language-context"
 import { formatPrice } from "@/lib/format"
 import { localizeProduct } from "@/lib/types"
+import { countryOptions } from "@/lib/countries"
 
 const FREE_SHIPPING_THRESHOLD = 50
 const SHIPPING_COST = 5.99
@@ -35,10 +36,8 @@ const initialForm: FormData = {
   address: "",
   city: "",
   postalCode: "",
-  country: "Germany",
+  country: "DE",
 }
-
-const COUNTRIES = ["Germany", "France", "Austria", "Belgium", "Netherlands", "Switzerland", "Luxembourg"]
 
 export default function CheckoutPage() {
   const { items, totalPrice, clearCart } = useCart()
@@ -85,7 +84,7 @@ export default function CheckoutPage() {
     `w-full px-4 py-3 rounded-2xl border bg-white text-sm focus:outline-none focus:ring-2 transition-all ${
       errors[field]
         ? "border-red-400 focus:border-red-400 focus:ring-red-100"
-        : "border-[#e5e5e5] focus:border-[#ff4d8c] focus:ring-[rgba(255,77,140,0.1)]"
+        : "border-[#e5e5e5] focus:border-[#c9a96e] focus:ring-[rgba(201,169,110,0.12)]"
     }`
 
   if (orderTotal !== null) {
@@ -96,7 +95,7 @@ export default function CheckoutPage() {
             <div className="w-20 h-20 bg-[#10b981] rounded-full flex items-center justify-center mx-auto mb-8">
               <Check className="w-10 h-10 text-white" />
             </div>
-            <h1 className="font-display text-4xl md:text-5xl font-semibold tracking-[-0.03em] mb-4">
+            <h1 className="font-display text-3xl md:text-4xl font-semibold tracking-[-0.03em] mb-3">
               {t.checkout.orderConfirmed}
             </h1>
             <p className="text-lg text-[#666] mb-3">{t.checkout.orderThanks}</p>
@@ -273,14 +272,14 @@ export default function CheckoutPage() {
                   <select
                     id="country"
                     name="country"
-                    autoComplete="country-name"
+                    autoComplete="country"
                     value={formData.country}
                     onChange={handleChange}
                     className={inputClass("country")}
                   >
-                    {COUNTRIES.map((c) => (
-                      <option key={c} value={c}>
-                        {c}
+                    {countryOptions(locale).map((c) => (
+                      <option key={c.code} value={c.code}>
+                        {c.name}
                       </option>
                     ))}
                   </select>

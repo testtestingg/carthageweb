@@ -3,6 +3,7 @@ import { promises as fs } from "node:fs"
 import path from "node:path"
 import { randomBytes } from "node:crypto"
 import { requireAdmin, handleApiError } from "@/lib/server/admin-api"
+import { getSupabase, isSupabaseConfigured, UPLOADS_BUCKET } from "@/lib/server/supabase"
 
 export const dynamic = "force-dynamic"
 
@@ -53,6 +54,21 @@ export async function POST(request: NextRequest) {
     }
 
     const filename = `${Date.now()}-${randomBytes(6).toString("hex")}.${signature.ext}`
+
+    // Supabase Storage when configured, local public/uploads otherwise
+    if (isSupabaseConfigured()) {
+      const storage = getSupabase().storage.from(UPLOADS_BUCKET)
+      const { error } = await storage.upload(filename, buffer, {
+        contentType: signature.mime,
+        cacheControl: "31536000",
+      })
+      if (error) {
+        return NextResponse.json({ error: `Upload failed: ${error.message}` }, { status: 500 })
+      }
+      const { data } = storage.getPublicUrl(filename)
+      return NextResponse.json({ url: data.publicUrl }, { status: 201 })
+    }
+
     await fs.mkdir(UPLOAD_DIR, { recursive: true })
     await fs.writeFile(path.join(UPLOAD_DIR, filename), buffer)
 

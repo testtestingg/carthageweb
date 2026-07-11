@@ -30,10 +30,13 @@ export function ProductCard({ product, showAddToCart = false }: { product: Produ
     setTimeout(() => setAdded(false), 1500)
   }
 
+  // h-full + flex-col + mt-auto keep every card in a grid row the same
+  // height, with the price row and add-to-cart button always aligned at
+  // the bottom regardless of how long the product name or subtitle is.
   return (
-    <div className="group bg-white rounded-[18px] p-4 transition-all duration-300 border border-transparent hover:translate-y-[-6px] hover:border-[#eee] hover:shadow-[0_20px_40px_rgba(0,0,0,0.04)]">
-      <Link href={`/product/${product.id}`} className="block">
-        <div className="w-full h-44 md:h-48 rounded-xl overflow-hidden mb-4 bg-[#f5f5f5] relative">
+    <div className="group flex flex-col h-full bg-white rounded-2xl p-3.5 border border-[#ececec] transition-all duration-300 hover:-translate-y-1 hover:border-[#e2e2e2] hover:shadow-[0_16px_32px_rgba(0,0,0,0.06)]">
+      <Link href={`/product/${product.id}`} className="flex flex-col flex-1 min-h-0">
+        <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden bg-[#f5f5f5]">
           {product.badge && <ProductBadge badge={product.badge} />}
           {!product.inStock && (
             <span className="absolute top-3 right-3 z-10 bg-white/90 text-[#666] text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">
@@ -48,10 +51,14 @@ export function ProductCard({ product, showAddToCart = false }: { product: Produ
             className="object-cover transition-transform duration-300 group-hover:scale-105"
           />
         </div>
-        <div className="flex justify-between items-start gap-2">
+        <div className="flex justify-between items-baseline gap-3 pt-3.5 mt-auto">
           <div className="min-w-0">
-            <span className="font-semibold text-sm block mb-0.5 truncate">{info.name}</span>
-            <span className="text-xs text-[#888] block truncate">{info.subtitle}</span>
+            <span className="font-semibold text-sm block truncate leading-snug" title={info.name}>
+              {info.name}
+            </span>
+            <span className="text-xs text-[#888] block truncate leading-snug min-h-4">
+              {info.subtitle || " "}
+            </span>
           </div>
           <span className="font-display font-bold text-sm whitespace-nowrap">
             {formatPrice(product.price, locale)}
@@ -63,12 +70,12 @@ export function ProductCard({ product, showAddToCart = false }: { product: Produ
         <button
           onClick={handleAdd}
           disabled={!product.inStock}
-          className={`w-full mt-4 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 flex items-center justify-center gap-2 ${
+          className={`w-full mt-3.5 py-2.5 rounded-full text-[13px] font-semibold transition-all duration-300 flex items-center justify-center gap-2 ${
             !product.inStock
               ? "bg-[#f5f5f5] text-[#aaa] cursor-not-allowed"
               : added
                 ? "bg-[#10b981] text-white"
-                : "bg-[#111] text-white hover:bg-[#222] hover:shadow-[0_8px_16px_rgba(0,0,0,0.1)]"
+                : "bg-[#111] text-white hover:bg-[#2a2a2a]"
           }`}
         >
           {added ? (

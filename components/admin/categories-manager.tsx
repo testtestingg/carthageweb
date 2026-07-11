@@ -3,7 +3,7 @@
 import { useState } from "react"
 import { useRouter } from "next/navigation"
 import { Plus, Pencil, Trash2, Loader2, AlertCircle, Check, X } from "lucide-react"
-import { CategoryIcon, CATEGORY_ICONS } from "@/components/site/category-icon"
+import { CategoryIcon, CATEGORY_ICON_KEYS } from "@/components/site/category-icon"
 import { LOCALES, LOCALE_LABELS, type Category, type Locale } from "@/lib/types"
 
 interface CategoryDraft {
@@ -138,7 +138,7 @@ export function CategoriesManager({
   }
 
   const inputClass =
-    "w-full px-4 py-2.5 rounded-xl border border-[#e5e5e5] bg-white text-sm focus:outline-none focus:border-[#ff4d8c] focus:ring-2 focus:ring-[rgba(255,77,140,0.1)] transition-all"
+    "w-full px-4 py-2.5 rounded-xl border border-[#e5e5e5] bg-white text-sm focus:outline-none focus:border-[#c9a96e] focus:ring-2 focus:ring-[rgba(201,169,110,0.12)] transition-all"
 
   return (
     <div>
@@ -199,7 +199,7 @@ export function CategoriesManager({
             <div>
               <span className="block text-xs font-medium text-[#666] mb-1.5">Icon</span>
               <div className="flex flex-wrap gap-1.5">
-                {Object.keys(CATEGORY_ICONS).map((iconKey) => (
+                {CATEGORY_ICON_KEYS.map((iconKey) => (
                   <button
                     key={iconKey}
                     type="button"
@@ -236,7 +236,7 @@ export function CategoriesManager({
           <div className="grid sm:grid-cols-2 gap-4 mb-5">
             <div>
               <label htmlFor={`cat-name-${activeTab}`} className="block text-xs font-medium text-[#666] mb-1.5">
-                Name {activeTab === "en" && <span className="text-[#ff4d8c]">*</span>}
+                Name {activeTab === "en" && <span className="text-[#c9a96e]">*</span>}
               </label>
               <input
                 id={`cat-name-${activeTab}`}
@@ -278,7 +278,7 @@ export function CategoriesManager({
         {categories.map((category) => (
           <div key={category.id} className="flex items-center gap-4 px-5 py-4">
             <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#fff0f5] to-[#ffe4ec] flex items-center justify-center flex-shrink-0">
-              <CategoryIcon icon={category.icon} className="w-5 h-5 text-[#ff4d8c]" />
+              <CategoryIcon icon={category.icon} className="w-5 h-5 text-[#c9a96e]" />
             </div>
             <div className="flex-1 min-w-0">
               <p className="font-medium text-sm truncate">{category.translations.en.name}</p>

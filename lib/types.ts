@@ -52,6 +52,46 @@ export interface ContactMessage {
   createdAt: string
 }
 
+export interface FormationTranslation {
+  name: string
+  description: string
+  details: string
+}
+
+export interface Formation {
+  id: string
+  image: string
+  category: string
+  duration: string
+  price?: number
+  published: boolean
+  createdAt: string
+  updatedAt: string
+  translations: Record<Locale, FormationTranslation>
+}
+
+export type EnrollmentStatus = "new" | "contacted"
+
+export interface Enrollment {
+  id: string
+  formationId: string
+  formationName: string
+  name: string
+  email: string
+  phone: string
+  country: string
+  message: string
+  locale: Locale
+  status: EnrollmentStatus
+  createdAt: string
+}
+
+export function localizeFormation(formation: Formation, locale: Locale): FormationTranslation {
+  const t = formation.translations[locale]
+  if (t && t.name.trim()) return t
+  return formation.translations[DEFAULT_LOCALE]
+}
+
 export function localizeProduct(product: Product, locale: Locale): ProductTranslation {
   const t = product.translations[locale]
   if (t && t.name.trim()) return t

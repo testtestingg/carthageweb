@@ -151,7 +151,7 @@ export function ProductForm({ categories, product }: { categories: Category[]; p
     translations[locale].name.trim() && translations[locale].description.trim()
 
   const inputClass =
-    "w-full px-4 py-2.5 rounded-xl border border-[#e5e5e5] bg-white text-sm focus:outline-none focus:border-[#ff4d8c] focus:ring-2 focus:ring-[rgba(255,77,140,0.1)] transition-all"
+    "w-full px-4 py-2.5 rounded-xl border border-[#e5e5e5] bg-white text-sm focus:outline-none focus:border-[#c9a96e] focus:ring-2 focus:ring-[rgba(201,169,110,0.12)] transition-all"
 
   return (
     <div>
@@ -181,7 +181,7 @@ export function ProductForm({ categories, product }: { categories: Category[]; p
             <section className="bg-white rounded-[18px] border border-[#eee] p-5">
               <h2 className="font-semibold text-sm mb-4">Product Image</h2>
               <div
-                className="w-full aspect-square rounded-xl bg-[#f5f5f5] border-2 border-dashed border-[#e5e5e5] overflow-hidden relative cursor-pointer hover:border-[#ff4d8c] transition-colors"
+                className="w-full aspect-square rounded-xl bg-[#f5f5f5] border-2 border-dashed border-[#e5e5e5] overflow-hidden relative cursor-pointer hover:border-[#c9a96e] transition-colors"
                 onClick={() => fileInputRef.current?.click()}
                 onDragOver={(e) => e.preventDefault()}
                 onDrop={(e) => {
@@ -201,7 +201,7 @@ export function ProductForm({ categories, product }: { categories: Category[]; p
                 )}
                 {uploading && (
                   <div className="absolute inset-0 bg-white/70 flex items-center justify-center">
-                    <Loader2 className="w-6 h-6 animate-spin text-[#ff4d8c]" />
+                    <Loader2 className="w-6 h-6 animate-spin text-[#c9a96e]" />
                   </div>
                 )}
               </div>
@@ -227,7 +227,7 @@ export function ProductForm({ categories, product }: { categories: Category[]; p
                   type="checkbox"
                   checked={inStock}
                   onChange={(e) => setInStock(e.target.checked)}
-                  className="w-4 h-4 accent-[#ff4d8c]"
+                  className="w-4 h-4 accent-[#c9a96e]"
                 />
               </label>
               <label className="flex items-center justify-between gap-3 cursor-pointer">
@@ -236,7 +236,7 @@ export function ProductForm({ categories, product }: { categories: Category[]; p
                   type="checkbox"
                   checked={featured}
                   onChange={(e) => setFeatured(e.target.checked)}
-                  className="w-4 h-4 accent-[#ff4d8c]"
+                  className="w-4 h-4 accent-[#c9a96e]"
                 />
               </label>
             </section>
@@ -353,7 +353,7 @@ export function ProductForm({ categories, product }: { categories: Category[]; p
               <div className="space-y-4">
                 <div>
                   <label htmlFor={`name-${activeTab}`} className="block text-xs font-medium text-[#666] mb-1.5">
-                    Name {activeTab === "en" && <span className="text-[#ff4d8c]">*</span>}
+                    Name {activeTab === "en" && <span className="text-[#c9a96e]">*</span>}
                   </label>
                   <input
                     id={`name-${activeTab}`}

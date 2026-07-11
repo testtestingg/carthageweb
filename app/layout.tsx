@@ -11,31 +11,68 @@ const geist = Geist({ subsets: ["latin"], variable: "--font-geist" })
 const geistMono = Geist_Mono({ subsets: ["latin"], variable: "--font-geist-mono" })
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], variable: "--font-space-grotesk" })
 
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://carthage.de"
+
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "Carthage - Premium Cosmetic & Pigmentation | Made in Germany",
     template: "%s | Carthage",
   },
   description:
-    "Professional-grade PMU products, custom formulations, and certified education. ISO & GMP certified quality from Germany for permanent makeup artists worldwide.",
-  keywords: "PMU, permanent makeup, cosmetic, pigmentation, needles, Carthage, made in Germany",
-  icons: {
-    icon: [
-      {
-        url: "/icon-light-32x32.png",
-        media: "(prefers-color-scheme: light)",
-      },
-      {
-        url: "/icon-dark-32x32.png",
-        media: "(prefers-color-scheme: dark)",
-      },
-      {
-        url: "/icon.svg",
-        type: "image/svg+xml",
-      },
-    ],
-    apple: "/apple-icon.png",
+    "Professional-grade PMU products, cosmetics, stone paper and certified education. ISO & GMP certified quality from Germany for professionals worldwide.",
+  keywords:
+    "PMU, permanent makeup, cosmetic, pigmentation, needles, stone paper, Carthage, made in Germany",
+  alternates: {
+    canonical: "/",
   },
+  openGraph: {
+    type: "website",
+    siteName: "Carthage",
+    url: SITE_URL,
+    title: "Carthage - Premium Cosmetic & Pigmentation | Made in Germany",
+    description:
+      "Professional-grade PMU products, cosmetics, stone paper and certified education. Made in Germany.",
+    images: [{ url: "/logo-carthage.png", width: 512, height: 512, alt: "Carthage logo" }],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+}
+
+// Organization + WebSite structured data for search engines
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${SITE_URL}/#organization`,
+      name: "Carthage Cosmetic & Pigmentation",
+      url: SITE_URL,
+      logo: `${SITE_URL}/logo-carthage.png`,
+      email: "info@carthagecare.de",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Lietzenburger Str. 9a",
+        postalCode: "10789",
+        addressLocality: "Berlin",
+        addressCountry: "DE",
+      },
+      sameAs: [
+        "https://www.instagram.com/carthage.tattoo",
+        "https://www.facebook.com/carthage.tattoo",
+      ],
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      url: SITE_URL,
+      name: "Carthage",
+      publisher: { "@id": `${SITE_URL}/#organization` },
+      inLanguage: ["en", "fr", "de"],
+    },
+  ],
 }
 
 export default async function RootLayout({
@@ -49,6 +86,10 @@ export default async function RootLayout({
   return (
     <html lang={initialLocale === "fr" || initialLocale === "de" ? initialLocale : "en"}>
       <body className={`${geist.variable} ${geistMono.variable} ${spaceGrotesk.variable} font-sans antialiased`}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
         <LanguageProvider initialLocale={initialLocale}>
           <CartProvider>{children}</CartProvider>
         </LanguageProvider>

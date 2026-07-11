@@ -40,16 +40,34 @@
     "icon": "sparkles",
     "translations": {
       "en": {
-        "name": "Skincare",
-        "description": "Post-procedure care and daily skincare essentials"
+        "name": "Skincare & Cosmetics",
+        "description": "Post-procedure care and professional cosmetic essentials"
       },
       "fr": {
-        "name": "Soins de la peau",
-        "description": "Soins post-procédure et essentiels du quotidien"
+        "name": "Soins & cosmétiques",
+        "description": "Soins post-procédure et essentiels cosmétiques professionnels"
       },
       "de": {
-        "name": "Hautpflege",
-        "description": "Pflege nach der Behandlung und tägliche Essentials"
+        "name": "Hautpflege & Kosmetik",
+        "description": "Pflege nach der Behandlung und professionelle Kosmetik-Essentials"
+      }
+    }
+  },
+  {
+    "id": "stonepaper",
+    "icon": "leaf",
+    "translations": {
+      "en": {
+        "name": "Stone Paper",
+        "description": "Tree-free notebooks and packaging by Golden Bridge"
+      },
+      "fr": {
+        "name": "Papier de pierre",
+        "description": "Carnets et emballages sans arbre par Golden Bridge"
+      },
+      "de": {
+        "name": "Steinpapier",
+        "description": "Baumfreie Notizbücher und Verpackungen von Golden Bridge"
       }
     }
   },
