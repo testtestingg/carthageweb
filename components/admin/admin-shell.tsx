@@ -4,7 +4,7 @@ import { useState } from "react"
 import Link from "next/link"
 import { usePathname, useRouter } from "next/navigation"
 import { Package, FolderTree, GraduationCap, UserPlus, Settings, LogOut, ExternalLink, Menu, X } from "lucide-react"
-
+import Image from "next/image";
 const NAV_ITEMS = [
   { href: "/admin", label: "Products", icon: Package },
   { href: "/admin/categories", label: "Categories", icon: FolderTree },
@@ -67,9 +67,16 @@ export function AdminShell({ username, children }: { username: string; children:
       <div className="flex">
         {/* Sidebar */}
         <aside className="hidden md:flex w-60 min-h-screen bg-white border-r border-[#eee] flex-col p-5 sticky top-0 max-h-screen">
-          <Link href="/admin" className="font-display font-bold text-xl tracking-[-0.03em] mb-1 px-2">
-            carthage<span className="text-[#c9a96e]">.</span>
-          </Link>
+<Link href="/admin" className="mb-1 px-2">
+  <Image
+    src="/logo-carthage.png"
+    alt="Carthage"
+    width={180}
+    height={50}
+    priority
+    className="h-10 w-auto"
+  />
+</Link>
           <p className="text-xs text-[#999] mb-8 px-2">Admin Panel</p>
 
           {nav}
