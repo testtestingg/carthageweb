@@ -28,10 +28,10 @@ const en = {
   },
   hero: {
     madeInGermany: "Made in Germany",
-    titleLine1: "Professional PMU",
+    titleLine1: "German Quality",
     titleLine2: "by Carthage.",
     subtitle:
-      "Premium cosmetic & pigmentation products crafted for industry leaders. ISO & GMP certified quality, professional-grade formulas designed for permanent makeup artists worldwide.",
+      "A diversified company delivering premium solutions in cosmetics, permanent makeup, sustainable materials, and future-focused innovations, crafted to the highest international standards.",
     shopCollection: "Shop The Collection",
     aboutCarthage: "About Carthage",
     bestSellerBadge: "BEST\nSELLER",
@@ -524,10 +524,10 @@ const fr: Dictionary = {
   },
   hero: {
     madeInGermany: "Fabriqué en Allemagne",
-    titleLine1: "PMU professionnel",
+    titleLine1: "Qualité allemande",
     titleLine2: "par Carthage.",
     subtitle:
-      "Produits cosmétiques et de pigmentation haut de gamme, conçus pour les leaders du secteur. Qualité certifiée ISO & GMP, formules professionnelles pensées pour les artistes du maquillage permanent du monde entier.",
+      "Une entreprise diversifiée proposant des solutions haut de gamme dans les domaines des cosmétiques, du maquillage permanent, des matériaux durables et des innovations d'avenir, conçues selon les plus hauts standards internationaux.",
     shopCollection: "Découvrir la collection",
     aboutCarthage: "À propos de Carthage",
     bestSellerBadge: "BEST\nSELLER",
@@ -1017,10 +1017,10 @@ const de: Dictionary = {
   },
   hero: {
     madeInGermany: "Made in Germany",
-    titleLine1: "Professionelles PMU",
-    titleLine2: "von Carthage.",
+    titleLine1: "Deutsche Qualität",
+    titleLine2: "Von Carthage",
     subtitle:
-      "Premium-Kosmetik- und Pigmentierungsprodukte für führende Profis. ISO- & GMP-zertifizierte Qualität und professionelle Formeln für Permanent-Make-up-Artists weltweit.",
+      "Ein diversifiziertes Unternehmen, das hochwertige Lösungen in den Bereichen Kosmetik, Permanent Make-up, nachhaltige Materialien und zukunftsorientierte Innovationen entwickelt – gefertigt nach höchsten internationalen Qualitätsstandards.",
     shopCollection: "Kollektion entdecken",
     aboutCarthage: "Über Carthage",
     bestSellerBadge: "BEST\nSELLER",
