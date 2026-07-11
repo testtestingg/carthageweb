@@ -1,9 +1,5 @@
-import { getProducts, getCategories } from "@/lib/server/store"
 import { HomeClient } from "@/components/home/home-client"
 
-export const dynamic = "force-dynamic"
-
-export default async function HomePage() {
-  const [products, categories] = await Promise.all([getProducts(), getCategories()])
-  return <HomeClient products={products} categories={categories} />
+export default function HomePage() {
+  return <HomeClient />
 }

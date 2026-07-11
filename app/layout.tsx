@@ -16,11 +16,11 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://carthage.de"
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Carthage - Premium Cosmetic & Pigmentation | Made in Germany",
+    default: "Carthage - Cosmetics, PMU & Stone Paper | Made in Germany",
     template: "%s | Carthage",
   },
   description:
-    "Professional-grade PMU products, cosmetics, stone paper and certified education. ISO & GMP certified quality from Germany for professionals worldwide.",
+    "German industry & production group: professional cosmetics & PMU products, sustainable stone paper by Golden Bridge, and a certified PMU academy in Berlin.",
   keywords:
     "PMU, permanent makeup, cosmetic, pigmentation, needles, stone paper, Carthage, made in Germany",
   alternates: {
@@ -30,9 +30,9 @@ export const metadata: Metadata = {
     type: "website",
     siteName: "Carthage",
     url: SITE_URL,
-    title: "Carthage - Premium Cosmetic & Pigmentation | Made in Germany",
+    title: "Carthage - Cosmetics, PMU & Stone Paper | Made in Germany",
     description:
-      "Professional-grade PMU products, cosmetics, stone paper and certified education. Made in Germany.",
+      "German industry & production group: cosmetics & PMU, stone paper by Golden Bridge, and a certified academy in Berlin.",
     images: [{ url: "/logo-carthage.png", width: 512, height: 512, alt: "Carthage logo" }],
   },
   robots: {

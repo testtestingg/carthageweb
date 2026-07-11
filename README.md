@@ -1,5 +1,5 @@
 # Carthage — Cosmetic & Pigmentation Storefront
- 
+   
 E-commerce storefront for professional PMU (permanent makeup) products, built with Next.js 16, React 19, Tailwind CSS 4 and Supabase.
 
 ## Features

@@ -1,35 +1,42 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
+import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { ArrowRight, Zap, Star, Gem, Leaf } from "lucide-react"
 import { SiteShell } from "@/components/site/site-shell"
-import { ProductCard } from "@/components/site/product-card"
-import { CategoryIcon } from "@/components/site/category-icon"
 import { useLanguage } from "@/context/language-context"
-import { localizeCategory, localizeProduct, type Category, type Product } from "@/lib/types"
 
-export function HomeClient({ products, categories }: { products: Product[]; categories: Category[] }) {
-  const { locale, t } = useLanguage()
+/**
+ * Corporate homepage: presents the group's areas of activity
+ * (Industry & Production: Cosmetics, Stone Paper - plus the Academy)
+ * and routes visitors into each division's own section.
+ */
+
+const DIVISIONS = [
+  {
+    href: "/shop",
+    image: "/IMG_6447.JPG",
+    alt: "Carthage V6 Pink cartridge needle with professional PMU products",
+    production: true,
+  },
+  {
+    href: "/stone-paper",
+    image: "/stone-paper/paper-3.jpg",
+    alt: "Stone paper rolls, sheets and an open notebook by Golden Bridge",
+    production: true,
+  },
+  {
+    href: "/academy",
+    image: "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=1200&q=80",
+    alt: "PMU artist working on a client at the Carthage Academy",
+    production: false,
+  },
+] as const
+
+export function HomeClient() {
+  const { t } = useLanguage()
   const [subscribed, setSubscribed] = useState(false)
-  const videoRef = useRef<HTMLVideoElement>(null)
-
-  // React doesn't server-render the `muted` attribute, which makes browsers
-  // block autoplay before hydration - force playback once mounted.
-  useEffect(() => {
-    const video = videoRef.current
-    if (!video) return
-    video.muted = true
-    video.play().catch(() => {
-      // autoplay rejected (e.g. data saver) - the poster keeps the design intact
-    })
-  }, [])
-
-  const featuredProducts = [...products]
-    .sort((a, b) => Number(b.featured) - Number(a.featured))
-    .slice(0, 4)
-  const floatingCards = products.filter((p) => p.featured).slice(0, 2)
 
   const marqueeItems = [
     { icon: Zap, label: t.marquee.madeInGermany },
@@ -40,111 +47,47 @@ export function HomeClient({ products, categories }: { products: Product[]; cate
 
   return (
     <SiteShell>
-      {/* Main Hero */}
-      <main className="relative max-w-[1240px] w-full mx-auto pt-28 md:pt-36 pb-14 px-4 md:px-12 grid md:grid-cols-2 items-center gap-10 md:gap-14">
-        <div className="z-[2]">
-          <div className="inline-flex items-center px-3 py-1.5 bg-white border border-[#e5e5e5] rounded-full text-[11px] font-semibold uppercase tracking-wider mb-6 shadow-[0_2px_10px_rgba(0,0,0,0.03)]">
-            <span className="w-[18px] h-3 mr-2 rounded-[2px] overflow-hidden inline-flex flex-col shrink-0 border border-black/5" aria-hidden="true">
-              <span className="flex-1 bg-black" />
-              <span className="flex-1 bg-[#dd0000]" />
-              <span className="flex-1 bg-[#ffce00]" />
-            </span>
-            {t.hero.madeInGermany}
-          </div>
-
-          <h1 className="font-display text-4xl sm:text-5xl md:text-[56px] leading-[1.02] font-semibold tracking-[-0.03em] mb-5 text-black">
-            {t.hero.titleLine1} <br />
-            <span className="italic font-normal bg-gradient-to-r from-[#c9a96e] to-[#e8c97a] bg-clip-text text-transparent">
-              {t.hero.titleLine2}
-            </span>
-          </h1>
-
-          <p className="text-base md:text-[17px] leading-relaxed text-[#555] max-w-[440px] mb-8">{t.hero.subtitle}</p>
-
-          <div className="flex flex-col sm:flex-row gap-3 items-start sm:items-center">
-            <Link
-              href="/shop"
-              className="bg-[#111] text-white px-7 py-3.5 rounded-full font-semibold text-sm transition-all duration-300 hover:translate-y-[-2px] hover:shadow-[0_10px_20px_rgba(0,0,0,0.15)] hover:bg-[#222] inline-flex items-center gap-2"
-            >
-              {t.hero.shopCollection}
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-            <Link
-              href="/about"
-              className="px-7 py-3.5 rounded-full font-semibold text-sm bg-[rgba(255,255,255,0.5)] border border-[#e5e5e5] transition-all hover:bg-white hover:border-black"
-            >
-              {t.hero.aboutCarthage}
-            </Link>
-          </div>
+      {/* Hero */}
+      <main className="relative max-w-[1240px] w-full mx-auto pt-32 md:pt-40 pb-14 md:pb-20 px-4 md:px-12 text-center">
+        <div className="inline-flex items-center px-3 py-1.5 bg-white border border-[#e5e5e5] rounded-full text-[11px] font-semibold uppercase tracking-wider mb-6 shadow-[0_2px_10px_rgba(0,0,0,0.03)]">
+          <span className="w-[18px] h-3 mr-2 rounded-[2px] overflow-hidden inline-flex flex-col shrink-0 border border-black/5" aria-hidden="true">
+            <span className="flex-1 bg-black" />
+            <span className="flex-1 bg-[#dd0000]" />
+            <span className="flex-1 bg-[#ffce00]" />
+          </span>
+          {t.hero.madeInGermany}
         </div>
 
-        <div className="relative h-[400px] md:h-[540px] w-full">
-          <div className="group w-full h-full rounded-[40px] overflow-hidden relative -rotate-2 transition-transform duration-500 shadow-[0_30px_60px_rgba(0,0,0,0.1)] hover:rotate-0">
-            <video
-              ref={videoRef}
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="metadata"
-              poster="/IMG_6447.JPG"
-              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              aria-label="Carthage professional PMU products"
-            >
-              <source src="/hero-video.mp4" type="video/mp4" />
-            </video>
+        <h1 className="font-display text-4xl sm:text-5xl md:text-[56px] leading-[1.05] font-semibold tracking-[-0.03em] mb-5 text-black">
+          {t.hero.titleLine1} <br />
+          <span className="italic font-normal bg-gradient-to-r from-[#c9a96e] to-[#e8c97a] bg-clip-text text-transparent">
+            {t.hero.titleLine2}
+          </span>
+        </h1>
 
-            {/* Badge */}
-            <div className="absolute top-5 left-5 z-[4] w-20 h-20 flex items-center justify-center bg-[#dbff00] rounded-full text-black font-extrabold font-display text-center rotate-[15deg] shadow-[0_10px_20px_rgba(0,0,0,0.1)] text-xs leading-tight whitespace-pre-line">
-              {t.hero.bestSellerBadge}
-            </div>
-          </div>
+        <p className="text-base md:text-[17px] leading-relaxed text-[#555] max-w-[560px] mx-auto mb-8">
+          {t.hero.subtitle}
+        </p>
 
-          {/* Floating Glassmorphism Product Cards */}
-          {floatingCards[0] && (
-            <Link
-              href={`/product/${floatingCards[0].id}`}
-              className="absolute bottom-[60px] left-[-20px] md:left-[-40px] bg-[rgba(255,255,255,0.7)] backdrop-blur-2xl p-3.5 rounded-[18px] border border-[rgba(255,255,255,0.6)] shadow-[0_20px_40px_rgba(0,0,0,0.05)] flex items-center gap-3 z-[3] animate-[float_6s_ease-in-out_infinite] hover:bg-white/90 transition-colors"
-            >
-              <Image
-                src={floatingCards[0].image}
-                alt={localizeProduct(floatingCards[0], locale).name}
-                width={44}
-                height={44}
-                className="w-11 h-11 rounded-xl object-cover"
-              />
-              <div>
-                <h4 className="text-sm font-semibold mb-0.5">{localizeProduct(floatingCards[0], locale).name.split(" ").slice(0, 2).join(" ")}</h4>
-                <p className="text-xs text-[#666]">{localizeProduct(floatingCards[0], locale).subtitle}</p>
-                <div className="flex text-[#ffb800] text-xs mt-0.5">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-              </div>
-            </Link>
-          )}
-
-          {floatingCards[1] && (
-            <Link
-              href={`/product/${floatingCards[1].id}`}
-              className="absolute top-20 right-[-10px] md:right-[-20px] bg-[rgba(255,255,255,0.7)] backdrop-blur-2xl p-3.5 rounded-[18px] border border-[rgba(255,255,255,0.6)] shadow-[0_20px_40px_rgba(0,0,0,0.05)] flex items-center gap-3 z-[3] animate-[float_6s_ease-in-out_1.5s_infinite] hover:bg-white/90 transition-colors"
-            >
-              <Image
-                src={floatingCards[1].image}
-                alt={localizeProduct(floatingCards[1], locale).name}
-                width={44}
-                height={44}
-                className="w-11 h-11 rounded-xl object-cover"
-              />
-              <div>
-                <h4 className="text-sm font-semibold mb-0.5">{localizeProduct(floatingCards[1], locale).name.split(" ").slice(0, 3).join(" ")}</h4>
-                <p className="text-xs text-[#666]">{localizeProduct(floatingCards[1], locale).subtitle}</p>
-                <div className="flex text-[#ffb800] text-xs mt-0.5">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
-              </div>
-            </Link>
-          )}
+        <div className="flex flex-col sm:flex-row gap-3 items-center justify-center">
+          <a
+            href="#divisions"
+            className="bg-[#111] text-white px-7 py-3.5 rounded-full font-semibold text-sm transition-all duration-300 hover:translate-y-[-2px] hover:shadow-[0_10px_20px_rgba(0,0,0,0.15)] hover:bg-[#222] inline-flex items-center gap-2"
+          >
+            {t.hero.shopCollection}
+            <ArrowRight className="w-4 h-4" />
+          </a>
+          <Link
+            href="/about"
+            className="px-7 py-3.5 rounded-full font-semibold text-sm bg-white border border-[#e5e5e5] transition-all hover:border-black"
+          >
+            {t.hero.aboutCarthage}
+          </Link>
         </div>
       </main>
 
       {/* Marquee Ticker */}
-      <div className="w-full bg-[#111] text-white py-3.5 overflow-hidden whitespace-nowrap relative -rotate-1 scale-[1.02] -mt-10 z-[5] border-t border-b border-[#333]">
+      <div className="w-full bg-[#111] text-white py-3.5 overflow-hidden whitespace-nowrap relative -rotate-1 scale-[1.02] z-[5] border-t border-b border-[#333]">
         <div className="inline-block animate-[marquee_20s_linear_infinite]">
           {[...Array(4)].map((_, i) => (
             <span key={i}>
@@ -162,53 +105,89 @@ export function HomeClient({ products, categories }: { products: Product[]; cate
         </div>
       </div>
 
-      {/* Featured Products Strip */}
-      <section className="py-14 px-4 md:px-12 max-w-[1240px] mx-auto">
-        <div className="flex justify-between items-end mb-7">
-          <h3 className="font-display text-2xl font-semibold">{t.home.trendingNow}</h3>
-          <Link href="/shop" className="underline font-medium text-sm">
-            {t.home.seeAllProducts}
-          </Link>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-          {featuredProducts.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-        </div>
-      </section>
-
-      {/* Categories Section */}
-      <section className="py-14 px-4 md:px-12 max-w-[1240px] mx-auto">
-        <div className="text-center mb-10">
-          <h3 className="font-display text-3xl font-semibold mb-3">
-            {t.home.exploreTitle}{" "}
+      {/* Areas of activity */}
+      <section id="divisions" className="py-16 md:py-20 px-4 md:px-12 max-w-[1240px] mx-auto scroll-mt-24">
+        <div className="text-center mb-10 md:mb-14">
+          <p className="text-[11px] tracking-[0.3em] uppercase text-[#a89263] mb-3">
+            {t.home.divisionsEyebrow}
+          </p>
+          <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-[-0.02em] mb-3">
+            {t.home.divisionsTitle}{" "}
             <span className="italic font-normal bg-gradient-to-r from-[#c9a96e] to-[#e8c97a] bg-clip-text text-transparent">
-              {t.home.exploreTitleAccent}
+              {t.home.divisionsTitleAccent}
             </span>
-          </h3>
-          <p className="text-base text-[#666]">{t.home.exploreSubtitle}</p>
+          </h2>
+          <p className="text-[15px] md:text-base text-[#666] max-w-[520px] mx-auto">
+            {t.home.divisionsSubtitle}
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
-          {categories.map((category) => {
-            const info = localizeCategory(category, locale)
-            const href = category.id === "academy" ? "/academy" : `/shop?category=${category.id}`
+        {/* Production divisions */}
+        <div className="grid md:grid-cols-2 gap-6 mb-6">
+          {t.home.divisions.slice(0, 2).map((division, i) => {
+            const meta = DIVISIONS[i]
             return (
               <Link
-                key={category.id}
-                href={href}
-                className="group bg-white rounded-2xl p-6 border border-[#eee] transition-all duration-300 hover:translate-y-[-4px] hover:shadow-[0_20px_40px_rgba(0,0,0,0.06)] text-center"
+                key={division.name}
+                href={meta.href}
+                className="group relative flex flex-col justify-end min-h-[380px] md:min-h-[440px] rounded-[24px] overflow-hidden border border-[#eee] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_30px_60px_rgba(0,0,0,0.12)]"
               >
-                <div className="w-12 h-12 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-[#fdf6ec] to-[#f5e6c8] flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
-                  <CategoryIcon icon={category.icon} className="w-5 h-5 text-[#c9a96e]" />
+                <Image
+                  src={meta.image}
+                  alt={meta.alt}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent" />
+                <div className="relative p-7 md:p-8 text-white">
+                  <span className="inline-block text-[10px] font-bold uppercase tracking-[0.2em] bg-white/15 backdrop-blur-sm border border-white/20 rounded-full px-3 py-1 mb-4">
+                    {t.home.productionLabel}
+                  </span>
+                  <h3 className="font-display text-2xl md:text-[28px] font-semibold mb-2">{division.name}</h3>
+                  <p className="text-sm text-white/80 leading-relaxed max-w-[400px] mb-5">
+                    {division.description}
+                  </p>
+                  <span className="inline-flex items-center gap-2 text-sm font-semibold text-[#e8c97a] group-hover:gap-3 transition-all">
+                    {division.cta}
+                    <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                  </span>
                 </div>
-                <h4 className="font-display font-semibold text-[15px] mb-1.5">{info.name}</h4>
-                <p className="text-sm text-[#666] leading-relaxed">{info.description}</p>
               </Link>
             )
           })}
         </div>
+
+        {/* Academy */}
+        <Link
+          href={DIVISIONS[2].href}
+          className="group grid md:grid-cols-[1fr_320px] items-stretch bg-white rounded-[24px] border border-[#eee] overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_30px_60px_rgba(0,0,0,0.08)]"
+        >
+          <div className="p-7 md:p-8 flex flex-col justify-center">
+            <span className="inline-block w-fit text-[10px] font-bold uppercase tracking-[0.2em] bg-[#fdf6ec] text-[#a4813d] border border-[#f0e3c8] rounded-full px-3 py-1 mb-4">
+              {t.home.educationLabel}
+            </span>
+            <h3 className="font-display text-2xl md:text-[28px] font-semibold mb-2">
+              {t.home.divisions[2].name}
+            </h3>
+            <p className="text-sm text-[#666] leading-relaxed max-w-[480px] mb-5">
+              {t.home.divisions[2].description}
+            </p>
+            <span className="inline-flex items-center gap-2 text-sm font-semibold text-[#c9a96e] group-hover:gap-3 transition-all">
+              {t.home.divisions[2].cta}
+              <ArrowRight className="w-4 h-4" aria-hidden="true" />
+            </span>
+          </div>
+          <div className="relative min-h-[220px] md:min-h-0">
+            <Image
+              src={DIVISIONS[2].image}
+              alt={DIVISIONS[2].alt}
+              fill
+              sizes="(max-width: 768px) 100vw, 320px"
+              className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+            />
+          </div>
+        </Link>
       </section>
 
       {/* Newsletter Section */}
@@ -261,44 +240,6 @@ export function HomeClient({ products, categories }: { products: Product[]; cate
 
             <p className="text-xs text-[#888]">{t.home.newsletterDisclaimer}</p>
           </div>
-        </div>
-      </section>
-
-      {/* Testimonials Section */}
-      <section className="py-14 px-4 md:px-12 max-w-[1240px] mx-auto">
-        <div className="text-center mb-10">
-          <h3 className="font-display text-3xl font-semibold mb-3">
-            {t.home.testimonialsTitle}{" "}
-            <span className="italic font-normal bg-gradient-to-r from-[#c9a96e] to-[#e8c97a] bg-clip-text text-transparent">
-              {t.home.testimonialsTitleAccent}
-            </span>
-          </h3>
-          <p className="text-base text-[#666]">{t.home.testimonialsSubtitle}</p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {t.home.testimonials.map((testimonial, i) => (
-            <div
-              key={testimonial.name}
-              className="group bg-white rounded-2xl p-6 border border-[#eee] transition-all duration-300 hover:translate-y-[-4px] hover:shadow-[0_20px_40px_rgba(0,0,0,0.06)]"
-            >
-              <div className="flex text-[#ffb800] text-sm mb-4" aria-label="5 stars">
-                &#9733;&#9733;&#9733;&#9733;&#9733;
-              </div>
-              <p className="text-[15px] leading-relaxed text-[#444] mb-6">&quot;{testimonial.quote}&quot;</p>
-              <div className="flex items-center gap-3">
-                <div
-                  className={`w-11 h-11 rounded-full bg-gradient-to-br ${
-                    ["from-[#c9a96e] to-[#e8c97a]", "from-[#e0e7ff] to-[#c7d2fe]", "from-[#fdf6ec] to-[#f5e6c8]"][i % 3]
-                  }`}
-                />
-                <div>
-                  <h4 className="font-semibold text-sm">{testimonial.name}</h4>
-                  <p className="text-xs text-[#888]">{testimonial.role}</p>
-                </div>
-              </div>
-            </div>
-          ))}
         </div>
       </section>
     </SiteShell>

@@ -28,11 +28,11 @@ const en = {
   },
   hero: {
     madeInGermany: "Made in Germany",
-    titleLine1: "Professional PMU",
+    titleLine1: "German Quality",
     titleLine2: "by Carthage.",
     subtitle:
-      "Premium cosmetic & pigmentation products crafted for industry leaders. ISO & GMP certified quality, professional-grade formulas designed for permanent makeup artists worldwide.",
-    shopCollection: "Shop The Collection",
+      "A diversified company delivering premium solutions in cosmetics, permanent makeup, sustainable materials, and future-focused innovations, crafted to the highest international standards.",
+    shopCollection: "Explore our divisions",
     aboutCarthage: "About Carthage",
     bestSellerBadge: "BEST\nSELLER",
   },
@@ -43,11 +43,33 @@ const en = {
     premiumQuality: "Premium Quality",
   },
   home: {
-    trendingNow: "Trending Now",
-    seeAllProducts: "See All Products",
-    exploreTitle: "Explore",
-    exploreTitleAccent: "Categories",
-    exploreSubtitle: "Premium cosmetics, high-grade pigments, and innovative aesthetic products",
+    divisionsEyebrow: "Areas of activity",
+    divisionsTitle: "Two industries,",
+    divisionsTitleAccent: "one standard.",
+    divisionsSubtitle:
+      "Every division runs on the same German production discipline. Choose an area to see its full range.",
+    divisions: [
+      {
+        name: "Cosmetics & PMU",
+        description:
+          "Professional pigments, cartridge needles and skincare — developed and manufactured to ISO & GMP standards for artists and studios worldwide.",
+        cta: "Explore products",
+      },
+      {
+        name: "Stone Paper",
+        description:
+          "Golden Bridge: waterproof, tree-free paper, bags and industrial packaging, produced from limestone at our facility in Luckau.",
+        cta: "Explore stone paper",
+      },
+      {
+        name: "Academy",
+        description:
+          "Certified PMU education in Berlin — cohorts of six, live models and six months of mentoring after every course.",
+        cta: "View programs",
+      },
+    ],
+    productionLabel: "Industry & Production",
+    educationLabel: "Education",
     newsletterBadge: "Stay Connected",
     newsletterTitle1: "Get Exclusive",
     newsletterTitle2: "Product Updates",
@@ -524,11 +546,11 @@ const fr: Dictionary = {
   },
   hero: {
     madeInGermany: "Fabriqué en Allemagne",
-    titleLine1: "PMU professionnel",
+    titleLine1: "Qualité allemande",
     titleLine2: "par Carthage.",
     subtitle:
-      "Produits cosmétiques et de pigmentation haut de gamme, conçus pour les leaders du secteur. Qualité certifiée ISO & GMP, formules professionnelles pensées pour les artistes du maquillage permanent du monde entier.",
-    shopCollection: "Découvrir la collection",
+      "Une entreprise diversifiée proposant des solutions haut de gamme dans les domaines des cosmétiques, du maquillage permanent, des matériaux durables et des innovations d'avenir, conçues selon les plus hauts standards internationaux.",
+    shopCollection: "Découvrir nos domaines",
     aboutCarthage: "À propos de Carthage",
     bestSellerBadge: "BEST\nSELLER",
   },
@@ -539,11 +561,33 @@ const fr: Dictionary = {
     premiumQuality: "Qualité premium",
   },
   home: {
-    trendingNow: "Tendances du moment",
-    seeAllProducts: "Voir tous les produits",
-    exploreTitle: "Explorez nos",
-    exploreTitleAccent: "catégories",
-    exploreSubtitle: "Cosmétiques haut de gamme, pigments de qualité supérieure et produits esthétiques innovants",
+    divisionsEyebrow: "Domaines d'activité",
+    divisionsTitle: "Deux industries,",
+    divisionsTitleAccent: "une même exigence.",
+    divisionsSubtitle:
+      "Chaque division repose sur la même discipline de production allemande. Choisissez un domaine pour découvrir sa gamme complète.",
+    divisions: [
+      {
+        name: "Cosmétiques & PMU",
+        description:
+          "Pigments professionnels, aiguilles à cartouche et soins de la peau — développés et fabriqués selon les normes ISO & GMP pour les artistes et studios du monde entier.",
+        cta: "Découvrir les produits",
+      },
+      {
+        name: "Papier de pierre",
+        description:
+          "Golden Bridge : papier sans arbre imperméable, sacs et emballages industriels, produits à partir de calcaire sur notre site de Luckau.",
+        cta: "Découvrir le papier de pierre",
+      },
+      {
+        name: "Académie",
+        description:
+          "Formation PMU certifiée à Berlin — promotions de six, modèles réels et six mois de mentorat après chaque formation.",
+        cta: "Voir les programmes",
+      },
+    ],
+    productionLabel: "Industrie & Production",
+    educationLabel: "Formation",
     newsletterBadge: "Restons en contact",
     newsletterTitle1: "Recevez nos actualités",
     newsletterTitle2: "en exclusivité",
@@ -1017,11 +1061,11 @@ const de: Dictionary = {
   },
   hero: {
     madeInGermany: "Made in Germany",
-    titleLine1: "Professionelles PMU",
-    titleLine2: "von Carthage.",
+    titleLine1: "Deutsche Qualität",
+    titleLine2: "Von Carthage",
     subtitle:
-      "Premium-Kosmetik- und Pigmentierungsprodukte für führende Profis. ISO- & GMP-zertifizierte Qualität und professionelle Formeln für Permanent-Make-up-Artists weltweit.",
-    shopCollection: "Kollektion entdecken",
+      "Ein diversifiziertes Unternehmen, das hochwertige Lösungen in den Bereichen Kosmetik, Permanent Make-up, nachhaltige Materialien und zukunftsorientierte Innovationen entwickelt – gefertigt nach höchsten internationalen Qualitätsstandards.",
+    shopCollection: "Unsere Bereiche entdecken",
     aboutCarthage: "Über Carthage",
     bestSellerBadge: "BEST\nSELLER",
   },
@@ -1032,11 +1076,33 @@ const de: Dictionary = {
     premiumQuality: "Premium-Qualität",
   },
   home: {
-    trendingNow: "Aktuelle Trends",
-    seeAllProducts: "Alle Produkte ansehen",
-    exploreTitle: "Entdecken Sie unsere",
-    exploreTitleAccent: "Kategorien",
-    exploreSubtitle: "Premium-Kosmetik, hochwertige Pigmente und innovative ästhetische Produkte",
+    divisionsEyebrow: "Geschäftsbereiche",
+    divisionsTitle: "Zwei Industrien,",
+    divisionsTitleAccent: "ein Standard.",
+    divisionsSubtitle:
+      "Jede Division folgt derselben deutschen Produktionsdisziplin. Wählen Sie einen Bereich, um das volle Sortiment zu sehen.",
+    divisions: [
+      {
+        name: "Kosmetik & PMU",
+        description:
+          "Professionelle Pigmente, Cartridge-Nadeln und Hautpflege — entwickelt und gefertigt nach ISO- & GMP-Standards für Artists und Studios weltweit.",
+        cta: "Produkte entdecken",
+      },
+      {
+        name: "Steinpapier",
+        description:
+          "Golden Bridge: wasserfestes, baumfreies Papier, Säcke und Industrieverpackungen — aus Kalkstein gefertigt an unserem Standort in Luckau.",
+        cta: "Steinpapier entdecken",
+      },
+      {
+        name: "Akademie",
+        description:
+          "Zertifizierte PMU-Ausbildung in Berlin — Sechsergruppen, echte Modelle und sechs Monate Mentoring nach jedem Kurs.",
+        cta: "Programme ansehen",
+      },
+    ],
+    productionLabel: "Industrie & Produktion",
+    educationLabel: "Ausbildung",
     newsletterBadge: "In Verbindung bleiben",
     newsletterTitle1: "Exklusive",
     newsletterTitle2: "Produkt-Updates",
