@@ -2,13 +2,12 @@
 
 import { useEffect, useRef, useState } from "react"
 import Link from "next/link"
-import Image from "next/image"
 import { ArrowRight, Zap, Star, Gem, Leaf } from "lucide-react"
 import { SiteShell } from "@/components/site/site-shell"
 import { ProductCard } from "@/components/site/product-card"
 import { CategoryIcon } from "@/components/site/category-icon"
 import { useLanguage } from "@/context/language-context"
-import { localizeCategory, localizeProduct, type Category, type Product } from "@/lib/types"
+import { localizeCategory, type Category, type Product } from "@/lib/types"
 
 export function HomeClient({ products, categories }: { products: Product[]; categories: Category[] }) {
   const { locale, t } = useLanguage()
@@ -22,14 +21,13 @@ export function HomeClient({ products, categories }: { products: Product[]; cate
     if (!video) return
     video.muted = true
     video.play().catch(() => {
-      // autoplay rejected (e.g. data saver) - the poster keeps the design intact
+      // autoplay rejected (e.g. data saver)
     })
   }, [])
 
   const featuredProducts = [...products]
     .sort((a, b) => Number(b.featured) - Number(a.featured))
     .slice(0, 4)
-  const floatingCards = products.filter((p) => p.featured).slice(0, 2)
 
   const marqueeItems = [
     { icon: Zap, label: t.marquee.madeInGermany },
@@ -87,11 +85,10 @@ export function HomeClient({ products, categories }: { products: Product[]; cate
               loop
               playsInline
               preload="metadata"
-              poster="/IMG_6447.JPG"
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               aria-label="Carthage professional PMU products"
             >
-              <source src="/hero-video.mp4" type="video/mp4" />
+              <source src="/video.mp4" type="video/mp4" />
             </video>
 
             {/* Badge */}
@@ -99,47 +96,6 @@ export function HomeClient({ products, categories }: { products: Product[]; cate
               {t.hero.bestSellerBadge}
             </div>
           </div>
-
-          {/* Floating Glassmorphism Product Cards */}
-          {floatingCards[0] && (
-            <Link
-              href={`/product/${floatingCards[0].id}`}
-              className="absolute bottom-[60px] left-[-20px] md:left-[-40px] bg-[rgba(255,255,255,0.7)] backdrop-blur-2xl p-3.5 rounded-[18px] border border-[rgba(255,255,255,0.6)] shadow-[0_20px_40px_rgba(0,0,0,0.05)] flex items-center gap-3 z-[3] animate-[float_6s_ease-in-out_infinite] hover:bg-white/90 transition-colors"
-            >
-              <Image
-                src={floatingCards[0].image}
-                alt={localizeProduct(floatingCards[0], locale).name}
-                width={44}
-                height={44}
-                className="w-11 h-11 rounded-xl object-cover"
-              />
-              <div>
-                <h4 className="text-sm font-semibold mb-0.5">{localizeProduct(floatingCards[0], locale).name.split(" ").slice(0, 2).join(" ")}</h4>
-                <p className="text-xs text-[#666]">{localizeProduct(floatingCards[0], locale).subtitle}</p>
-                <div className="flex text-[#ffb800] text-xs mt-0.5">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-              </div>
-            </Link>
-          )}
-
-          {floatingCards[1] && (
-            <Link
-              href={`/product/${floatingCards[1].id}`}
-              className="absolute top-20 right-[-10px] md:right-[-20px] bg-[rgba(255,255,255,0.7)] backdrop-blur-2xl p-3.5 rounded-[18px] border border-[rgba(255,255,255,0.6)] shadow-[0_20px_40px_rgba(0,0,0,0.05)] flex items-center gap-3 z-[3] animate-[float_6s_ease-in-out_1.5s_infinite] hover:bg-white/90 transition-colors"
-            >
-              <Image
-                src={floatingCards[1].image}
-                alt={localizeProduct(floatingCards[1], locale).name}
-                width={44}
-                height={44}
-                className="w-11 h-11 rounded-xl object-cover"
-              />
-              <div>
-                <h4 className="text-sm font-semibold mb-0.5">{localizeProduct(floatingCards[1], locale).name.split(" ").slice(0, 3).join(" ")}</h4>
-                <p className="text-xs text-[#666]">{localizeProduct(floatingCards[1], locale).subtitle}</p>
-                <div className="flex text-[#ffb800] text-xs mt-0.5">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
-              </div>
-            </Link>
-          )}
         </div>
       </main>
 
