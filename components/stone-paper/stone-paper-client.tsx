@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import Image from "next/image"
-import { ArrowRight, Check } from "lucide-react"
+import { ArrowRight, Check, Factory, Wheat, HardHat, Coffee, Briefcase, ShieldCheck } from "lucide-react"
 import { SiteShell } from "@/components/site/site-shell"
 import { useLanguage } from "@/context/language-context"
 
@@ -250,6 +250,64 @@ export function StonePaperClient() {
               </div>
             ))}
           </dl>
+        </div>
+      </section>
+
+      {/* Applications */}
+      <section className="max-w-[1200px] mx-auto px-4 md:px-12 py-16 md:py-24">
+        <div className="max-w-[560px] mb-10 md:mb-14">
+          <Eyebrow>{sp.applicationsEyebrow}</Eyebrow>
+          <h2 className="font-display text-2xl md:text-[34px] leading-[1.15] tracking-[-0.02em] font-medium text-[#1c1a17]">
+            {sp.applicationsTitle}
+          </h2>
+        </div>
+        <div className="grid sm:grid-cols-2 gap-5">
+          {sp.applications.map((app, i) => {
+            const icons = [Wheat, HardHat, Coffee, Briefcase]
+            const Icon = icons[i] || Factory
+            return (
+              <article
+                key={app.name}
+                className="group flex gap-5 p-6 md:p-7 bg-white rounded-2xl border border-[#e9e5dd] transition-all duration-300 hover:shadow-[0_16px_40px_rgba(28,26,23,0.06)] hover:-translate-y-0.5"
+              >
+                <span className="w-12 h-12 shrink-0 rounded-xl bg-[#f6f4f0] flex items-center justify-center">
+                  <Icon className="w-5 h-5 text-[#a89263]" />
+                </span>
+                <div>
+                  <h3 className="font-display text-base font-medium text-[#1c1a17] mb-2">{app.name}</h3>
+                  <p className="text-sm leading-[1.7] text-[#5c574e]">{app.description}</p>
+                </div>
+              </article>
+            )
+          })}
+        </div>
+      </section>
+
+      {/* Certifications */}
+      <section className="bg-[#f6f4f0]">
+        <div className="max-w-[1200px] mx-auto px-4 md:px-12 py-16 md:py-24">
+          <div className="max-w-[560px] mb-10 md:mb-14">
+            <Eyebrow>{sp.certEyebrow}</Eyebrow>
+            <h2 className="font-display text-2xl md:text-[34px] leading-[1.15] tracking-[-0.02em] font-medium text-[#1c1a17]">
+              {sp.certTitle}
+            </h2>
+          </div>
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+            {sp.certs.map((cert) => (
+              <div
+                key={cert.label}
+                className="flex items-center gap-4 p-5 bg-[#faf9f6] rounded-xl border border-[#e9e5dd]"
+              >
+                <span className="w-10 h-10 shrink-0 rounded-full bg-[#edeae2] flex items-center justify-center">
+                  <ShieldCheck className="w-4.5 h-4.5 text-[#a89263]" />
+                </span>
+                <div>
+                  <p className="text-xs font-bold uppercase tracking-[0.1em] text-[#a89263]">{cert.label}</p>
+                  <p className="text-sm text-[#5c574e]">{cert.value}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

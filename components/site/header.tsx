@@ -7,7 +7,6 @@ import { useRouter, usePathname } from "next/navigation"
 import { Search, ShoppingBag, Menu, X, Globe, Loader2, ChevronDown, ArrowRight } from "lucide-react"
 import { useCart } from "@/context/cart-context"
 import { useLanguage } from "@/context/language-context"
-import { CategoryIcon } from "@/components/site/category-icon"
 import { formatPrice } from "@/lib/format"
 import { LOCALES, LOCALE_LABELS, type Locale } from "@/lib/types"
 
@@ -167,10 +166,10 @@ export function SiteHeader() {
             {shopMenuOpen && (
               <div
                 role="menu"
-                className="absolute left-1/2 -translate-x-1/2 top-full mt-4 w-[300px] bg-white rounded-2xl border border-[#eee] shadow-[0_24px_60px_rgba(0,0,0,0.12)] p-2 origin-top animate-in fade-in slide-in-from-top-2 zoom-in-95 duration-200"
+                className="absolute left-0 top-full mt-4 w-[300px] bg-white rounded-2xl border border-[#eee] shadow-[0_24px_60px_rgba(0,0,0,0.12)] p-2 origin-top animate-in fade-in slide-in-from-top-2 zoom-in-95 duration-200"
               >
                 {/* caret */}
-                <span className="absolute -top-1.5 left-1/2 -translate-x-1/2 w-3 h-3 bg-white border-l border-t border-[#eee] rotate-45 rounded-tl-[3px]" />
+                <span className="absolute -top-1.5 left-6 w-3 h-3 bg-white border-l border-t border-[#eee] rotate-45 rounded-tl-[3px]" />
 
                 <Link
                   href="/shop"
@@ -178,8 +177,14 @@ export function SiteHeader() {
                   onClick={() => setShopMenuOpen(false)}
                   className="group/item relative flex items-center gap-3.5 p-3 rounded-xl transition-colors hover:bg-[#faf7f1]"
                 >
-                  <span className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#fdf6ec] to-[#f5e6c8] flex items-center justify-center shrink-0 transition-transform duration-300 group-hover/item:scale-105">
-                    <CategoryIcon icon="sparkles" className="w-5 h-5 text-[#a4813d]" />
+                  <span className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#fdf6ec] to-[#f5e6c8] flex items-center justify-center shrink-0 transition-transform duration-300 group-hover/item:scale-105 overflow-hidden relative">
+                    <Image
+                      src="/0476c5bd-60bd-4601-b0f5-a80cb878c173.JPG"
+                      alt="PMU Pigment"
+                      fill
+                      sizes="44px"
+                      className="object-cover opacity-80 group-hover/item:opacity-100 transition-opacity"
+                    />
                   </span>
                   <span className="min-w-0 flex-1">
                     <span className="block text-sm font-semibold text-[#111]">{t.nav.shopMenuCosmetics}</span>
@@ -194,8 +199,14 @@ export function SiteHeader() {
                   onClick={() => setShopMenuOpen(false)}
                   className="group/item relative flex items-center gap-3.5 p-3 rounded-xl transition-colors hover:bg-[#f6f5f1]"
                 >
-                  <span className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#f4f2ec] to-[#e6e2d6] flex items-center justify-center shrink-0 transition-transform duration-300 group-hover/item:scale-105">
-                    <CategoryIcon icon="leaf" className="w-5 h-5 text-[#6b6350]" />
+                  <span className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#f4f2ec] to-[#e6e2d6] flex items-center justify-center shrink-0 transition-transform duration-300 group-hover/item:scale-105 overflow-hidden relative">
+                    <Image
+                      src="/stone-paper/paper-1.jpg"
+                      alt="Stone Paper Notebook"
+                      fill
+                      sizes="44px"
+                      className="object-cover opacity-80 group-hover/item:opacity-100 transition-opacity"
+                    />
                   </span>
                   <span className="min-w-0 flex-1">
                     <span className="block text-sm font-semibold text-[#111]">{t.nav.shopMenuStone}</span>
@@ -241,7 +252,7 @@ export function SiteHeader() {
             <span className="hidden sm:inline">{locale}</span>
           </button>
           {langMenuOpen && (
-            <div className="absolute right-0 top-full mt-3 bg-white rounded-2xl shadow-[0_20px_40px_rgba(0,0,0,0.1)] border border-[#eee] py-2 min-w-[140px] overflow-hidden">
+            <div className="absolute right-0 top-full mt-3 bg-white rounded-2xl shadow-[0_20px_40px_rgba(0,0,0,0.1)] border border-[#eee] py-2 min-w-[140px] overflow-hidden z-[1001]">
               {LOCALES.map((l: Locale) => (
                 <button
                   key={l}
@@ -371,8 +382,8 @@ export function SiteHeader() {
                   onClick={() => setMobileMenuOpen(false)}
                   className="flex items-center gap-3 py-2.5"
                 >
-                  <span className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#fdf6ec] to-[#f5e6c8] flex items-center justify-center shrink-0">
-                    <CategoryIcon icon="sparkles" className="w-4 h-4 text-[#a4813d]" />
+                  <span className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#fdf6ec] to-[#f5e6c8] flex items-center justify-center shrink-0 overflow-hidden relative">
+                    <Image src="/0476c5bd-60bd-4601-b0f5-a80cb878c173.JPG" alt="PMU" fill sizes="36px" className="object-cover" />
                   </span>
                   <span>
                     <span className="block text-[15px] font-medium text-[#222]">{t.nav.shopMenuCosmetics}</span>
@@ -384,8 +395,8 @@ export function SiteHeader() {
                   onClick={() => setMobileMenuOpen(false)}
                   className="flex items-center gap-3 py-2.5"
                 >
-                  <span className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#f4f2ec] to-[#e6e2d6] flex items-center justify-center shrink-0">
-                    <CategoryIcon icon="leaf" className="w-4 h-4 text-[#6b6350]" />
+                  <span className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#f4f2ec] to-[#e6e2d6] flex items-center justify-center shrink-0 overflow-hidden relative">
+                    <Image src="/stone-paper/paper-1.jpg" alt="Stone Paper" fill sizes="36px" className="object-cover" />
                   </span>
                   <span>
                     <span className="block text-[15px] font-medium text-[#222]">{t.nav.shopMenuStone}</span>
