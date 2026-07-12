@@ -16,7 +16,7 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://carthage.de"
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Carthage - Cosmetics, PMU & Stone Paper | Made in Germany",
+    default: "Carthage GmbH - Cosmetics, PMU & Stone Paper | Made in Germany",
     template: "%s | Carthage",
   },
   description:
@@ -28,12 +28,12 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    siteName: "Carthage",
+    siteName: "Carthage GmbH",
     url: SITE_URL,
-    title: "Carthage - Cosmetics, PMU & Stone Paper | Made in Germany",
+    title: "Carthage GmbH - Cosmetics, PMU & Stone Paper | Made in Germany",
     description:
       "German industry & production group: cosmetics & PMU, stone paper by Golden Bridge, and a certified academy in Berlin.",
-    images: [{ url: "/logo-carthage.png", width: 512, height: 512, alt: "Carthage logo" }],
+    images: [{ url: "/logo-carthage.png", width: 512, height: 512, alt: "Carthage GmbH logo" }],
   },
   robots: {
     index: true,
@@ -48,7 +48,7 @@ const structuredData = {
     {
       "@type": "Organization",
       "@id": `${SITE_URL}/#organization`,
-      name: "Carthage Cosmetic & Pigmentation",
+      name: "Carthage GmbH Cosmetic & Pigmentation",
       url: SITE_URL,
       logo: `${SITE_URL}/logo-carthage.png`,
       email: "info@carthagecare.de",
@@ -68,7 +68,7 @@ const structuredData = {
       "@type": "WebSite",
       "@id": `${SITE_URL}/#website`,
       url: SITE_URL,
-      name: "Carthage",
+      name: "Carthage GmbH",
       publisher: { "@id": `${SITE_URL}/#organization` },
       inLanguage: ["en", "fr", "de"],
     },

@@ -297,7 +297,7 @@ export function AcademyClient({ formations }: { formations: Formation[] }) {
           <div className="relative w-56 h-56 md:w-64 md:h-64 mx-auto md:mx-0 rounded-full overflow-hidden shadow-[0_20px_40px_rgba(0,0,0,0.1)]">
             <Image
               src={INSTRUCTOR_IMAGE}
-              alt="Rahma Yarbakht, lead instructor of the Carthage Academy"
+              alt="Rahma Yarbakht, lead instructor of the Carthage GmbH Academy"
               fill
               sizes="256px"
               className="object-cover"

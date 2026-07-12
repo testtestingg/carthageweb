@@ -7,7 +7,7 @@ export const dynamic = "force-dynamic"
 export const metadata: Metadata = {
   title: "PMU Academy - Certified Permanent Makeup Training in Berlin",
   description:
-    "Train in permanent makeup at the Carthage Academy in Berlin: small cohorts of six, live models, certification and six months of mentoring. Brows, lips, microblading - taught where the pigments are made.",
+    "Train in permanent makeup at the Carthage GmbH Academy in Berlin: small cohorts of six, live models, certification and six months of mentoring. Brows, lips, microblading - taught where the pigments are made.",
   alternates: { canonical: "/academy" },
 }
 
@@ -29,7 +29,7 @@ export default async function AcademyPage() {
         url: `${siteUrl}/academy`,
         provider: {
           "@type": "Organization",
-          name: "Carthage Academy",
+          name: "Carthage GmbH Academy",
           sameAs: siteUrl,
         },
         ...(f.price

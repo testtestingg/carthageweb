@@ -43,7 +43,7 @@ export function AdminLoginForm() {
       <div className="w-full max-w-sm">
         <div className="text-center mb-8">
           <span className="font-display font-bold text-3xl tracking-[-0.03em]">
-            carthage<span className="text-[#c9a96e]">.</span>
+            carthage GmbH<span className="text-[#c9a96e]">.</span>
           </span>
           <p className="text-sm text-[#888] mt-2">Admin Panel</p>
         </div>

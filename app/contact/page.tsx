@@ -107,8 +107,8 @@ export default function ContactPage() {
       iconBg: "bg-[#eff6ff]",
       title: t.contact.email,
       content: (
-        <a href="mailto:info@carthagecare.de" className="hover:text-black transition-colors">
-          info@carthagecare.de
+        <a href="mailto:info@carthage.de" className="hover:text-black transition-colors">
+          info@carthage.de
         </a>
       ),
     },
@@ -172,7 +172,7 @@ export default function ContactPage() {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Carthage Office Location"
+                title="Carthage GmbH Office Location"
               />
             </div>
           </div>

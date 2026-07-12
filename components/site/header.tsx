@@ -4,9 +4,10 @@ import { useState, useEffect, useRef, useCallback } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { useRouter, usePathname } from "next/navigation"
-import { Search, ShoppingBag, Menu, X, Globe, Loader2 } from "lucide-react"
+import { Search, ShoppingBag, Menu, X, Globe, Loader2, ChevronDown, ArrowRight } from "lucide-react"
 import { useCart } from "@/context/cart-context"
 import { useLanguage } from "@/context/language-context"
+import { CategoryIcon } from "@/components/site/category-icon"
 import { formatPrice } from "@/lib/format"
 import { LOCALES, LOCALE_LABELS, type Locale } from "@/lib/types"
 
@@ -21,12 +22,14 @@ interface SearchResult {
 export function SiteHeader() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [langMenuOpen, setLangMenuOpen] = useState(false)
+  const [shopMenuOpen, setShopMenuOpen] = useState(false)
   const [searchOpen, setSearchOpen] = useState(false)
   const [query, setQuery] = useState("")
   const [results, setResults] = useState<SearchResult[] | null>(null)
   const [searching, setSearching] = useState(false)
   const searchInputRef = useRef<HTMLInputElement>(null)
   const langMenuRef = useRef<HTMLDivElement>(null)
+  const shopMenuRef = useRef<HTMLLIElement>(null)
   const router = useRouter()
   const pathname = usePathname()
   const { totalItems, toggleCart } = useCart()
@@ -37,6 +40,7 @@ export function SiteHeader() {
     setMobileMenuOpen(false)
     setSearchOpen(false)
     setLangMenuOpen(false)
+    setShopMenuOpen(false)
     setQuery("")
     setResults(null)
   }, [pathname])
@@ -56,6 +60,18 @@ export function SiteHeader() {
     document.addEventListener("mousedown", onClick)
     return () => document.removeEventListener("mousedown", onClick)
   }, [langMenuOpen])
+
+  // Close shop menu on outside click
+  useEffect(() => {
+    if (!shopMenuOpen) return
+    const onClick = (e: MouseEvent) => {
+      if (shopMenuRef.current && !shopMenuRef.current.contains(e.target as Node)) {
+        setShopMenuOpen(false)
+      }
+    }
+    document.addEventListener("mousedown", onClick)
+    return () => document.removeEventListener("mousedown", onClick)
+  }, [shopMenuOpen])
 
   // Debounced live search
   useEffect(() => {
@@ -129,8 +145,67 @@ export function SiteHeader() {
 
       {/* Desktop Navigation */}
       <nav className="hidden md:block">
-        <ul className="flex gap-7 list-none">
-          <li>{navLink("/shop", t.nav.shop)}</li>
+        <ul className="flex gap-7 list-none items-center">
+          <li className="relative" ref={shopMenuRef}>
+            <button
+              onClick={() => setShopMenuOpen(!shopMenuOpen)}
+              className={`inline-flex items-center gap-1 text-sm font-medium transition-colors ${
+                pathname.startsWith("/shop") || pathname.startsWith("/stone-paper/shop")
+                  ? "text-black"
+                  : "text-[#444] hover:text-black"
+              }`}
+              aria-expanded={shopMenuOpen}
+              aria-haspopup="menu"
+            >
+              {t.nav.shop}
+              <ChevronDown
+                className={`w-3.5 h-3.5 transition-transform duration-200 ${shopMenuOpen ? "rotate-180" : ""}`}
+                aria-hidden="true"
+              />
+            </button>
+
+            {shopMenuOpen && (
+              <div
+                role="menu"
+                className="absolute left-1/2 -translate-x-1/2 top-full mt-4 w-[300px] bg-white rounded-2xl border border-[#eee] shadow-[0_24px_60px_rgba(0,0,0,0.12)] p-2 origin-top animate-in fade-in slide-in-from-top-2 zoom-in-95 duration-200"
+              >
+                {/* caret */}
+                <span className="absolute -top-1.5 left-1/2 -translate-x-1/2 w-3 h-3 bg-white border-l border-t border-[#eee] rotate-45 rounded-tl-[3px]" />
+
+                <Link
+                  href="/shop"
+                  role="menuitem"
+                  onClick={() => setShopMenuOpen(false)}
+                  className="group/item relative flex items-center gap-3.5 p-3 rounded-xl transition-colors hover:bg-[#faf7f1]"
+                >
+                  <span className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#fdf6ec] to-[#f5e6c8] flex items-center justify-center shrink-0 transition-transform duration-300 group-hover/item:scale-105">
+                    <CategoryIcon icon="sparkles" className="w-5 h-5 text-[#a4813d]" />
+                  </span>
+                  <span className="min-w-0 flex-1">
+                    <span className="block text-sm font-semibold text-[#111]">{t.nav.shopMenuCosmetics}</span>
+                    <span className="block text-xs text-[#888] truncate">{t.nav.shopMenuCosmeticsDesc}</span>
+                  </span>
+                  <ArrowRight className="w-4 h-4 text-[#c9a96e] opacity-0 -translate-x-1 transition-all duration-200 group-hover/item:opacity-100 group-hover/item:translate-x-0" />
+                </Link>
+
+                <Link
+                  href="/stone-paper/shop"
+                  role="menuitem"
+                  onClick={() => setShopMenuOpen(false)}
+                  className="group/item relative flex items-center gap-3.5 p-3 rounded-xl transition-colors hover:bg-[#f6f5f1]"
+                >
+                  <span className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#f4f2ec] to-[#e6e2d6] flex items-center justify-center shrink-0 transition-transform duration-300 group-hover/item:scale-105">
+                    <CategoryIcon icon="leaf" className="w-5 h-5 text-[#6b6350]" />
+                  </span>
+                  <span className="min-w-0 flex-1">
+                    <span className="block text-sm font-semibold text-[#111]">{t.nav.shopMenuStone}</span>
+                    <span className="block text-xs text-[#888] truncate">{t.nav.shopMenuStoneDesc}</span>
+                  </span>
+                  <ArrowRight className="w-4 h-4 text-[#a89263] opacity-0 -translate-x-1 transition-all duration-200 group-hover/item:opacity-100 group-hover/item:translate-x-0" />
+                </Link>
+              </div>
+            )}
+          </li>
           <li>{navLink("/academy", t.nav.academy)}</li>
           <li>{navLink("/stone-paper", t.nav.stonePaper)}</li>
           <li>{navLink("/about", t.nav.about)}</li>
@@ -287,8 +362,38 @@ export function SiteHeader() {
         <div className="absolute top-full left-0 right-0 bg-[rgba(255,255,255,0.98)] backdrop-blur-xl border-b border-[rgba(0,0,0,0.04)] md:hidden">
           <nav className="px-4 py-5">
             <ul className="flex flex-col gap-3 list-none">
-              <li>{navLink("/shop", t.nav.shop, true)}</li>
-              <li>{navLink("/academy", t.nav.academy, true)}</li>
+              <li>
+                <span className="block text-[11px] font-bold uppercase tracking-wider text-[#999] pt-1">
+                  {t.nav.shop}
+                </span>
+                <Link
+                  href="/shop"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="flex items-center gap-3 py-2.5"
+                >
+                  <span className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#fdf6ec] to-[#f5e6c8] flex items-center justify-center shrink-0">
+                    <CategoryIcon icon="sparkles" className="w-4 h-4 text-[#a4813d]" />
+                  </span>
+                  <span>
+                    <span className="block text-[15px] font-medium text-[#222]">{t.nav.shopMenuCosmetics}</span>
+                    <span className="block text-xs text-[#888]">{t.nav.shopMenuCosmeticsDesc}</span>
+                  </span>
+                </Link>
+                <Link
+                  href="/stone-paper/shop"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="flex items-center gap-3 py-2.5"
+                >
+                  <span className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#f4f2ec] to-[#e6e2d6] flex items-center justify-center shrink-0">
+                    <CategoryIcon icon="leaf" className="w-4 h-4 text-[#6b6350]" />
+                  </span>
+                  <span>
+                    <span className="block text-[15px] font-medium text-[#222]">{t.nav.shopMenuStone}</span>
+                    <span className="block text-xs text-[#888]">{t.nav.shopMenuStoneDesc}</span>
+                  </span>
+                </Link>
+              </li>
+              <li className="pt-2 border-t border-[rgba(0,0,0,0.05)]">{navLink("/academy", t.nav.academy, true)}</li>
               <li>{navLink("/stone-paper", t.nav.stonePaper, true)}</li>
               <li>{navLink("/about", t.nav.about, true)}</li>
               <li>{navLink("/contact", t.nav.contact, true)}</li>

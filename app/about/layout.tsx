@@ -3,7 +3,7 @@ import type { Metadata } from "next"
 export const metadata: Metadata = {
   title: "About Us - German PMU Manufacturing & Education",
   description:
-    "Carthage produces professional PMU products, cosmetic formulations and stone paper in Germany. ISO & GMP certified manufacturing, custom formulations and a certified academy.",
+    "Carthage GmbH produces professional PMU products, cosmetic formulations and stone paper in Germany. ISO & GMP certified manufacturing, custom formulations and a certified academy.",
   alternates: { canonical: "/about" },
 }
 

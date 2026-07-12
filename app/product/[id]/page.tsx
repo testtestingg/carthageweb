@@ -47,7 +47,7 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
     description: info.description,
     image: product.image.startsWith("http") ? product.image : `${siteUrl}${product.image}`,
     url: `${siteUrl}/product/${product.id}`,
-    brand: { "@type": "Brand", name: "Carthage" },
+    brand: { "@type": "Brand", name: "Carthage GmbH" },
     offers: {
       "@type": "Offer",
       price: product.price,

@@ -526,6 +526,167 @@
     }
   },
   {
+    "id": "brow-conditioning-serum",
+    "price": 34,
+    "currency": "EUR",
+    "image": "https://images.unsplash.com/photo-1781344116880-029945a42b75?w=1200&q=80",
+    "categoryId": "skincare",
+    "badge": "new",
+    "keywords": ["brow", "serum", "conditioning", "peptide", "lash", "cosmetics"],
+    "inStock": true,
+    "featured": false,
+    "createdAt": "2026-07-11T15:00:00.000Z",
+    "updatedAt": "2026-07-11T15:00:00.000Z",
+    "translations": {
+      "en": {
+        "name": "Brow Conditioning Serum",
+        "subtitle": "Peptide Complex",
+        "description": "A peptide-based conditioning serum that strengthens brow hairs between PMU sessions. Supports fuller-looking brows and keeps healed pigment work framed by healthy natural hair. 30ml dropper bottle.",
+        "features": ["Peptide & panthenol complex", "30ml with precision dropper", "Suitable after healed PMU", "Ophthalmologically tested", "Vegan & Cruelty-free"]
+      },
+      "fr": {
+        "name": "Sérum fortifiant sourcils",
+        "subtitle": "Complexe peptidique",
+        "description": "Un sérum fortifiant à base de peptides qui renforce les poils des sourcils entre les séances de PMU. Favorise des sourcils visiblement plus fournis et met en valeur le travail pigmentaire cicatrisé. Flacon compte-gouttes de 30 ml.",
+        "features": ["Complexe peptides & panthénol", "30 ml avec compte-gouttes de précision", "Adapté après un PMU cicatrisé", "Testé ophtalmologiquement", "Végane et non testé sur les animaux"]
+      },
+      "de": {
+        "name": "Brauen-Aufbauserum",
+        "subtitle": "Peptid-Komplex",
+        "description": "Ein peptidbasiertes Aufbauserum, das die Brauenhärchen zwischen PMU-Sitzungen stärkt. Sorgt für voller wirkende Brauen und rahmt verheilte Pigmentierungen mit gesundem Naturhaar ein. 30-ml-Flasche mit Pipette.",
+        "features": ["Peptid- & Panthenol-Komplex", "30 ml mit Präzisionspipette", "Geeignet nach verheiltem PMU", "Ophthalmologisch getestet", "Vegan & tierversuchsfrei"]
+      }
+    }
+  },
+  {
+    "id": "pmu-repair-balm",
+    "price": 22,
+    "currency": "EUR",
+    "image": "https://images.unsplash.com/photo-1779437141537-62577b216307?w=1200&q=80",
+    "categoryId": "skincare",
+    "keywords": ["balm", "repair", "aftercare", "healing", "pmu", "cosmetics"],
+    "inStock": true,
+    "featured": false,
+    "createdAt": "2026-07-11T15:05:00.000Z",
+    "updatedAt": "2026-07-11T15:05:00.000Z",
+    "translations": {
+      "en": {
+        "name": "PMU Repair Balm",
+        "subtitle": "Healing Aftercare",
+        "description": "A rich, occlusive balm for the first days after a PMU treatment. Protects the pigmented area, softens crusting and keeps the skin comfortable through the healing phase. 50ml frosted glass jar.",
+        "features": ["Formulated for days 1-7 aftercare", "50ml frosted glass jar", "No perfume, no essential oils", "Protects pigment during healing", "Vegan & Cruelty-free"]
+      },
+      "fr": {
+        "name": "Baume réparateur PMU",
+        "subtitle": "Soin cicatrisant",
+        "description": "Un baume riche et occlusif pour les premiers jours après un traitement PMU. Protège la zone pigmentée, assouplit les croûtes et garde la peau confortable pendant la cicatrisation. Pot en verre dépoli de 50 ml.",
+        "features": ["Formulé pour les jours 1 à 7", "Pot en verre dépoli de 50 ml", "Sans parfum ni huiles essentielles", "Protège le pigment pendant la cicatrisation", "Végane et non testé sur les animaux"]
+      },
+      "de": {
+        "name": "PMU-Repair-Balsam",
+        "subtitle": "Heilende Nachsorge",
+        "description": "Ein reichhaltiger, okklusiver Balsam für die ersten Tage nach einer PMU-Behandlung. Schützt die pigmentierte Zone, weicht Krusten auf und hält die Haut in der Heilungsphase geschmeidig. 50-ml-Tiegel aus satiniertem Glas.",
+        "features": ["Formuliert für Tag 1-7 der Nachsorge", "50-ml-Tiegel aus satiniertem Glas", "Ohne Parfüm und ätherische Öle", "Schützt das Pigment beim Verheilen", "Vegan & tierversuchsfrei"]
+      }
+    }
+  },
+  {
+    "id": "velvet-night-cream",
+    "price": 44,
+    "currency": "EUR",
+    "image": "https://images.unsplash.com/photo-1763503836825-97f5450d155a?w=1200&q=80",
+    "categoryId": "skincare",
+    "keywords": ["night cream", "regenerating", "moisturizer", "cosmetics", "skincare"],
+    "inStock": true,
+    "featured": false,
+    "createdAt": "2026-07-11T15:10:00.000Z",
+    "updatedAt": "2026-07-11T15:10:00.000Z",
+    "translations": {
+      "en": {
+        "name": "Velvet Night Cream",
+        "subtitle": "Regenerating Care",
+        "description": "A velvety overnight cream that supports the skin's natural regeneration. Ceramides and squalane replenish the barrier while you sleep - ideal alongside professional treatments. 50ml jar.",
+        "features": ["Ceramides & squalane", "50ml jar", "Overnight barrier repair", "Dermatologically tested", "Vegan & Cruelty-free"]
+      },
+      "fr": {
+        "name": "Crème de nuit velours",
+        "subtitle": "Soin régénérant",
+        "description": "Une crème de nuit veloutée qui soutient la régénération naturelle de la peau. Céramides et squalane restaurent la barrière cutanée pendant le sommeil - idéale en complément des soins professionnels. Pot de 50 ml.",
+        "features": ["Céramides & squalane", "Pot de 50 ml", "Répare la barrière pendant la nuit", "Testée dermatologiquement", "Végane et non testée sur les animaux"]
+      },
+      "de": {
+        "name": "Samtige Nachtcreme",
+        "subtitle": "Regenerierende Pflege",
+        "description": "Eine samtige Nachtcreme, die die natürliche Regeneration der Haut unterstützt. Ceramide und Squalan bauen die Hautbarriere über Nacht wieder auf - ideal begleitend zu professionellen Behandlungen. 50-ml-Tiegel.",
+        "features": ["Ceramide & Squalan", "50-ml-Tiegel", "Barriere-Reparatur über Nacht", "Dermatologisch getestet", "Vegan & tierversuchsfrei"]
+      }
+    }
+  },
+  {
+    "id": "stone-paper-sheets-a4",
+    "price": 24,
+    "currency": "EUR",
+    "image": "/stone-paper/paper-7.jpg",
+    "categoryId": "stonepaper",
+    "keywords": ["stone paper", "sheets", "a4", "printing", "office", "tree-free"],
+    "inStock": true,
+    "featured": false,
+    "createdAt": "2026-07-11T15:15:00.000Z",
+    "updatedAt": "2026-07-11T15:15:00.000Z",
+    "translations": {
+      "en": {
+        "name": "Stone Paper Sheets A4",
+        "subtitle": "250-Sheet Pack",
+        "description": "250 loose A4 sheets of 120 gsm stone paper for printing, sketching and technical documentation. Waterproof and tear-resistant with a bright white, exceptionally smooth surface that takes crisp ink lines.",
+        "features": ["250 sheets, 120 gsm", "Waterproof & tear-resistant", "Laser- and inkjet-compatible", "Bright white, ultra-smooth surface", "Produced tree-free in Germany"]
+      },
+      "fr": {
+        "name": "Feuilles A4 en papier de pierre",
+        "subtitle": "Paquet de 250 feuilles",
+        "description": "250 feuilles A4 de papier de pierre 120 g/m² pour l'impression, le dessin et la documentation technique. Imperméables et résistantes à la déchirure, avec une surface d'un blanc éclatant, exceptionnellement lisse, pour des tracés nets.",
+        "features": ["250 feuilles, 120 g/m²", "Imperméables et indéchirables", "Compatibles laser et jet d'encre", "Surface ultra-lisse d'un blanc éclatant", "Produites sans arbre en Allemagne"]
+      },
+      "de": {
+        "name": "Steinpapier-Blätter A4",
+        "subtitle": "250er-Pack",
+        "description": "250 lose A4-Blätter aus 120-g/m²-Steinpapier für Druck, Skizzen und technische Dokumentation. Wasserfest und reißfest, mit strahlend weißer, außergewöhnlich glatter Oberfläche für gestochen scharfe Linien.",
+        "features": ["250 Blätter, 120 g/m²", "Wasserfest & reißfest", "Laser- und Inkjet-kompatibel", "Strahlend weiße, ultraglatte Oberfläche", "Baumfrei produziert in Deutschland"]
+      }
+    }
+  },
+  {
+    "id": "stone-paper-roll-industrial",
+    "price": 149,
+    "currency": "EUR",
+    "image": "/stone-paper/paper-6.jpg",
+    "categoryId": "stonepaper",
+    "keywords": ["stone paper", "roll", "industrial", "b2b", "converting", "packaging"],
+    "inStock": true,
+    "featured": false,
+    "createdAt": "2026-07-11T15:20:00.000Z",
+    "updatedAt": "2026-07-11T15:20:00.000Z",
+    "translations": {
+      "en": {
+        "name": "Stone Paper Roll 780 mm",
+        "subtitle": "Industrial Grade",
+        "description": "Industrial stone paper roll, 780 mm width, for converting into bags, labels and packaging. Naturally waterproof, chemically stable and compatible with offset, UV, digital and flexo printing. Larger formats on request.",
+        "features": ["780 mm width, 200 m length", "150 gsm industrial grade", "Offset, UV, digital & flexo printing", "Naturally waterproof - no coating", "Volume pricing on request"]
+      },
+      "fr": {
+        "name": "Bobine de papier de pierre 780 mm",
+        "subtitle": "Qualité industrielle",
+        "description": "Bobine industrielle de papier de pierre, largeur 780 mm, destinée à la transformation en sacs, étiquettes et emballages. Naturellement imperméable, chimiquement stable et compatible avec l'impression offset, UV, numérique et flexo. Formats supérieurs sur demande.",
+        "features": ["Largeur 780 mm, longueur 200 m", "Qualité industrielle 150 g/m²", "Impression offset, UV, numérique et flexo", "Naturellement imperméable - sans enduction", "Tarifs volume sur demande"]
+      },
+      "de": {
+        "name": "Steinpapier-Rolle 780 mm",
+        "subtitle": "Industriequalität",
+        "description": "Industrielle Steinpapier-Rolle, 780 mm Breite, zur Weiterverarbeitung zu Säcken, Etiketten und Verpackungen. Von Natur aus wasserfest, chemisch stabil und kompatibel mit Offset-, UV-, Digital- und Flexodruck. Größere Formate auf Anfrage.",
+        "features": ["780 mm Breite, 200 m Länge", "Industriequalität 150 g/m²", "Offset-, UV-, Digital- & Flexodruck", "Von Natur aus wasserfest - ohne Beschichtung", "Volumenpreise auf Anfrage"]
+      }
+    }
+  },
+  {
     "id": "invisible-shield-spf50",
     "price": 30,
     "currency": "EUR",

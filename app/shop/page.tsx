@@ -7,7 +7,7 @@ export const dynamic = "force-dynamic"
 export const metadata: Metadata = {
   title: "Shop",
   description:
-    "Discover the complete range of Carthage professional permanent makeup solutions: pigments, cartridge needles and skincare.",
+    "Discover the complete range of Carthage GmbH professional permanent makeup solutions: pigments, cartridge needles and skincare.",
 }
 
 export default async function ShopPage({

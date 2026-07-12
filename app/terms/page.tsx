@@ -69,7 +69,7 @@ export default function TermsPage() {
           <section className="mb-10">
             <h2 className="font-display text-xl font-semibold mb-4">6. Besondere Bedingungen f&uuml;r PMU-Produkte (Gewerbliche Nutzung)</h2>
             <p className="text-[15px] text-[#555] leading-relaxed">
-              Bestimmte von der Carthage GmbH vertriebene Produkte (z. B. Permanent-Make-up-Pigmente, professionelle Maschinen) sind ausschlie&szlig;lich f&uuml;r den professionellen Gebrauch durch geschulte und zertifizierte Anwender bestimmt. Durch den Kauf dieser Artikel best&auml;tigt der K&auml;ufer, dass er &uuml;ber die erforderlichen Lizenzen, Schulungen und Qualifikationen verf&uuml;gt, die in seinem Land/seiner Region f&uuml;r die sichere Verwendung dieser Produkte gesetzlich vorgeschrieben sind. Die Carthage Care GmbH haftet nicht f&uuml;r unsachgem&auml;&szlig;e Anwendung, allergische Reaktionen infolge fehlender Patch-Tests oder &auml;sthetische Ergebnisse.
+              Bestimmte von der Carthage GmbH vertriebene Produkte (z. B. Permanent-Make-up-Pigmente, professionelle Maschinen) sind ausschlie&szlig;lich f&uuml;r den professionellen Gebrauch durch geschulte und zertifizierte Anwender bestimmt. Durch den Kauf dieser Artikel best&auml;tigt der K&auml;ufer, dass er &uuml;ber die erforderlichen Lizenzen, Schulungen und Qualifikationen verf&uuml;gt, die in seinem Land/seiner Region f&uuml;r die sichere Verwendung dieser Produkte gesetzlich vorgeschrieben sind. Die Carthage GmbH haftet nicht f&uuml;r unsachgem&auml;&szlig;e Anwendung, allergische Reaktionen infolge fehlender Patch-Tests oder &auml;sthetische Ergebnisse.
             </p>
           </section>
 

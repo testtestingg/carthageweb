@@ -120,7 +120,7 @@ export default function AboutPage() {
             <div className="relative h-[380px] rounded-[28px] overflow-hidden shadow-[0_30px_60px_rgba(0,0,0,0.08)]">
               <Image
                 src="https://www.rypmu.de/rahma-hero.png"
-                alt="Founder of Carthage Products"
+                alt="Founder of Carthage GmbH Products"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover"

@@ -5,6 +5,10 @@ export const LOCALE_COOKIE = "carthage-locale"
 const en = {
   nav: {
     shop: "Shop",
+    shopMenuCosmetics: "PMU & Cosmetics",
+    shopMenuCosmeticsDesc: "Pigments, needles & skincare",
+    shopMenuStone: "Stone Paper Products",
+    shopMenuStoneDesc: "Notebooks, bags & packaging",
     academy: "Academy",
     stonePaper: "Stone Paper",
     about: "About",
@@ -29,7 +33,7 @@ const en = {
   hero: {
     madeInGermany: "Made in Germany",
     titleLine1: "German Quality",
-    titleLine2: "by Carthage.",
+    titleLine2: "by Carthage Gmbh.",
     subtitle:
       "A diversified company delivering premium solutions in cosmetics, permanent makeup, sustainable materials, and future-focused innovations, crafted to the highest international standards.",
     shopCollection: "Explore our divisions",
@@ -133,6 +137,11 @@ const en = {
     clearFilters: "Clear all",
     showFilters: "Show filters",
     hideFilters: "Hide filters",
+    stoneTitle: "Stone Paper",
+    stoneTitleAccent: "Collection",
+    stoneSubtitle:
+      "Tree-free notebooks, bags and packaging by Golden Bridge - waterproof, tear-resistant and produced in Germany.",
+    stoneBreadcrumb: "Stone Paper Shop",
   },
   product: {
     home: "Home",
@@ -523,6 +532,10 @@ export type Dictionary = typeof en
 const fr: Dictionary = {
   nav: {
     shop: "Boutique",
+    shopMenuCosmetics: "PMU & Cosmétiques",
+    shopMenuCosmeticsDesc: "Pigments, aiguilles et soins",
+    shopMenuStone: "Produits en papier de pierre",
+    shopMenuStoneDesc: "Carnets, sacs et emballages",
     academy: "Académie",
     stonePaper: "Papier de pierre",
     about: "À propos",
@@ -651,6 +664,11 @@ const fr: Dictionary = {
     clearFilters: "Tout effacer",
     showFilters: "Afficher les filtres",
     hideFilters: "Masquer les filtres",
+    stoneTitle: "Collection",
+    stoneTitleAccent: "papier de pierre",
+    stoneSubtitle:
+      "Carnets, sacs et emballages sans arbre par Golden Bridge - imperméables, résistants à la déchirure et produits en Allemagne.",
+    stoneBreadcrumb: "Boutique papier de pierre",
   },
   product: {
     home: "Accueil",
@@ -1038,6 +1056,10 @@ const fr: Dictionary = {
 const de: Dictionary = {
   nav: {
     shop: "Shop",
+    shopMenuCosmetics: "PMU & Kosmetik",
+    shopMenuCosmeticsDesc: "Pigmente, Nadeln & Pflege",
+    shopMenuStone: "Steinpapier-Produkte",
+    shopMenuStoneDesc: "Notizbücher, Säcke & Verpackung",
     academy: "Akademie",
     stonePaper: "Steinpapier",
     about: "Über uns",
@@ -1166,6 +1188,11 @@ const de: Dictionary = {
     clearFilters: "Alle zurücksetzen",
     showFilters: "Filter anzeigen",
     hideFilters: "Filter ausblenden",
+    stoneTitle: "Steinpapier-",
+    stoneTitleAccent: "Kollektion",
+    stoneSubtitle:
+      "Baumfreie Notizbücher, Säcke und Verpackungen von Golden Bridge - wasserfest, reißfest und produziert in Deutschland.",
+    stoneBreadcrumb: "Steinpapier-Shop",
   },
   product: {
     home: "Startseite",

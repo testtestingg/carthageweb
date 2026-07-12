@@ -53,7 +53,7 @@ export function AdminShell({ username, children }: { username: string; children:
           {mobileNavOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
         </button>
         <span className="font-display font-bold text-lg">
-          carthage<span className="text-[#c9a96e]">.</span> <span className="font-normal text-sm text-[#888]">admin</span>
+          carthage GmbH<span className="text-[#c9a96e]">.</span> <span className="font-normal text-sm text-[#888]">admin</span>
         </span>
         <button onClick={handleLogout} aria-label="Log out">
           <LogOut className="w-5 h-5 text-[#888]" />
@@ -70,7 +70,7 @@ export function AdminShell({ username, children }: { username: string; children:
 <Link href="/admin" className="mb-1 px-2">
   <Image
     src="/logo-carthage.png"
-    alt="Carthage"
+    alt="Carthage GmbH"
     width={180}
     height={50}
     priority

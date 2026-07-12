@@ -122,7 +122,7 @@ export function SiteFooter() {
 
         <div className="pt-8 border-t border-[rgba(255,255,255,0.1)] flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-xs text-[#666] text-center md:text-left">
-            &copy; {new Date().getFullYear()} Carthage Cosmetic &amp; Pigmentation. {t.footer.rights}
+            &copy; {new Date().getFullYear()} Carthage GmbH Cosmetic &amp; Pigmentation. {t.footer.rights}
           </p>
           <div className="flex gap-6">
             <Link href="/privacy" className="text-xs text-[#666] hover:text-white transition-colors">

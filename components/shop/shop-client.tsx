@@ -18,11 +18,14 @@ export function ShopClient({
   categories,
   initialQuery,
   initialCategory,
+  variant = "default",
 }: {
   products: Product[]
   categories: Category[]
   initialQuery: string
   initialCategory: string
+  /** "stonepaper" renders the dedicated Golden Bridge shop heading */
+  variant?: "default" | "stonepaper"
 }) {
   const { locale, t } = useLanguage()
   const router = useRouter()
@@ -109,10 +112,18 @@ export function ShopClient({
   const priceInputClass =
     "w-full px-3 py-2 rounded-lg border border-[#e5e5e5] bg-white text-sm focus:outline-none focus:border-[#c9a96e] transition-all"
 
+  const isStone = variant === "stonepaper"
+  const heading = {
+    breadcrumb: isStone ? t.shop.stoneBreadcrumb : t.shop.breadcrumb,
+    title: isStone ? t.shop.stoneTitle : t.shop.title,
+    titleAccent: isStone ? t.shop.stoneTitleAccent : t.shop.titleAccent,
+    subtitle: isStone ? t.shop.stoneSubtitle : t.shop.subtitle,
+  }
+
   const filtersPanel = (
     <div className="space-y-7">
-      {/* Categories */}
-      <div>
+      {/* Categories (hidden when the shop is scoped to a single category) */}
+      <div className={filterCategories.length <= 1 ? "hidden" : undefined}>
         <h3 className="text-[11px] font-bold uppercase tracking-wider text-[#999] mb-3">
           {t.shop.categories}
         </h3>
@@ -224,17 +235,17 @@ export function ShopClient({
             {t.product.home}
           </Link>
           <span>/</span>
-          <span className="text-black">{t.shop.breadcrumb}</span>
+          <span className="text-black">{heading.breadcrumb}</span>
         </nav>
 
         <div className="mb-8">
           <h1 className="font-display text-3xl md:text-4xl font-semibold tracking-[-0.03em] mb-3">
-            {t.shop.title}{" "}
+            {heading.title}{" "}
             <span className="italic font-normal bg-gradient-to-r from-[#c9a96e] to-[#e8c97a] bg-clip-text text-transparent">
-              {t.shop.titleAccent}
+              {heading.titleAccent}
             </span>
           </h1>
-          <p className="text-[15px] md:text-base text-[#666] max-w-[600px]">{t.shop.subtitle}</p>
+          <p className="text-[15px] md:text-base text-[#666] max-w-[600px]">{heading.subtitle}</p>
         </div>
 
         {/* Active search banner */}
