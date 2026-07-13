@@ -47,6 +47,27 @@ const en = {
     premiumQuality: "Premium Quality",
   },
   home: {
+    gateway: {
+      eyebrow: "Two industries · one standard",
+      title: "Where would you like",
+      titleAccent: "to begin?",
+      subtitle:
+        "Carthage is a diversified German company operating across two distinct industries. Choose the division you're here to explore.",
+      cosmetics: {
+        label: "Cosmetics & Beauty",
+        name: "Cosmetics & PMU",
+        description:
+          "Professional pigments, cartridge needles and skincare — developed to ISO & GMP standards for artists and studios worldwide.",
+        cta: "Explore Cosmetics",
+      },
+      stonePaper: {
+        label: "Industrial Manufacturing",
+        name: "Stone Paper",
+        description:
+          "Waterproof, tree-free paper, bags and industrial packaging by Golden Bridge — produced from limestone in Germany.",
+        cta: "Explore Stone Paper",
+      },
+    },
     divisionsEyebrow: "Areas of activity",
     divisionsTitle: "Two industries,",
     divisionsTitleAccent: "one standard.",
@@ -617,6 +638,27 @@ const fr: Dictionary = {
     premiumQuality: "Qualité premium",
   },
   home: {
+    gateway: {
+      eyebrow: "Deux industries · une exigence",
+      title: "Par où souhaitez-vous",
+      titleAccent: "commencer ?",
+      subtitle:
+        "Carthage est une entreprise allemande diversifiée présente dans deux industries distinctes. Choisissez la division que vous souhaitez explorer.",
+      cosmetics: {
+        label: "Cosmétiques & Beauté",
+        name: "Cosmétiques & PMU",
+        description:
+          "Pigments professionnels, aiguilles à cartouche et soins — développés selon les normes ISO & GMP pour les artistes et studios du monde entier.",
+        cta: "Découvrir les cosmétiques",
+      },
+      stonePaper: {
+        label: "Fabrication industrielle",
+        name: "Papier de pierre",
+        description:
+          "Papier imperméable et sans arbre, sacs et emballages industriels par Golden Bridge — produits à partir de calcaire en Allemagne.",
+        cta: "Découvrir le papier de pierre",
+      },
+    },
     divisionsEyebrow: "Domaines d'activité",
     divisionsTitle: "Deux industries,",
     divisionsTitleAccent: "une même exigence.",
@@ -1184,6 +1226,27 @@ const de: Dictionary = {
     premiumQuality: "Premium-Qualität",
   },
   home: {
+    gateway: {
+      eyebrow: "Zwei Industrien · ein Standard",
+      title: "Womit möchten Sie",
+      titleAccent: "beginnen?",
+      subtitle:
+        "Carthage ist ein diversifiziertes deutsches Unternehmen in zwei unterschiedlichen Industrien. Wählen Sie den Bereich, den Sie entdecken möchten.",
+      cosmetics: {
+        label: "Kosmetik & Beauty",
+        name: "Kosmetik & PMU",
+        description:
+          "Professionelle Pigmente, Cartridge-Nadeln und Hautpflege — nach ISO- & GMP-Standards für Artists und Studios weltweit.",
+        cta: "Kosmetik entdecken",
+      },
+      stonePaper: {
+        label: "Industrielle Fertigung",
+        name: "Steinpapier",
+        description:
+          "Wasserfestes, baumfreies Papier, Säcke und Industrieverpackungen von Golden Bridge — aus Kalkstein in Deutschland gefertigt.",
+        cta: "Steinpapier entdecken",
+      },
+    },
     divisionsEyebrow: "Geschäftsbereiche",
     divisionsTitle: "Zwei Industrien,",
     divisionsTitleAccent: "ein Standard.",
