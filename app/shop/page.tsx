@@ -10,6 +10,8 @@ export const metadata: Metadata = {
     "Discover the complete range of Carthage GmbH professional permanent makeup solutions: pigments, cartridge needles and skincare.",
 }
 
+const STONE_CATEGORY = "stonepaper"
+
 export default async function ShopPage({
   searchParams,
 }: {
@@ -17,10 +19,14 @@ export default async function ShopPage({
 }) {
   const [products, categories, params] = await Promise.all([getProducts(), getCategories(), searchParams])
 
+  // Exclude stone paper products from the PMU & Cosmetics shop
+  const pmuProducts = products.filter((p) => p.categoryId !== STONE_CATEGORY)
+  const pmuCategories = categories.filter((c) => c.id !== STONE_CATEGORY)
+
   return (
     <ShopClient
-      products={products}
-      categories={categories}
+      products={pmuProducts}
+      categories={pmuCategories}
       initialQuery={typeof params.q === "string" ? params.q : ""}
       initialCategory={typeof params.category === "string" ? params.category : ""}
     />

@@ -3,13 +3,13 @@
 import { useEffect, useRef, useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { ArrowRight, Zap, Star, Gem, Leaf } from "lucide-react"
+import { ArrowRight, Zap, Star, Gem, Leaf, Shield, Users, FlaskConical, Recycle, Quote } from "lucide-react"
 import { SiteShell } from "@/components/site/site-shell"
 import { useLanguage } from "@/context/language-context"
 
 /**
- * Homepage: classic Carthage hero (video visual) followed by the
- * areas-of-activity section that routes visitors into each division.
+ * Homepage: classic Carthage hero (video visual) followed by product samples,
+ * reviews, why-us, areas-of-activity and newsletter.
  */
 
 const DIVISIONS = [
@@ -29,6 +29,22 @@ const DIVISIONS = [
     alt: "PMU artist working on a client at the Carthage GmbH Academy",
   },
 ] as const
+
+const PRODUCT_SAMPLES = [
+  { image: "/0476c5bd-60bd-4601-b0f5-a80cb878c173.JPG", name: "Limited Edition Lips Pigment", category: "PMU Pigments", href: "/product/limited-edition-lips-pigment" },
+  { image: "/IMG_6444.JPG", name: "V6 Pink Silicone Needle", category: "Cartridge Needles", href: "/product/v6-pink-silicone-tattoo-needle" },
+  { image: "/IMG_6447.JPG", name: "V6 Pink Pro Edition", category: "Cartridge Needles", href: "/product/v6-pink-needle-pro" },
+  { image: "/minimalist-rose-pink-toner-bottle-on-white-backgro.jpg", name: "Glow Tonic", category: "Skincare", href: "/product/glow-tonic-exfoliator" },
+  { image: "/stone-paper/paper-1.jpg", name: "Stone Paper Notebook A5", category: "Stone Paper", href: "/product/stone-paper-notebook-a5" },
+  { image: "/stone-paper/paper-9.jpg", name: "Stone Paper Bags", category: "Stone Paper", href: "/product/stone-paper-bags-sample-pack" },
+]
+
+// Real high-quality portrait photos from Unsplash
+const REVIEWER_IMAGES = [
+  "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=80",
+  "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&q=80",
+  "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&q=80",
+]
 
 /** Staggered fade-up reveal once the element scrolls into view. */
 function Reveal({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) {
@@ -69,15 +85,11 @@ export function HomeClient() {
   const [subscribed, setSubscribed] = useState(false)
   const videoRef = useRef<HTMLVideoElement>(null)
 
-  // React doesn't server-render the `muted` attribute, which makes browsers
-  // block autoplay before hydration - force playback once mounted.
   useEffect(() => {
     const video = videoRef.current
     if (!video) return
     video.muted = true
-    video.play().catch(() => {
-      // autoplay rejected (e.g. data saver) - the poster keeps the design intact
-    })
+    video.play().catch(() => {})
   }, [])
 
   const marqueeItems = [
@@ -86,6 +98,8 @@ export function HomeClient() {
     { icon: Gem, label: t.marquee.professionalGrade },
     { icon: Leaf, label: t.marquee.premiumQuality },
   ]
+
+  const whyIcons = [Shield, FlaskConical, Users, Recycle]
 
   return (
     <SiteShell>
@@ -169,6 +183,164 @@ export function HomeClient() {
           ))}
         </div>
       </div>
+
+      {/* Product Samples */}
+      <section className="py-16 md:py-24 px-4 md:px-12 max-w-[1240px] mx-auto">
+        <Reveal>
+          <div className="text-center mb-10 md:mb-14">
+            <p className="text-[11px] tracking-[0.3em] uppercase text-[#a89263] mb-3">
+              {t.home.samplesEyebrow}
+            </p>
+            <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-[-0.02em] mb-3">
+              {t.home.samplesTitle}{" "}
+              <span className="italic font-normal bg-gradient-to-r from-[#c9a96e] to-[#e8c97a] bg-clip-text text-transparent">
+                {t.home.samplesTitleAccent}
+              </span>
+            </h2>
+            <p className="text-[15px] md:text-base text-[#666] max-w-[560px] mx-auto">
+              {t.home.samplesSubtitle}
+            </p>
+          </div>
+        </Reveal>
+
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-5">
+          {PRODUCT_SAMPLES.map((sample, i) => (
+            <Reveal key={sample.name} delay={i * 80}>
+              <Link
+                href={sample.href}
+                className="group relative bg-white rounded-2xl border border-[#eee] overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] hover:border-[#e4d9c2]"
+              >
+                <div className="relative aspect-square overflow-hidden bg-[#f8f7f5]">
+                  <Image
+                    src={sample.image}
+                    alt={sample.name}
+                    fill
+                    sizes="(max-width: 640px) 50vw, 33vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-[1.06]"
+                  />
+                  <span className="absolute top-3 left-3 text-[9px] font-bold uppercase tracking-[0.15em] bg-white/90 backdrop-blur-sm text-[#6b5c3e] rounded-full px-2.5 py-1 shadow-[0_2px_8px_rgba(0,0,0,0.06)]">
+                    {sample.category}
+                  </span>
+                </div>
+                <div className="p-4">
+                  <p className="text-sm font-semibold text-[#111] truncate group-hover:text-[#8a713f] transition-colors">{sample.name}</p>
+                </div>
+              </Link>
+            </Reveal>
+          ))}
+        </div>
+
+        <Reveal delay={500}>
+          <div className="text-center mt-10">
+            <Link
+              href="/shop"
+              className="inline-flex items-center gap-2 bg-[#111] text-white px-7 py-3.5 rounded-full font-semibold text-sm transition-all duration-300 hover:translate-y-[-2px] hover:shadow-[0_10px_20px_rgba(0,0,0,0.15)] hover:bg-[#222]"
+            >
+              {t.hero.shopCollection}
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </Reveal>
+      </section>
+
+      {/* Customer Reviews */}
+      <section className="py-16 md:py-20 bg-[#faf9f7]">
+        <div className="max-w-[1240px] mx-auto px-4 md:px-12">
+          <Reveal>
+            <div className="text-center mb-12 md:mb-16">
+              <p className="text-[11px] tracking-[0.3em] uppercase text-[#a89263] mb-3">
+                {t.home.testimonialsSubtitle}
+              </p>
+              <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-[-0.02em]">
+                {t.home.testimonialsTitle}{" "}
+                <span className="italic font-normal bg-gradient-to-r from-[#c9a96e] to-[#e8c97a] bg-clip-text text-transparent">
+                  {t.home.testimonialsTitleAccent}
+                </span>
+              </h2>
+            </div>
+          </Reveal>
+
+          <div className="grid md:grid-cols-3 gap-6 md:gap-8">
+            {t.home.testimonials.map((testimonial, i) => (
+              <Reveal key={testimonial.name} delay={i * 150}>
+                <div className="group relative bg-white rounded-3xl p-7 md:p-8 border border-[#eee] transition-all duration-500 hover:shadow-[0_30px_60px_rgba(0,0,0,0.06)] hover:-translate-y-1">
+                  {/* Quote icon */}
+                  <Quote className="w-8 h-8 text-[#e8c97a] opacity-40 mb-5" />
+                  
+                  <blockquote className="text-[15px] leading-[1.8] text-[#444] mb-7 italic">
+                    &ldquo;{testimonial.quote}&rdquo;
+                  </blockquote>
+
+                  <div className="flex items-center gap-4">
+                    {/* Reviewer photo with modern glassmorphism ring effect */}
+                    <div className="relative">
+                      <div className="w-14 h-14 rounded-full overflow-hidden ring-2 ring-[#e8c97a]/30 ring-offset-2 ring-offset-white transition-all duration-500 group-hover:ring-[#c9a96e]/60 group-hover:ring-offset-4">
+                        <Image
+                          src={REVIEWER_IMAGES[i]}
+                          alt={testimonial.name}
+                          width={56}
+                          height={56}
+                          className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-500"
+                        />
+                      </div>
+                      {/* Glow effect on hover */}
+                      <div className="absolute -inset-1 rounded-full bg-gradient-to-br from-[#c9a96e]/20 to-[#e8c97a]/20 blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
+                    </div>
+                    
+                    <div>
+                      <p className="text-sm font-bold text-[#111]">{testimonial.name}</p>
+                      <p className="text-xs text-[#888]">{testimonial.role}</p>
+                    </div>
+                  </div>
+
+                  {/* Star rating */}
+                  <div className="absolute top-7 right-7 flex gap-0.5">
+                    {[...Array(5)].map((_, j) => (
+                      <Star key={j} className="w-3.5 h-3.5 fill-[#e8c97a] text-[#e8c97a]" />
+                    ))}
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Carthage */}
+      <section className="py-16 md:py-24 px-4 md:px-12 max-w-[1240px] mx-auto">
+        <Reveal>
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-[-0.02em] mb-3">
+              {t.home.whyTitle}{" "}
+              <span className="italic font-normal bg-gradient-to-r from-[#c9a96e] to-[#e8c97a] bg-clip-text text-transparent">
+                {t.home.whyTitleAccent}
+              </span>
+            </h2>
+            <p className="text-[15px] md:text-base text-[#666] max-w-[520px] mx-auto">
+              {t.home.whySubtitle}
+            </p>
+          </div>
+        </Reveal>
+
+        <div className="grid sm:grid-cols-2 gap-5">
+          {t.home.whyPoints.map((point, i) => {
+            const Icon = whyIcons[i]
+            return (
+              <Reveal key={point.title} delay={i * 100}>
+                <div className="group flex gap-5 p-6 md:p-7 bg-white rounded-2xl border border-[#eee] transition-all duration-300 hover:shadow-[0_16px_40px_rgba(0,0,0,0.05)] hover:-translate-y-0.5 hover:border-[#e4d9c2]">
+                  <span className="w-12 h-12 shrink-0 rounded-xl bg-gradient-to-br from-[#fdf6ec] to-[#f5e6c8] flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
+                    <Icon className="w-5 h-5 text-[#a4813d]" />
+                  </span>
+                  <div>
+                    <h3 className="text-base font-semibold text-[#111] mb-1.5">{point.title}</h3>
+                    <p className="text-sm text-[#666] leading-relaxed">{point.description}</p>
+                  </div>
+                </div>
+              </Reveal>
+            )
+          })}
+        </div>
+      </section>
 
       {/* Areas of activity */}
       <section id="divisions" className="py-16 md:py-20 px-4 md:px-12 max-w-[1240px] mx-auto scroll-mt-24">
