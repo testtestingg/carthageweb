@@ -219,7 +219,6 @@ export function SiteHeader() {
           </li>
           <li>{navLink("/academy", t.nav.academy)}</li>
           <li>{navLink("/stone-paper", t.nav.stonePaper)}</li>
-          <li>{navLink("/about", t.nav.about)}</li>
           <li>{navLink("/contact", t.nav.contact)}</li>
         </ul>
       </nav>
@@ -406,7 +405,6 @@ export function SiteHeader() {
               </li>
               <li className="pt-2 border-t border-[rgba(0,0,0,0.05)]">{navLink("/academy", t.nav.academy, true)}</li>
               <li>{navLink("/stone-paper", t.nav.stonePaper, true)}</li>
-              <li>{navLink("/about", t.nav.about, true)}</li>
               <li>{navLink("/contact", t.nav.contact, true)}</li>
               <li className="pt-2 border-t border-[rgba(0,0,0,0.05)]">
                 <Link
