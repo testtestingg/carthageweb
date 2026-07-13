@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef, useCallback } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { useRouter, usePathname } from "next/navigation"
+import { useRouter, usePathname } from "next/navigation" 
 import { Search, ShoppingBag, Menu, X, Globe, Loader2, ChevronDown, ArrowRight } from "lucide-react"
 import { useCart } from "@/context/cart-context"
 import { useLanguage } from "@/context/language-context"
