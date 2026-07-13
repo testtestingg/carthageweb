@@ -25,7 +25,7 @@ const DIVISIONS = [
   },
   {
     href: "/academy",
-    image: "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=1200&q=80",
+    image: "/image5.jpg",
     alt: "PMU artist working on a client at the Carthage GmbH Academy",
   },
 ] as const
