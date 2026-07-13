@@ -25,7 +25,7 @@ const DIVISIONS = [
   },
   {
     href: "/academy",
-    image: "/image5.jpg",
+    image: "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=1200&q=80",
     alt: "PMU artist working on a client at the Carthage GmbH Academy",
   },
 ] as const
@@ -41,9 +41,9 @@ const PRODUCT_SAMPLES = [
 
 // Real high-quality portrait photos from Unsplash
 const REVIEWER_IMAGES = [
-  "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=80",
-  "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&q=80",
-  "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&q=80",
+  "https://i.pravatar.cc/150?img=45",
+  "https://i.pravatar.cc/150?img=53",
+  "https://i.pravatar.cc/150?img=23",
 ]
 
 /** Staggered fade-up reveal once the element scrolls into view. */
