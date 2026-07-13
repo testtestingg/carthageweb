@@ -101,67 +101,125 @@ export function HomeClient() {
 
   const whyIcons = [Shield, FlaskConical, Users, Recycle]
 
+  const gatewayCards: {
+    href: string
+    label: string
+    name: string
+    description: string
+    cta: string
+    alt: string
+    image?: string
+    video?: boolean
+    poster?: string
+  }[] = [
+    {
+      href: "/stone-paper",
+      label: t.home.gateway.stonePaper.label,
+      name: t.home.gateway.stonePaper.name,
+      description: t.home.gateway.stonePaper.description,
+      cta: t.home.gateway.stonePaper.cta,
+      image: "/stone-paper/paper-3.jpg",
+      alt: "Stone paper rolls, sheets and an open notebook by Golden Bridge",
+    },
+    {
+      href: "/shop",
+      label: t.home.gateway.cosmetics.label,
+      name: t.home.gateway.cosmetics.name,
+      description: t.home.gateway.cosmetics.description,
+      cta: t.home.gateway.cosmetics.cta,
+      video: true,
+      poster: "/IMG_6447.JPG",
+      alt: "Carthage professional PMU products",
+    },
+  ]
+
   return (
     <SiteShell>
-      {/* Hero */}
-      <main className="relative max-w-[1240px] w-full mx-auto pt-28 md:pt-36 pb-14 px-4 md:px-12 grid md:grid-cols-2 items-center gap-10 md:gap-14">
-        <div className="z-[2]">
-          <div className="inline-flex items-center px-3 py-1.5 bg-white border border-[#e5e5e5] rounded-full text-[11px] font-semibold uppercase tracking-wider mb-6 shadow-[0_2px_10px_rgba(0,0,0,0.03)]">
-            <span className="w-[18px] h-3 mr-2 rounded-[2px] overflow-hidden inline-flex flex-col shrink-0 border border-black/5" aria-hidden="true">
-              <span className="flex-1 bg-black" />
-              <span className="flex-1 bg-[#dd0000]" />
-              <span className="flex-1 bg-[#ffce00]" />
-            </span>
-            {t.hero.madeInGermany}
-          </div>
-
-          <h1 className="font-display text-4xl sm:text-5xl md:text-[56px] leading-[1.02] font-semibold tracking-[-0.03em] mb-5 text-black">
-            {t.hero.titleLine1} <br />
-            <span className="italic font-normal bg-gradient-to-r from-[#c9a96e] to-[#e8c97a] bg-clip-text text-transparent">
-              {t.hero.titleLine2}
-            </span>
-          </h1>
-
-          <p className="text-base md:text-[17px] leading-relaxed text-[#555] max-w-[440px] mb-8">{t.hero.subtitle}</p>
-
-          <div className="flex flex-col sm:flex-row gap-3 items-start sm:items-center">
-            <a
-              href="#divisions"
-              className="bg-[#111] text-white px-7 py-3.5 rounded-full font-semibold text-sm transition-all duration-300 hover:translate-y-[-2px] hover:shadow-[0_10px_20px_rgba(0,0,0,0.15)] hover:bg-[#222] inline-flex items-center gap-2"
-            >
-              {t.hero.shopCollection}
-              <ArrowRight className="w-4 h-4" />
-            </a>
-            <Link
-              href="/about"
-              className="px-7 py-3.5 rounded-full font-semibold text-sm bg-[rgba(255,255,255,0.5)] border border-[#e5e5e5] transition-all hover:bg-white hover:border-black"
-            >
-              {t.hero.aboutCarthage}
-            </Link>
-          </div>
-        </div>
-
-        <div className="relative h-[400px] md:h-[540px] w-full">
-          <div className="group w-full h-full rounded-[40px] overflow-hidden relative -rotate-2 transition-transform duration-500 shadow-[0_30px_60px_rgba(0,0,0,0.1)] hover:rotate-0">
-            <video
-              ref={videoRef}
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="metadata"
-              poster="/IMG_6447.JPG"
-              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              aria-label="Carthage professional PMU products"
-            >
-              <source src="/video.mp4" type="video/mp4" />
-            </video>
-
-            {/* Badge */}
-            <div className="absolute top-5 left-5 z-[4] w-20 h-20 flex items-center justify-center bg-[#dbff00] rounded-full text-black font-extrabold font-display text-center rotate-[15deg] shadow-[0_10px_20px_rgba(0,0,0,0.1)] text-xs leading-tight whitespace-pre-line">
-              {t.hero.bestSellerBadge}
+      {/* Hero — gateway to the company's two divisions */}
+      <main className="relative max-w-[1240px] w-full mx-auto pt-28 md:pt-36 pb-20 md:pb-24 px-4 md:px-12">
+        <Reveal>
+          <div className="text-center max-w-[720px] mx-auto mb-10 md:mb-14">
+            <div className="inline-flex items-center px-3 py-1.5 bg-white border border-[#e5e5e5] rounded-full text-[11px] font-semibold uppercase tracking-wider mb-6 shadow-[0_2px_10px_rgba(0,0,0,0.03)]">
+              <span className="w-[18px] h-3 mr-2 rounded-[2px] overflow-hidden inline-flex flex-col shrink-0 border border-black/5" aria-hidden="true">
+                <span className="flex-1 bg-black" />
+                <span className="flex-1 bg-[#dd0000]" />
+                <span className="flex-1 bg-[#ffce00]" />
+              </span>
+              {t.hero.madeInGermany}
             </div>
+
+            <p className="text-[11px] tracking-[0.3em] uppercase text-[#a89263] mb-4">{t.home.gateway.eyebrow}</p>
+
+            <h1 className="font-display text-4xl sm:text-5xl md:text-[56px] leading-[1.15] font-semibold tracking-[-0.03em] mb-5 text-black">
+              {t.home.gateway.title}{" "}
+              <span className="italic font-normal bg-gradient-to-r from-[#c9a96e] to-[#e8c97a] bg-clip-text text-transparent pr-[0.12em]">
+                {t.home.gateway.titleAccent}
+              </span>
+            </h1>
+
+            <p className="text-base md:text-[17px] leading-relaxed text-[#555] max-w-[560px] mx-auto">
+              {t.home.gateway.subtitle}
+            </p>
           </div>
+        </Reveal>
+
+        {/* Two equally-weighted division choices */}
+        <div className="grid md:grid-cols-2 gap-6 md:gap-8">
+          {gatewayCards.map((card, i) => (
+            <Reveal key={card.name} delay={i * 140} className="h-full">
+              <Link
+                href={card.href}
+                className="group relative flex flex-col justify-end h-[440px] md:h-[560px] rounded-[36px] overflow-hidden shadow-[0_30px_60px_rgba(0,0,0,0.12)] transition-transform duration-500 hover:-translate-y-1.5"
+              >
+                <div className="absolute inset-0">
+                  {card.video ? (
+                    <video
+                      ref={videoRef}
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      preload="metadata"
+                      poster={card.poster}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      aria-label={card.alt}
+                    >
+                      <source src="/video.mp4" type="video/mp4" />
+                    </video>
+                  ) : (
+                    <Image
+                      src={card.image!}
+                      alt={card.alt}
+                      fill
+                      priority
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                  )}
+                </div>
+
+                {/* Legibility gradient */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/5" />
+
+                <span className="absolute top-5 left-5 z-[3] text-[10px] font-bold uppercase tracking-[0.15em] bg-white/90 backdrop-blur-sm text-[#6b5c3e] rounded-full px-3 py-1.5 shadow-[0_2px_8px_rgba(0,0,0,0.06)]">
+                  {card.label}
+                </span>
+
+                <div className="relative z-[3] p-7 md:p-9 text-white">
+                  <h2 className="font-display text-2xl md:text-[32px] font-semibold tracking-[-0.02em] mb-2.5 leading-tight">
+                    {card.name}
+                  </h2>
+                  <p className="text-sm md:text-[15px] leading-relaxed text-white/85 max-w-[420px] mb-6">
+                    {card.description}
+                  </p>
+                  <span className="inline-flex items-center gap-2 bg-white text-[#111] px-6 py-3 rounded-full font-semibold text-sm transition-all duration-300 group-hover:shadow-[0_10px_24px_rgba(0,0,0,0.28)]">
+                    {card.cta}
+                    <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true" />
+                  </span>
+                </div>
+              </Link>
+            </Reveal>
+          ))}
         </div>
       </main>
 
