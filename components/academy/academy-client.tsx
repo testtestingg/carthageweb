@@ -18,7 +18,7 @@ const PLACEHOLDER_IMAGES = [
   "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1200&q=80",
 ]
 
-const HERO_IMAGE = "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=1600&q=80"
+const HERO_IMAGE = "/image5.jpg"
 const INSTRUCTOR_IMAGE = "https://www.rypmu.de/rahmaphoto.jpeg"
 
 interface EnrollForm {
