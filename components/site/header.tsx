@@ -229,8 +229,11 @@ export function SiteHeader() {
                 {/* caret */}
                 <span className="absolute -top-1.5 left-6 w-3 h-3 bg-white border-l border-t border-[#eee] rotate-45 rounded-tl-[3px]" />
 
+                {/* Both entries under "Shop" are shopping destinations. The
+                    editorial division page stays on the top-level
+                    "Cosmetics & PMU" nav link. */}
                 <Link
-                  href="/carthage-care"
+                  href="/shop"
                   role="menuitem"
                   onClick={() => setShopMenuOpen(false)}
                   className="group/item relative flex items-center gap-3.5 p-3 rounded-xl transition-colors hover:bg-[#faf7f1]"
