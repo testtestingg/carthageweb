@@ -7,7 +7,7 @@ import { SiteShell } from "@/components/site/site-shell"
 import { useLanguage } from "@/context/language-context"
 
 /**
- * Golden Bridge stone paper division.
+ * Carthage stone paper division.
  * Same Carthage shell (header, cart, footer) but its own editorial,
  * industrial design language: stone palette, hairline rules, numbered
  * sections and light typography.

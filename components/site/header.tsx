@@ -9,6 +9,7 @@ import { useCart } from "@/context/cart-context"
 import { useLanguage } from "@/context/language-context"
 import { formatPrice } from "@/lib/format"
 import { LOCALES, LOCALE_LABELS, type Locale } from "@/lib/types"
+import { LOGO_PROGRESS_VAR } from "@/lib/animation/tokens"
 
 interface SearchResult {
   id: string
@@ -26,6 +27,7 @@ export function SiteHeader() {
   const [query, setQuery] = useState("")
   const [results, setResults] = useState<SearchResult[] | null>(null)
   const [searching, setSearching] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
   const searchInputRef = useRef<HTMLInputElement>(null)
   const langMenuRef = useRef<HTMLDivElement>(null)
   const shopMenuRef = useRef<HTMLLIElement>(null)
@@ -33,6 +35,62 @@ export function SiteHeader() {
   const pathname = usePathname()
   const { totalItems, toggleCart } = useCart()
   const { locale, setLocale, t } = useLanguage()
+  // Both cinematic routes hand the oversized logo back to the header, but only
+  // the homepage sits on a dark full-bleed film, so only it can carry a
+  // transparent header with light nav text.
+  const cinematicRoute = pathname === "/" || pathname === "/carthage-care"
+  const darkHeroRoute = pathname === "/"
+  const transparentHeader =
+    darkHeroRoute &&
+    !scrolled &&
+    !mobileMenuOpen &&
+    !searchOpen &&
+    !shopMenuOpen &&
+    !langMenuOpen
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 54)
+    handleScroll()
+    window.addEventListener("scroll", handleScroll, { passive: true })
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
+  /*
+   * Oversized-logo handover.
+   *
+   * On cinematic routes the logo starts large over the hero film and settles
+   * into the header bar as the hero scrolls away. Progress is published as a
+   * CSS custom property and read by .site-logo-cinematic, so the movement
+   * tracks scroll continuously without re-rendering the header each frame.
+   */
+  useEffect(() => {
+    const root = document.documentElement
+    if (!cinematicRoute) {
+      root.style.setProperty(LOGO_PROGRESS_VAR, "1")
+      return
+    }
+
+    let frame = 0
+    const update = () => {
+      frame = 0
+      const span = Math.max(window.innerHeight * 0.6, 1)
+      const progress = Math.min(Math.max(window.scrollY / span, 0), 1)
+      root.style.setProperty(LOGO_PROGRESS_VAR, progress.toFixed(4))
+    }
+    const onScroll = () => {
+      if (!frame) frame = window.requestAnimationFrame(update)
+    }
+
+    update()
+    window.addEventListener("scroll", onScroll, { passive: true })
+    window.addEventListener("resize", onScroll, { passive: true })
+    return () => {
+      window.removeEventListener("scroll", onScroll)
+      window.removeEventListener("resize", onScroll)
+      if (frame) window.cancelAnimationFrame(frame)
+      root.style.removeProperty(LOGO_PROGRESS_VAR)
+    }
+  }, [cinematicRoute])
 
   // Close menus on navigation
   useEffect(() => {
@@ -131,10 +189,10 @@ export function SiteHeader() {
   }
 
   return (
-    <header className="fixed top-0 z-[1000] w-full h-16 md:h-[72px] flex justify-between items-center px-4 md:px-12 bg-[rgba(255,255,255,0.88)] backdrop-blur-xl border-b border-[rgba(0,0,0,0.04)]">
+    <header className={`site-header fixed top-0 z-[1000] w-full h-16 md:h-[72px] flex justify-between items-center px-4 md:px-12 transition-[background-color,border-color] duration-500 ${transparentHeader ? "site-header-transparent bg-transparent border-b border-transparent" : "bg-[rgba(255,255,255,0.9)] backdrop-blur-xl border-b border-[rgba(0,0,0,0.04)]"}`}>
       {/* Mobile Menu Button */}
       <button
-        className="md:hidden transition-transform hover:scale-110"
+        className="md:hidden w-11 h-11 -ml-2 flex items-center justify-center transition-transform hover:scale-110"
         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         aria-label={t.nav.openMenu}
         aria-expanded={mobileMenuOpen}
@@ -172,7 +230,7 @@ export function SiteHeader() {
                 <span className="absolute -top-1.5 left-6 w-3 h-3 bg-white border-l border-t border-[#eee] rotate-45 rounded-tl-[3px]" />
 
                 <Link
-                  href="/shop"
+                  href="/carthage-care"
                   role="menuitem"
                   onClick={() => setShopMenuOpen(false)}
                   className="group/item relative flex items-center gap-3.5 p-3 rounded-xl transition-colors hover:bg-[#faf7f1]"
@@ -217,23 +275,29 @@ export function SiteHeader() {
               </div>
             )}
           </li>
+          <li>{navLink("/carthage-care", t.nav.cosmeticsPmu)}</li>
           <li>{navLink("/academy", t.nav.academy)}</li>
           <li>{navLink("/stone-paper", t.nav.stonePaper)}</li>
           <li>{navLink("/contact", t.nav.contact)}</li>
         </ul>
       </nav>
 
-      {/* Logo */}
+      {/* Logo, always links to the Carthage Group homepage.
+          On cinematic routes its size/offset is driven by the hero's scroll
+          progress (see .site-logo-cinematic in globals.css) rather than a
+          class toggle, so it travels smoothly instead of snapping. */}
       <Link
         href="/"
-        className="absolute left-1/2 -translate-x-1/2 md:relative md:left-auto md:translate-x-0"
+        className={`absolute left-1/2 -translate-x-1/2 md:relative md:left-auto md:translate-x-0 ${
+          cinematicRoute ? "site-logo-cinematic" : ""
+        }`}
       >
         <Image
           src="/logo-carthage.png"
-          alt="Carthage - Cosmetic & Pigmentation"
-          width={64}
-          height={64}
-          className="h-[52px] w-auto md:h-[62px]"
+          alt="Carthage"
+          width={128}
+          height={128}
+          className={cinematicRoute ? "w-auto" : "w-auto h-[52px] md:h-[62px]"}
           priority
         />
       </Link>
@@ -243,7 +307,7 @@ export function SiteHeader() {
         <div className="relative" ref={langMenuRef}>
           <button
             onClick={() => setLangMenuOpen(!langMenuOpen)}
-            className="flex items-center gap-1 text-sm font-medium text-[#444] hover:text-black transition-colors uppercase"
+            className="w-11 h-11 flex items-center justify-center gap-1 text-sm font-medium text-[#444] hover:text-black transition-colors uppercase sm:w-auto sm:px-2"
             aria-label="Change language"
             aria-expanded={langMenuOpen}
           >
@@ -272,7 +336,7 @@ export function SiteHeader() {
 
         {/* Search */}
         <button
-          className="transition-transform hover:scale-110"
+          className="w-11 h-11 flex items-center justify-center transition-transform hover:scale-110"
           onClick={() => setSearchOpen(!searchOpen)}
           aria-label={t.nav.search}
           aria-expanded={searchOpen}
@@ -282,7 +346,7 @@ export function SiteHeader() {
 
         {/* Cart */}
         <button
-          className="relative transition-transform hover:scale-110"
+          className="relative w-11 h-11 flex items-center justify-center transition-transform hover:scale-110"
           onClick={toggleCart}
           aria-label={t.nav.openCart}
         >
@@ -403,7 +467,8 @@ export function SiteHeader() {
                   </span>
                 </Link>
               </li>
-              <li className="pt-2 border-t border-[rgba(0,0,0,0.05)]">{navLink("/academy", t.nav.academy, true)}</li>
+              <li className="pt-2 border-t border-[rgba(0,0,0,0.05)]">{navLink("/carthage-care", t.nav.cosmeticsPmu, true)}</li>
+              <li>{navLink("/academy", t.nav.academy, true)}</li>
               <li>{navLink("/stone-paper", t.nav.stonePaper, true)}</li>
               <li>{navLink("/contact", t.nav.contact, true)}</li>
               <li className="pt-2 border-t border-[rgba(0,0,0,0.05)]">

@@ -7,7 +7,7 @@ export const dynamic = "force-dynamic"
 export const metadata: Metadata = {
   title: "Stone Paper Shop - Tree-Free Notebooks, Bags & Packaging",
   description:
-    "Shop Golden Bridge stone paper products: waterproof tree-free notebooks, sheets, bags and industrial packaging. Produced in Germany by Carthage Gmbh.",
+    "Shop Carthage stone paper products: waterproof tree-free notebooks, sheets, bags and industrial packaging. Produced in Germany by Carthage Gmbh.",
   alternates: { canonical: "/stone-paper/shop" },
 }
 

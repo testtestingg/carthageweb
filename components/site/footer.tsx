@@ -9,14 +9,14 @@ export function SiteFooter() {
   const { t } = useLanguage()
 
   return (
-    <footer className="relative mt-16 bg-gradient-to-br from-[#111] to-[#1a1a1a] text-white pt-16 pb-8 px-4 md:px-12 overflow-hidden">
+    <footer className="relative bg-gradient-to-br from-[#111] to-[#1a1a1a] text-white pt-14 pb-8 px-4 md:px-12 overflow-hidden">
       <div className="absolute top-0 right-[20%] w-[400px] h-[400px] rounded-full opacity-10 blur-[80px] bg-[radial-gradient(circle,rgb(201,169,110)_0%,rgba(255,255,255,0)_70%)]" />
 
       <div className="relative max-w-[1240px] mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
           <div>
             <div className="mb-4">
-              <Image src="/logo-carthage.png" alt="Carthage" width={56} height={56} className="h-14 w-auto" />
+              <Image src="/logo-carthage.png" alt="Carthage" width={160} height={160} className="h-28 md:h-36 w-auto" />
             </div>
             <p className="text-sm text-[#999] leading-relaxed mb-6">{t.footer.tagline}</p>
             <div className="flex gap-3">
@@ -83,6 +83,11 @@ export function SiteFooter() {
               <li>
                 <Link href="/contact" className="text-sm text-[#999] hover:text-white transition-colors">
                   {t.footer.contact}
+                </Link>
+              </li>
+              <li>
+                <Link href="/carthage-care" className="text-sm text-[#999] hover:text-white transition-colors">
+                  {t.nav.cosmeticsPmu}
                 </Link>
               </li>
               <li>

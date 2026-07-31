@@ -96,10 +96,10 @@
         "subtitle": "Cartouche de précision",
         "description": "Conçue pour les artistes qui exigent précision et confort. La V6 Pink associe un design innovant à des matériaux haut de gamme pour sublimer chaque séance. Grip en silicone, stérilisée au gaz EO et compatible avec la plupart des machines à cartouche.",
         "features": [
-          "Grip silicone – doux, ergonomique et antidérapant",
-          "Précise et stable – flux d'encre régulier",
-          "Sécurité avant tout – stérilisée au gaz EO",
-          "Compatibilité universelle – s'adapte à la plupart des machines",
+          "Grip silicone, doux, ergonomique et antidérapant",
+          "Précise et stable, flux d'encre régulier",
+          "Sécurité avant tout, stérilisée au gaz EO",
+          "Compatibilité universelle, s'adapte à la plupart des machines",
           "Idéale pour le tracé, l'ombrage et le remplissage"
         ]
       },
@@ -108,10 +108,10 @@
         "subtitle": "Präzisions-Modulnadel",
         "description": "Entwickelt für Artists, die Präzision und Komfort verlangen. Die V6 Pink vereint innovatives Design mit hochwertigen Materialien für jede Session. Mit Silikongriff, EO-gassterilisiert und universell passend für die meisten Cartridge-Maschinen.",
         "features": [
-          "Silikongriff – weich, ergonomisch, rutschfest",
-          "Präzise & stabil – gleichmäßiger Farbfluss",
-          "Sicherheit zuerst – EO-gassterilisiert",
-          "Universell passend – kompatibel mit den meisten Maschinen",
+          "Silikongriff, weich, ergonomisch, rutschfest",
+          "Präzise & stabil, gleichmäßiger Farbfluss",
+          "Sicherheit zuerst, EO-gassterilisiert",
+          "Universell passend, kompatibel mit den meisten Maschinen",
           "Perfekt für Linien, Schattierungen & Farbfüllung"
         ]
       }
@@ -150,7 +150,7 @@
         ]
       },
       "fr": {
-        "name": "Aiguille V6 Pink – Édition Pro",
+        "name": "Aiguille V6 Pink, Édition Pro",
         "subtitle": "Cartouche PMU avancée",
         "description": "Conçue pour les artistes qui exigent précision, confort et fiabilité. Chaque détail est pensé pour perfectionner votre art. Compatible avec la plupart des machines et grips à cartouche, pour des résultats constants.",
         "features": [
@@ -162,9 +162,9 @@
         ]
       },
       "de": {
-        "name": "V6 Pink Nadel – Pro Edition",
+        "name": "V6 Pink Nadel, Pro Edition",
         "subtitle": "Fortschrittliche PMU-Cartridge",
-        "description": "Für Artists entwickelt, die Präzision, Komfort und Zuverlässigkeit fordern. Jedes Detail perfektioniert Ihre Kunst. Kompatibel mit den meisten Cartridge-Maschinen und Grips – für konstante Ergebnisse.",
+        "description": "Für Artists entwickelt, die Präzision, Komfort und Zuverlässigkeit fordern. Jedes Detail perfektioniert Ihre Kunst. Kompatibel mit den meisten Cartridge-Maschinen und Grips, für konstante Ergebnisse.",
         "features": [
           "Hochwertige Materialien",
           "Fortschrittliche Technik",

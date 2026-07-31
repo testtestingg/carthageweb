@@ -80,7 +80,7 @@ export default function AboutPage() {
             <div className="relative h-[380px] rounded-[28px] overflow-hidden shadow-[0_30px_60px_rgba(0,0,0,0.08)] order-2 md:order-1">
               <Image
                 src="/stone-paper/paper-3.jpg"
-                alt="Golden Bridge stone paper rolls and notebooks"
+                alt="Carthage stone paper rolls and notebooks"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover"

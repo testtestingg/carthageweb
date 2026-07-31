@@ -11,6 +11,7 @@ const en = {
     shopMenuStoneDesc: "Notebooks, bags & packaging",
     academy: "Academy",
     stonePaper: "Stone Paper",
+    cosmeticsPmu: "Cosmetics & PMU",
     about: "About",
     contact: "Contact",
     cart: "Cart",
@@ -57,14 +58,14 @@ const en = {
         label: "Cosmetics & Beauty",
         name: "Cosmetics & PMU",
         description:
-          "Professional pigments, cartridge needles and skincare — developed to ISO & GMP standards for artists and studios worldwide.",
+          "Professional pigments, cartridge needles and skincare, developed to ISO & GMP standards for artists and studios worldwide.",
         cta: "Explore Cosmetics",
       },
       stonePaper: {
         label: "Industrial Manufacturing",
         name: "Stone Paper",
         description:
-          "Waterproof, tree-free paper, bags and industrial packaging by Golden Bridge — produced from limestone in Germany.",
+          "Waterproof, tree-free paper, bags and industrial packaging by Carthage, produced from limestone in Germany.",
         cta: "Explore Stone Paper",
       },
     },
@@ -77,19 +78,19 @@ const en = {
       {
         name: "Cosmetics & PMU",
         description:
-          "Professional pigments, cartridge needles and skincare — developed and manufactured to ISO & GMP standards for artists and studios worldwide.",
+          "Professional pigments, cartridge needles and skincare, developed and manufactured to ISO & GMP standards for artists and studios worldwide.",
         cta: "Explore products",
       },
       {
         name: "Stone Paper",
         description:
-          "Golden Bridge: waterproof, tree-free paper, bags and industrial packaging, produced from limestone at our facility in Luckau.",
+          "Carthage: waterproof, tree-free paper, bags and industrial packaging, produced from limestone at our facility in Luckau.",
         cta: "Explore stone paper",
       },
       {
         name: "Academy",
         description:
-          "Certified PMU education in Berlin — cohorts of six, live models and six months of mentoring after every course.",
+          "Certified PMU education in Berlin, cohorts of six, live models and six months of mentoring after every course.",
         cta: "View programs",
       },
     ],
@@ -130,7 +131,7 @@ const en = {
     samplesEyebrow: "Our Products",
     samplesTitle: "Crafted with",
     samplesTitleAccent: "Precision",
-    samplesSubtitle: "Explore samples from our professional-grade product lines — each developed and manufactured in Germany.",
+    samplesSubtitle: "Explore samples from our professional-grade product lines, each developed and manufactured in Germany.",
     whyTitle: "Why Professionals",
     whyTitleAccent: "Choose Carthage",
     whySubtitle: "Every product is engineered, tested and manufactured under one roof in Germany.",
@@ -138,7 +139,7 @@ const en = {
       { title: "German Engineering", description: "All products are developed, tested and manufactured in Germany under strict quality protocols." },
       { title: "ISO & GMP Certified", description: "Our facilities meet the highest international standards for cosmetics and medical device manufacturing." },
       { title: "Artist-Driven Design", description: "Products are co-developed with working PMU artists, ensuring every detail serves real studio needs." },
-      { title: "Sustainable Materials", description: "From vegan pigments to tree-free stone paper — sustainability is built into every product line." },
+      { title: "Sustainable Materials", description: "From vegan pigments to tree-free stone paper, sustainability is built into every product line." },
     ],
   },
   shop: {
@@ -174,7 +175,7 @@ const en = {
     stoneTitle: "Stone Paper",
     stoneTitleAccent: "Collection",
     stoneSubtitle:
-      "Tree-free notebooks, bags and packaging by Golden Bridge - waterproof, tear-resistant and produced in Germany.",
+      "Tree-free notebooks, bags and packaging by Carthage - waterproof, tear-resistant and produced in Germany.",
     stoneBreadcrumb: "Stone Paper Shop",
   },
   product: {
@@ -306,14 +307,14 @@ const en = {
     stonePaperTitle: "Stone Paper",
     stonePaperAccent: "Production",
     stonePaperP1:
-      "Beyond cosmetics, Carthage is also involved in innovative stone paper production through Golden Bridge Co. Stone paper is a sustainable, tree-free alternative made from calcium carbonate — waterproof, tear-resistant, and eco-friendly.",
+      "Beyond cosmetics, Carthage also develops innovative stone paper products. This sustainable, tree-free material is made from calcium carbonate, waterproof, tear-resistant, and eco-friendly.",
     stonePaperP2:
       "This division reflects Carthage's commitment to innovation and sustainability across multiple industries.",
-    visitStonePaper: "Visit Golden Bridge Co.",
+    visitStonePaper: "Visit Carthage",
     founderTitle: "Led by",
     founderAccent: "Rahma Yarbakht",
     founderP1:
-      "Rahma Yarbakht brings over a decade of permanent makeup artistry and training experience. The academy is built for artists who want more than a quick certificate — a polished environment for learning the technical, visual, and business standards of premium PMU work.",
+      "Rahma Yarbakht brings over a decade of permanent makeup artistry and training experience. The academy is built for artists who want more than a quick certificate: a polished environment for learning the technical, visual, and business standards of premium PMU work.",
     founderP2:
       "Every lesson is grounded in real client outcomes, combining subtlety, symmetry, safety, and confidence.",
     visitAcademy: "Visit the Academy",
@@ -339,7 +340,7 @@ const en = {
     heroTitle1: "Learn PMU where",
     heroTitle2: "the pigments are made.",
     heroSubtitle:
-      "Small cohorts, live models and a curriculum built inside a working German manufacturer. You train with the same pigments and needles we ship to studios in 30 countries — and leave with a certificate that means something.",
+      "Small cohorts, live models and a curriculum built inside a working German manufacturer. You train with the same pigments and needles we ship to studios in 30 countries, and leave with a certificate that means something.",
     heroCtaEnroll: "Enroll Now",
     heroCtaPrograms: "Compare programs",
     heroFacts: [
@@ -357,7 +358,7 @@ const en = {
       {
         title: "Pick your program",
         description:
-          "Compare the tracks below. Not sure which level fits? Mention it in your application and we'll advise honestly — including telling you to wait if you're not ready.",
+          "Compare the tracks below. Not sure which level fits? Mention it in your application and we'll advise honestly, including telling you to wait if you're not ready.",
       },
       {
         title: "Send your application",
@@ -367,7 +368,7 @@ const en = {
       {
         title: "Get your confirmation",
         description:
-          "You receive an email confirmation immediately and a personal reply within one business day — dates, seat reservation and your onboarding pack.",
+          "You receive an email confirmation immediately and a personal reply within one business day, with dates, seat reservation and your onboarding pack.",
       },
     ],
     programsEyebrow: "The programs",
@@ -383,7 +384,7 @@ const en = {
     included: [
       {
         title: "Carthage working kit",
-        description: "Machine time, V6 cartridges and the full pigment range — the exact products from our own production line.",
+        description: "Machine time, V6 cartridges and the full pigment range, the exact products from our own production line.",
       },
       {
         title: "Live model practice",
@@ -399,7 +400,7 @@ const en = {
       },
       {
         title: "Hygiene & compliance module",
-        description: "German hygiene regulation, documentation and client consent — the part most academies skip.",
+        description: "German hygiene regulation, documentation and client consent, the part most academies skip.",
       },
       {
         title: "Business starter session",
@@ -409,13 +410,13 @@ const en = {
     instructorEyebrow: "Your instructor",
     instructorName: "Rahma Yarbakht",
     instructorP1:
-      "Rahma has spent over a decade in permanent makeup — first as an artist, then training artists across Europe. Her classes are deliberately small because technique corrections happen hands-on, at your station, not from a stage.",
+      "Rahma has spent over a decade in permanent makeup, first as an artist, then training artists across Europe. Her classes are deliberately small because technique corrections happen hands-on, at your station, not from a stage.",
     instructorP2:
       "Every lesson is grounded in healed results: subtlety, symmetry, safety and the confidence to charge properly for your work.",
     formEyebrow: "Enrollment",
     formTitle: "Apply for your seat.",
     formSubtitle:
-      "No payment now — your seat is only confirmed once we've spoken. Applications are reviewed within one business day.",
+      "No payment now. Your seat is only confirmed once we've spoken. Applications are reviewed within one business day.",
     formCourse: "Program",
     formCoursePlaceholder: "Select a program",
     formName: "Full name",
@@ -425,7 +426,7 @@ const en = {
     formPhone: "Phone (optional)",
     formCountry: "Country",
     formMessage: "Your background (optional)",
-    formMessagePlaceholder: "Tell us where you're starting from — beautician, tattoo artist, complete beginner...",
+    formMessagePlaceholder: "Tell us where you're starting from: beautician, tattoo artist, complete beginner...",
     formSubmit: "Submit application",
     formSubmitting: "Submitting...",
     formNameRequired: "Please enter your name",
@@ -436,7 +437,7 @@ const en = {
     confirmBody:
       "A confirmation is on its way to your inbox. Here's what happens next:",
     confirmSteps: [
-      "We review your application — usually within one business day",
+      "We review your application, usually within one business day",
       "We contact you personally to confirm dates and reserve your seat",
       "You receive your onboarding pack with everything for day one",
     ],
@@ -446,7 +447,7 @@ const en = {
   },
   stonePaper: {
     breadcrumb: "Stone Paper",
-    heroEyebrow: "Golden Bridge — a Carthage division",
+    heroEyebrow: "Carthage Stone Paper",
     heroTitle1: "Paper made",
     heroTitle2: "from stone.",
     heroSubtitle:
@@ -457,15 +458,15 @@ const en = {
       { value: "~80%", label: "Calcium carbonate" },
       { value: "0", label: "Trees harvested" },
       { value: "0 L", label: "Water in production" },
-      { value: "2–3×", label: "Tear resistance vs. pulp paper" },
+      { value: "2 to 3×", label: "Tear resistance vs. pulp paper" },
     ],
     introEyebrow: "The division",
     introTitle: "Industrial packaging, held to cosmetic-grade standards.",
     introP1:
-      "Golden Bridge Industrial Zone is Carthage's stone paper division. From our headquarters in Berlin and production facility in Luckau, we manufacture mineral-based paper and woven packaging for agriculture, construction, chemicals and food industries across Europe.",
+      "Carthage's stone paper division manufactures mineral-based paper and woven packaging for agriculture, construction, chemicals and food industries across Europe, from our headquarters in Berlin and production facility in Luckau.",
     introP2:
-      "Stone paper is made from roughly 80% calcium carbonate bonded with a small amount of HDPE resin. The result is a bright-white, exceptionally smooth material that is inherently waterproof and tear-resistant — no coatings, no lamination.",
-    factoryCaption: "Production facility — Luckau, Germany",
+      "Stone paper is made from roughly 80% calcium carbonate bonded with a small amount of HDPE resin. The result is a bright-white, exceptionally smooth material that is inherently waterproof and tear-resistant, no coatings, no lamination.",
+    factoryCaption: "Production facility in Luckau, Germany",
     productsEyebrow: "Product lines",
     productsTitle: "Three families, one material philosophy.",
     products: [
@@ -474,8 +475,8 @@ const en = {
         description:
           "Durable, moisture-resistant bags for industrial and commercial applications. Naturally waterproof with a premium smooth surface that takes exceptional print.",
         features: [
-          "Naturally waterproof — no coatings",
-          "2–3× the tear resistance of paper",
+          "Naturally waterproof, no coatings",
+          "2 to 3× the tear resistance of paper",
           "FDA-compliant food contact",
           "Offset, UV, digital & inkjet printing",
         ],
@@ -508,7 +509,7 @@ const en = {
     processSteps: [
       {
         title: "Limestone sourcing",
-        description: "Calcium carbonate is recovered from limestone — one of the most abundant minerals on earth, often as offcuts from existing quarries.",
+        description: "Calcium carbonate is recovered from limestone, one of the most abundant minerals on earth, often as offcuts from existing quarries.",
       },
       {
         title: "Micronised powder",
@@ -516,7 +517,7 @@ const en = {
       },
       {
         title: "HDPE bonding",
-        description: "The mineral powder is bonded with ~20% non-toxic HDPE resin, creating a flexible, stable compound — entirely without water or bleach.",
+        description: "The mineral powder is bonded with ~20% non-toxic HDPE resin, creating a flexible, stable compound, entirely without water or bleach.",
       },
       {
         title: "Calendering & finishing",
@@ -530,7 +531,7 @@ const en = {
     sustainP1:
       "Traditional paper consumes wood, thousands of litres of water and chlorine bleach. Stone paper replaces all of it with abundant limestone and a fully recyclable production loop.",
     sustainP2:
-      "At end of life, stone paper is recyclable through thermoplastic recycling streams — and it photodegrades under prolonged UV exposure without releasing toxins.",
+      "At end of life, stone paper is recyclable through thermoplastic recycling streams, and it photodegrades under prolonged UV exposure without releasing toxins.",
     sustainPoints: [
       "Tree-free & water-free production",
       "Recyclable thermoplastic stream",
@@ -540,9 +541,9 @@ const en = {
     specsTitle: "Material specifications.",
     specs: [
       { label: "Composition", value: "~80% CaCO₃ + ~20% HDPE" },
-      { label: "Basis weight", value: "80 – 300 gsm" },
-      { label: "Thickness", value: "95 – 350 µm" },
-      { label: "Tear resistance", value: "2–3× standard paper" },
+      { label: "Basis weight", value: "80 to 300 gsm" },
+      { label: "Thickness", value: "95 to 350 µm" },
+      { label: "Tear resistance", value: "2 to 3× standard paper" },
       { label: "Water resistance", value: "Naturally waterproof" },
       { label: "Oil / grease resistance", value: "Naturally resistant" },
       { label: "Print compatibility", value: "Offset, UV, digital, inkjet" },
@@ -602,6 +603,7 @@ const fr: Dictionary = {
     shopMenuStoneDesc: "Carnets, sacs et emballages",
     academy: "Académie",
     stonePaper: "Papier de pierre",
+    cosmeticsPmu: "Cosmétiques & PMU",
     about: "À propos",
     contact: "Contact",
     cart: "Panier",
@@ -648,14 +650,14 @@ const fr: Dictionary = {
         label: "Cosmétiques & Beauté",
         name: "Cosmétiques & PMU",
         description:
-          "Pigments professionnels, aiguilles à cartouche et soins — développés selon les normes ISO & GMP pour les artistes et studios du monde entier.",
+          "Pigments professionnels, aiguilles à cartouche et soins, développés selon les normes ISO & GMP pour les artistes et studios du monde entier.",
         cta: "Découvrir les cosmétiques",
       },
       stonePaper: {
         label: "Fabrication industrielle",
         name: "Papier de pierre",
         description:
-          "Papier imperméable et sans arbre, sacs et emballages industriels par Golden Bridge — produits à partir de calcaire en Allemagne.",
+          "Papier imperméable et sans arbre, sacs et emballages industriels par Carthage, produits à partir de calcaire en Allemagne.",
         cta: "Découvrir le papier de pierre",
       },
     },
@@ -668,19 +670,19 @@ const fr: Dictionary = {
       {
         name: "Cosmétiques & PMU",
         description:
-          "Pigments professionnels, aiguilles à cartouche et soins de la peau — développés et fabriqués selon les normes ISO & GMP pour les artistes et studios du monde entier.",
+          "Pigments professionnels, aiguilles à cartouche et soins de la peau, développés et fabriqués selon les normes ISO & GMP pour les artistes et studios du monde entier.",
         cta: "Découvrir les produits",
       },
       {
         name: "Papier de pierre",
         description:
-          "Golden Bridge : papier sans arbre imperméable, sacs et emballages industriels, produits à partir de calcaire sur notre site de Luckau.",
+          "Carthage : papier sans arbre imperméable, sacs et emballages industriels, produits à partir de calcaire sur notre site de Luckau.",
         cta: "Découvrir le papier de pierre",
       },
       {
         name: "Académie",
         description:
-          "Formation PMU certifiée à Berlin — promotions de six, modèles réels et six mois de mentorat après chaque formation.",
+          "Formation PMU certifiée à Berlin, promotions de six, modèles réels et six mois de mentorat après chaque formation.",
         cta: "Voir les programmes",
       },
     ],
@@ -721,7 +723,7 @@ const fr: Dictionary = {
     samplesEyebrow: "Nos Produits",
     samplesTitle: "Conçus avec",
     samplesTitleAccent: "Précision",
-    samplesSubtitle: "Explorez des échantillons de nos gammes professionnelles — chacune développée et fabriquée en Allemagne.",
+    samplesSubtitle: "Explorez des échantillons de nos gammes professionnelles, chacune développée et fabriquée en Allemagne.",
     whyTitle: "Pourquoi les professionnels",
     whyTitleAccent: "choisissent Carthage",
     whySubtitle: "Chaque produit est conçu, testé et fabriqué sous un même toit en Allemagne.",
@@ -729,7 +731,7 @@ const fr: Dictionary = {
       { title: "Ingénierie allemande", description: "Tous les produits sont développés, testés et fabriqués en Allemagne selon des protocoles qualité stricts." },
       { title: "Certifié ISO & GMP", description: "Nos installations répondent aux normes internationales les plus élevées pour les cosmétiques et les dispositifs médicaux." },
       { title: "Conception artiste", description: "Les produits sont co-développés avec des artistes PMU en exercice, chaque détail sert les besoins réels du studio." },
-      { title: "Matériaux durables", description: "Des pigments véganes au papier de pierre sans arbre — la durabilité est intégrée dans chaque gamme de produits." },
+      { title: "Matériaux durables", description: "Des pigments véganes au papier de pierre sans arbre, la durabilité est intégrée dans chaque gamme de produits." },
     ],
   },
   shop: {
@@ -765,7 +767,7 @@ const fr: Dictionary = {
     stoneTitle: "Collection",
     stoneTitleAccent: "papier de pierre",
     stoneSubtitle:
-      "Carnets, sacs et emballages sans arbre par Golden Bridge - imperméables, résistants à la déchirure et produits en Allemagne.",
+      "Carnets, sacs et emballages sans arbre par Carthage - imperméables, résistants à la déchirure et produits en Allemagne.",
     stoneBreadcrumb: "Boutique papier de pierre",
   },
   product: {
@@ -897,10 +899,10 @@ const fr: Dictionary = {
     stonePaperTitle: "Production de",
     stonePaperAccent: "papier de pierre",
     stonePaperP1:
-      "Au-delà des cosmétiques, Carthage est également impliquée dans la production innovante de papier de pierre via Golden Bridge Co. Le papier de pierre est une alternative durable et sans arbre, fabriquée à partir de carbonate de calcium — imperméable, résistant à la déchirure et écologique.",
+      "Au-delà des cosmétiques, Carthage développe aussi des produits innovants en papier de pierre. Ce matériau durable et sans arbre, fabriqué à partir de carbonate de calcium, est imperméable, résistant à la déchirure et écologique.",
     stonePaperP2:
       "Cette division reflète l'engagement de Carthage envers l'innovation et la durabilité dans plusieurs industries.",
-    visitStonePaper: "Visiter Golden Bridge Co.",
+    visitStonePaper: "Visiter Carthage",
     founderTitle: "Dirigée par",
     founderAccent: "Rahma Yarbakht",
     founderP1:
@@ -930,7 +932,7 @@ const fr: Dictionary = {
     heroTitle1: "Apprenez le PMU là où",
     heroTitle2: "naissent les pigments.",
     heroSubtitle:
-      "Petites promotions, modèles réels et un programme construit au sein d'un fabricant allemand en activité. Vous vous formez avec les pigments et aiguilles que nous expédions aux studios de 30 pays — et repartez avec un certificat qui a du poids.",
+      "Petites promotions, modèles réels et un programme construit au sein d'un fabricant allemand en activité. Vous vous formez avec les pigments et aiguilles que nous expédions aux studios de 30 pays, et repartez avec un certificat qui a du poids.",
     heroCtaEnroll: "S'inscrire",
     heroCtaPrograms: "Comparer les programmes",
     heroFacts: [
@@ -948,7 +950,7 @@ const fr: Dictionary = {
       {
         title: "Choisissez votre programme",
         description:
-          "Comparez les parcours ci-dessous. Vous hésitez sur le niveau ? Indiquez-le dans votre candidature et nous vous conseillerons honnêtement — quitte à vous dire d'attendre.",
+          "Comparez les parcours ci-dessous. Vous hésitez sur le niveau ? Indiquez-le dans votre candidature et nous vous conseillerons honnêtement, quitte à vous dire d'attendre.",
       },
       {
         title: "Envoyez votre candidature",
@@ -974,7 +976,7 @@ const fr: Dictionary = {
     included: [
       {
         title: "Kit de travail Carthage",
-        description: "Temps machine, cartouches V6 et la gamme complète de pigments — les produits de notre propre ligne de production.",
+        description: "Temps machine, cartouches V6 et la gamme complète de pigments, les produits de notre propre ligne de production.",
       },
       {
         title: "Pratique sur modèles réels",
@@ -990,7 +992,7 @@ const fr: Dictionary = {
       },
       {
         title: "Module hygiène & conformité",
-        description: "Réglementation allemande, documentation et consentement client — la partie que la plupart des académies négligent.",
+        description: "Réglementation allemande, documentation et consentement client, la partie que la plupart des académies négligent.",
       },
       {
         title: "Session business de lancement",
@@ -1000,13 +1002,13 @@ const fr: Dictionary = {
     instructorEyebrow: "Votre formatrice",
     instructorName: "Rahma Yarbakht",
     instructorP1:
-      "Rahma cumule plus de dix ans de maquillage permanent — d'abord comme artiste, puis en formant des artistes dans toute l'Europe. Ses classes sont volontairement petites : les corrections techniques se font à votre poste, pas depuis une estrade.",
+      "Rahma cumule plus de dix ans de maquillage permanent, d'abord comme artiste, puis en formant des artistes dans toute l'Europe. Ses classes sont volontairement petites : les corrections techniques se font à votre poste, pas depuis une estrade.",
     instructorP2:
       "Chaque leçon s'appuie sur des résultats cicatrisés : subtilité, symétrie, sécurité et la confiance nécessaire pour facturer votre travail à sa juste valeur.",
     formEyebrow: "Inscription",
     formTitle: "Candidatez pour votre place.",
     formSubtitle:
-      "Aucun paiement maintenant — votre place n'est confirmée qu'après notre échange. Les candidatures sont traitées sous un jour ouvré.",
+      "Aucun paiement maintenant, votre place n'est confirmée qu'après notre échange. Les candidatures sont traitées sous un jour ouvré.",
     formCourse: "Programme",
     formCoursePlaceholder: "Choisissez un programme",
     formName: "Nom complet",
@@ -1016,7 +1018,7 @@ const fr: Dictionary = {
     formPhone: "Téléphone (facultatif)",
     formCountry: "Pays",
     formMessage: "Votre parcours (facultatif)",
-    formMessagePlaceholder: "Dites-nous d'où vous partez — esthéticienne, tatoueuse, grande débutante...",
+    formMessagePlaceholder: "Dites-nous d'où vous partez, esthéticienne, tatoueuse, grande débutante...",
     formSubmit: "Envoyer ma candidature",
     formSubmitting: "Envoi en cours...",
     formNameRequired: "Veuillez saisir votre nom",
@@ -1026,7 +1028,7 @@ const fr: Dictionary = {
     confirmTitle: "Candidature reçue.",
     confirmBody: "Une confirmation arrive dans votre boîte mail. Voici la suite :",
     confirmSteps: [
-      "Nous étudions votre candidature — généralement sous un jour ouvré",
+      "Nous étudions votre candidature, généralement sous un jour ouvré",
       "Nous vous contactons personnellement pour confirmer les dates et réserver votre place",
       "Vous recevez votre dossier d'accueil avec tout le nécessaire pour le premier jour",
     ],
@@ -1036,7 +1038,7 @@ const fr: Dictionary = {
   },
   stonePaper: {
     breadcrumb: "Papier de pierre",
-    heroEyebrow: "Golden Bridge — une division Carthage",
+    heroEyebrow: "Carthage, Papier de pierre",
     heroTitle1: "Le papier né",
     heroTitle2: "de la pierre.",
     heroSubtitle:
@@ -1047,15 +1049,15 @@ const fr: Dictionary = {
       { value: "~80 %", label: "Carbonate de calcium" },
       { value: "0", label: "Arbre abattu" },
       { value: "0 L", label: "Eau utilisée en production" },
-      { value: "2–3×", label: "Résistance à la déchirure" },
+      { value: "2 à 3×", label: "Résistance à la déchirure" },
     ],
     introEyebrow: "La division",
     introTitle: "L'emballage industriel, au standard cosmétique.",
     introP1:
-      "Golden Bridge Industrial Zone est la division papier de pierre de Carthage. Depuis notre siège à Berlin et notre site de production à Luckau, nous fabriquons du papier minéral et des emballages tissés pour l'agriculture, la construction, la chimie et l'agroalimentaire dans toute l'Europe.",
+      "La division papier de pierre de Carthage fabrique du papier minéral et des emballages tissés pour l'agriculture, la construction, la chimie et l'agroalimentaire dans toute l'Europe, depuis notre siège à Berlin et notre site de production à Luckau.",
     introP2:
-      "Le papier de pierre est composé d'environ 80 % de carbonate de calcium lié par une faible part de résine HDPE. Le résultat : un matériau d'un blanc éclatant, exceptionnellement lisse, naturellement imperméable et résistant à la déchirure — sans enduction ni pelliculage.",
-    factoryCaption: "Site de production — Luckau, Allemagne",
+      "Le papier de pierre est composé d'environ 80 % de carbonate de calcium lié par une faible part de résine HDPE. Le résultat : un matériau d'un blanc éclatant, exceptionnellement lisse, naturellement imperméable et résistant à la déchirure, sans enduction ni pelliculage.",
+    factoryCaption: "Site de production à Luckau, Allemagne",
     productsEyebrow: "Gammes de produits",
     productsTitle: "Trois familles, une même philosophie du matériau.",
     products: [
@@ -1064,8 +1066,8 @@ const fr: Dictionary = {
         description:
           "Sacs durables et résistants à l'humidité pour applications industrielles et commerciales. Naturellement imperméables, avec une surface lisse premium offrant une impression exceptionnelle.",
         features: [
-          "Naturellement imperméables — sans enduction",
-          "Résistance à la déchirure 2–3× supérieure",
+          "Naturellement imperméables, sans enduction",
+          "Résistance à la déchirure 2 à 3× supérieure",
           "Contact alimentaire conforme FDA",
           "Impression offset, UV, numérique et jet d'encre",
         ],
@@ -1098,7 +1100,7 @@ const fr: Dictionary = {
     processSteps: [
       {
         title: "Approvisionnement en calcaire",
-        description: "Le carbonate de calcium provient du calcaire — l'un des minéraux les plus abondants au monde, souvent issu de chutes de carrières existantes.",
+        description: "Le carbonate de calcium provient du calcaire, l'un des minéraux les plus abondants au monde, souvent issu de chutes de carrières existantes.",
       },
       {
         title: "Poudre micronisée",
@@ -1106,7 +1108,7 @@ const fr: Dictionary = {
       },
       {
         title: "Liaison HDPE",
-        description: "La poudre minérale est liée avec ~20 % de résine HDPE non toxique, créant un composé souple et stable — entièrement sans eau ni chlore.",
+        description: "La poudre minérale est liée avec ~20 % de résine HDPE non toxique, créant un composé souple et stable, entièrement sans eau ni chlore.",
       },
       {
         title: "Calandrage et finition",
@@ -1120,7 +1122,7 @@ const fr: Dictionary = {
     sustainP1:
       "Le papier traditionnel consomme du bois, des milliers de litres d'eau et du chlore. Le papier de pierre remplace tout cela par du calcaire abondant et une boucle de production entièrement recyclable.",
     sustainP2:
-      "En fin de vie, le papier de pierre est recyclable via les filières thermoplastiques — et il se photodégrade sous exposition UV prolongée sans libérer de toxines.",
+      "En fin de vie, le papier de pierre est recyclable via les filières thermoplastiques, et il se photodégrade sous exposition UV prolongée sans libérer de toxines.",
     sustainPoints: [
       "Production sans arbre et sans eau",
       "Recyclable en filière thermoplastique",
@@ -1130,9 +1132,9 @@ const fr: Dictionary = {
     specsTitle: "Spécifications du matériau.",
     specs: [
       { label: "Composition", value: "~80 % CaCO₃ + ~20 % HDPE" },
-      { label: "Grammage", value: "80 – 300 g/m²" },
-      { label: "Épaisseur", value: "95 – 350 µm" },
-      { label: "Résistance à la déchirure", value: "2–3× le papier standard" },
+      { label: "Grammage", value: "80 à 300 g/m²" },
+      { label: "Épaisseur", value: "95 à 350 µm" },
+      { label: "Résistance à la déchirure", value: "2 à 3× le papier standard" },
       { label: "Résistance à l'eau", value: "Naturellement imperméable" },
       { label: "Résistance aux graisses", value: "Naturellement résistant" },
       { label: "Compatibilité d'impression", value: "Offset, UV, numérique, jet d'encre" },
@@ -1190,6 +1192,7 @@ const de: Dictionary = {
     shopMenuStoneDesc: "Notizbücher, Säcke & Verpackung",
     academy: "Akademie",
     stonePaper: "Steinpapier",
+    cosmeticsPmu: "Kosmetik & PMU",
     about: "Über uns",
     contact: "Kontakt",
     cart: "Warenkorb",
@@ -1214,7 +1217,7 @@ const de: Dictionary = {
     titleLine1: "Deutsche Qualität",
     titleLine2: "Von Carthage",
     subtitle:
-      "Ein diversifiziertes Unternehmen, das hochwertige Lösungen in den Bereichen Kosmetik, Permanent Make-up, nachhaltige Materialien und zukunftsorientierte Innovationen entwickelt – gefertigt nach höchsten internationalen Qualitätsstandards.",
+      "Ein diversifiziertes Unternehmen, das hochwertige Lösungen in den Bereichen Kosmetik, Permanent Make-up, nachhaltige Materialien und zukunftsorientierte Innovationen entwickelt, gefertigt nach höchsten internationalen Qualitätsstandards.",
     shopCollection: "Unsere Bereiche entdecken",
     aboutCarthage: "Über Carthage",
     bestSellerBadge: "BEST\nSELLER",
@@ -1236,14 +1239,14 @@ const de: Dictionary = {
         label: "Kosmetik & Beauty",
         name: "Kosmetik & PMU",
         description:
-          "Professionelle Pigmente, Cartridge-Nadeln und Hautpflege — nach ISO- & GMP-Standards für Artists und Studios weltweit.",
+          "Professionelle Pigmente, Cartridge-Nadeln und Hautpflege, nach ISO- & GMP-Standards für Artists und Studios weltweit.",
         cta: "Kosmetik entdecken",
       },
       stonePaper: {
         label: "Industrielle Fertigung",
         name: "Steinpapier",
         description:
-          "Wasserfestes, baumfreies Papier, Säcke und Industrieverpackungen von Golden Bridge — aus Kalkstein in Deutschland gefertigt.",
+          "Wasserfestes, baumfreies Papier, Säcke und Industrieverpackungen von Carthage, aus Kalkstein in Deutschland gefertigt.",
         cta: "Steinpapier entdecken",
       },
     },
@@ -1256,19 +1259,19 @@ const de: Dictionary = {
       {
         name: "Kosmetik & PMU",
         description:
-          "Professionelle Pigmente, Cartridge-Nadeln und Hautpflege — entwickelt und gefertigt nach ISO- & GMP-Standards für Artists und Studios weltweit.",
+          "Professionelle Pigmente, Cartridge-Nadeln und Hautpflege, entwickelt und gefertigt nach ISO- & GMP-Standards für Artists und Studios weltweit.",
         cta: "Produkte entdecken",
       },
       {
         name: "Steinpapier",
         description:
-          "Golden Bridge: wasserfestes, baumfreies Papier, Säcke und Industrieverpackungen — aus Kalkstein gefertigt an unserem Standort in Luckau.",
+          "Carthage: wasserfestes, baumfreies Papier, Säcke und Industrieverpackungen, aus Kalkstein gefertigt an unserem Standort in Luckau.",
         cta: "Steinpapier entdecken",
       },
       {
         name: "Akademie",
         description:
-          "Zertifizierte PMU-Ausbildung in Berlin — Sechsergruppen, echte Modelle und sechs Monate Mentoring nach jedem Kurs.",
+          "Zertifizierte PMU-Ausbildung in Berlin, Sechsergruppen, echte Modelle und sechs Monate Mentoring nach jedem Kurs.",
         cta: "Programme ansehen",
       },
     ],
@@ -1289,7 +1292,7 @@ const de: Dictionary = {
     testimonials: [
       {
         quote:
-          "Die V6 Pink Nadeln sind außergewöhnlich – der Silikongriff macht lange Sessions so viel angenehmer. Die Präzision bei Lippenarbeiten ist unerreicht.",
+          "Die V6 Pink Nadeln sind außergewöhnlich, der Silikongriff macht lange Sessions so viel angenehmer. Die Präzision bei Lippenarbeiten ist unerreicht.",
         name: "Sophia M.",
         role: "PMU-Artist, Berlin",
       },
@@ -1301,7 +1304,7 @@ const de: Dictionary = {
       },
       {
         quote:
-          "Die Qualität der Carthage-Produkte spricht für sich. Deutsche Ingenieurskunst trifft Handwerk – ich empfehle sie jeder Schülerin meiner Akademie.",
+          "Die Qualität der Carthage-Produkte spricht für sich. Deutsche Ingenieurskunst trifft Handwerk, ich empfehle sie jeder Schülerin meiner Akademie.",
         name: "Leila R.",
         role: "PMU-Trainerin, Hamburg",
       },
@@ -1309,15 +1312,15 @@ const de: Dictionary = {
     samplesEyebrow: "Unsere Produkte",
     samplesTitle: "Gefertigt mit",
     samplesTitleAccent: "Präzision",
-    samplesSubtitle: "Entdecken Sie Muster aus unseren professionellen Produktlinien — jede entwickelt und hergestellt in Deutschland.",
+    samplesSubtitle: "Entdecken Sie Muster aus unseren professionellen Produktlinien, jede entwickelt und hergestellt in Deutschland.",
     whyTitle: "Warum Profis",
     whyTitleAccent: "Carthage wählen",
     whySubtitle: "Jedes Produkt wird unter einem Dach in Deutschland entwickelt, getestet und hergestellt.",
     whyPoints: [
       { title: "Deutsche Ingenieurskunst", description: "Alle Produkte werden in Deutschland unter strengen Qualitätsprotokollen entwickelt, getestet und hergestellt." },
       { title: "ISO & GMP zertifiziert", description: "Unsere Einrichtungen erfüllen die höchsten internationalen Standards für Kosmetik- und Medizinproduktherstellung." },
-      { title: "Vom Künstler mitgestaltet", description: "Produkte werden mit aktiven PMU-Künstlern co-entwickelt — jedes Detail dient den echten Bedürfnissen im Studio." },
-      { title: "Nachhaltige Materialien", description: "Von veganen Pigmenten bis zu baumfreiem Steinpapier — Nachhaltigkeit ist in jede Produktlinie integriert." },
+      { title: "Vom Künstler mitgestaltet", description: "Produkte werden mit aktiven PMU-Künstlern co-entwickelt, jedes Detail dient den echten Bedürfnissen im Studio." },
+      { title: "Nachhaltige Materialien", description: "Von veganen Pigmenten bis zu baumfreiem Steinpapier, Nachhaltigkeit ist in jede Produktlinie integriert." },
     ],
   },
   shop: {
@@ -1325,7 +1328,7 @@ const de: Dictionary = {
     title: "Professionelle PMU-",
     titleAccent: "Kollektion",
     subtitle:
-      "Entdecken Sie unser komplettes Sortiment professioneller Permanent-Make-up-Lösungen – gemacht für Präzision und Exzellenz.",
+      "Entdecken Sie unser komplettes Sortiment professioneller Permanent-Make-up-Lösungen, gemacht für Präzision und Exzellenz.",
     all: "Alle",
     addToCart: "In den Warenkorb",
     outOfStock: "Ausverkauft",
@@ -1353,7 +1356,7 @@ const de: Dictionary = {
     stoneTitle: "Steinpapier-",
     stoneTitleAccent: "Kollektion",
     stoneSubtitle:
-      "Baumfreie Notizbücher, Säcke und Verpackungen von Golden Bridge - wasserfest, reißfest und produziert in Deutschland.",
+      "Baumfreie Notizbücher, Säcke und Verpackungen von Carthage - wasserfest, reißfest und produziert in Deutschland.",
     stoneBreadcrumb: "Steinpapier-Shop",
   },
   product: {
@@ -1420,7 +1423,7 @@ const de: Dictionary = {
     title: "Lassen Sie uns ins",
     titleAccent: "Gespräch kommen.",
     subtitle:
-      "Ob Auftragsfertigung, Akademie-Anmeldung oder internationale Partnerschaften – unser Team ist für Sie da.",
+      "Ob Auftragsfertigung, Akademie-Anmeldung oder internationale Partnerschaften, unser Team ist für Sie da.",
     office: "City West Office (Zentrale)",
     phone: "Telefon",
     email: "E-Mail",
@@ -1451,7 +1454,7 @@ const de: Dictionary = {
   },
   footer: {
     tagline:
-      "Premium-Kosmetik- und Pigmentierungsprodukte. Hergestellt in Deutschland – mit Präzision und Sorgfalt für PMU-Artists weltweit.",
+      "Premium-Kosmetik- und Pigmentierungsprodukte. Hergestellt in Deutschland, mit Präzision und Sorgfalt für PMU-Artists weltweit.",
     shop: "Shop",
     allProducts: "Alle Produkte",
     company: "Unternehmen",
@@ -1481,18 +1484,18 @@ const de: Dictionary = {
     missionP1:
       "Carthage ist mehr als eine Kosmetikmarke. Es ist ein vielseitiges Unternehmen, das professionelle PMU-Produkte (Permanent Make-up) herstellt, kosmetische Formulierungen fertigt und auch in der Steinpapier-Produktion tätig ist.",
     missionP2:
-      "Alle kosmetischen Produkte werden in Deutschland nach höchsten Qualitätsstandards gefertigt und erfüllen ISO- und GMP-Zertifizierungen. Von maßgeschneiderten Formulierungen über Premium-Pigmente bis zu präzisionsgefertigten Nadeln – jedes Produkt ist für Artists gemacht, die Exzellenz fordern.",
+      "Alle kosmetischen Produkte werden in Deutschland nach höchsten Qualitätsstandards gefertigt und erfüllen ISO- und GMP-Zertifizierungen. Von maßgeschneiderten Formulierungen über Premium-Pigmente bis zu präzisionsgefertigten Nadeln, jedes Produkt ist für Artists gemacht, die Exzellenz fordern.",
     stonePaperTitle: "Steinpapier-",
     stonePaperAccent: "Produktion",
     stonePaperP1:
-      "Über Kosmetik hinaus ist Carthage auch in der innovativen Steinpapier-Produktion über Golden Bridge Co. tätig. Steinpapier ist eine nachhaltige, baumfreie Alternative aus Calciumcarbonat — wasserfest, reißfest und umweltfreundlich.",
+      "Über Kosmetik hinaus entwickelt Carthage auch innovative Steinpapier-Produkte. Dieses nachhaltige, baumfreie Material aus Calciumcarbonat ist wasserfest, reißfest und umweltfreundlich.",
     stonePaperP2:
       "Diese Sparte spiegelt Carthages Engagement für Innovation und Nachhaltigkeit in mehreren Branchen wider.",
-    visitStonePaper: "Golden Bridge Co. besuchen",
+    visitStonePaper: "Carthage besuchen",
     founderTitle: "Geleitet von",
     founderAccent: "Rahma Yarbakht",
     founderP1:
-      "Rahma Yarbakht bringt über ein Jahrzehnt Erfahrung in Permanent-Make-up-Kunst und Ausbildung mit. Die Akademie richtet sich an Artists, die mehr wollen als ein schnelles Zertifikat – ein professionelles Umfeld, um die technischen, visuellen und unternehmerischen Standards hochwertiger PMU-Arbeit zu erlernen.",
+      "Rahma Yarbakht bringt über ein Jahrzehnt Erfahrung in Permanent-Make-up-Kunst und Ausbildung mit. Die Akademie richtet sich an Artists, die mehr wollen als ein schnelles Zertifikat: ein professionelles Umfeld, um die technischen, visuellen und unternehmerischen Standards hochwertiger PMU-Arbeit zu erlernen.",
     founderP2:
       "Jede Lektion basiert auf echten Kundenergebnissen und verbindet Feingefühl, Symmetrie, Sicherheit und Selbstvertrauen.",
     visitAcademy: "Zur Akademie",
@@ -1509,7 +1512,7 @@ const de: Dictionary = {
       },
       {
         title: "Internationale Standards",
-        desc: "ISO- & GMP-zertifizierte Produktionsstätte in Deutschland – für Produkte, die internationale regulatorische Anforderungen erfüllen.",
+        desc: "ISO- & GMP-zertifizierte Produktionsstätte in Deutschland, für Produkte, die internationale regulatorische Anforderungen erfüllen.",
       },
     ],
   },
@@ -1518,7 +1521,7 @@ const de: Dictionary = {
     heroTitle1: "PMU lernen, wo",
     heroTitle2: "die Pigmente entstehen.",
     heroSubtitle:
-      "Kleine Gruppen, echte Modelle und ein Lehrplan, entwickelt in einem produzierenden deutschen Hersteller. Sie trainieren mit denselben Pigmenten und Nadeln, die wir an Studios in 30 Ländern liefern — und gehen mit einem Zertifikat, das Gewicht hat.",
+      "Kleine Gruppen, echte Modelle und ein Lehrplan, entwickelt in einem produzierenden deutschen Hersteller. Sie trainieren mit denselben Pigmenten und Nadeln, die wir an Studios in 30 Ländern liefern, und gehen mit einem Zertifikat, das Gewicht hat.",
     heroCtaEnroll: "Jetzt anmelden",
     heroCtaPrograms: "Programme vergleichen",
     heroFacts: [
@@ -1536,7 +1539,7 @@ const de: Dictionary = {
       {
         title: "Programm wählen",
         description:
-          "Vergleichen Sie die Kurse unten. Unsicher beim Level? Erwähnen Sie es in der Bewerbung — wir beraten ehrlich, auch wenn das heißt: noch warten.",
+          "Vergleichen Sie die Kurse unten. Unsicher beim Level? Erwähnen Sie es in der Bewerbung, wir beraten ehrlich, auch wenn das heißt: noch warten.",
       },
       {
         title: "Bewerbung senden",
@@ -1562,7 +1565,7 @@ const de: Dictionary = {
     included: [
       {
         title: "Carthage-Arbeitskit",
-        description: "Maschinenzeit, V6-Cartridges und das volle Pigmentsortiment — die Produkte aus unserer eigenen Fertigung.",
+        description: "Maschinenzeit, V6-Cartridges und das volle Pigmentsortiment, die Produkte aus unserer eigenen Fertigung.",
       },
       {
         title: "Praxis an echten Modellen",
@@ -1578,23 +1581,23 @@ const de: Dictionary = {
       },
       {
         title: "Hygiene- & Compliance-Modul",
-        description: "Deutsche Hygieneverordnung, Dokumentation und Einverständniserklärungen — der Teil, den die meisten Akademien auslassen.",
+        description: "Deutsche Hygieneverordnung, Dokumentation und Einverständniserklärungen, der Teil, den die meisten Akademien auslassen.",
       },
       {
         title: "Business-Starter-Session",
-        description: "Preisgestaltung, Portfolio und Strategie für die ersten Kundinnen — für Studiogründung oder Wachstum.",
+        description: "Preisgestaltung, Portfolio und Strategie für die ersten Kundinnen, für Studiogründung oder Wachstum.",
       },
     ],
     instructorEyebrow: "Ihre Ausbilderin",
     instructorName: "Rahma Yarbakht",
     instructorP1:
-      "Rahma arbeitet seit über einem Jahrzehnt im Permanent Make-up — erst als Artist, dann als Ausbilderin von Artists in ganz Europa. Ihre Klassen sind bewusst klein: Technikkorrekturen passieren an Ihrem Platz, nicht von der Bühne.",
+      "Rahma arbeitet seit über einem Jahrzehnt im Permanent Make-up, erst als Artist, dann als Ausbilderin von Artists in ganz Europa. Ihre Klassen sind bewusst klein: Technikkorrekturen passieren an Ihrem Platz, nicht von der Bühne.",
     instructorP2:
       "Jede Lektion basiert auf verheilten Ergebnissen: Feingefühl, Symmetrie, Sicherheit und das Selbstvertrauen, die eigene Arbeit angemessen zu berechnen.",
     formEyebrow: "Anmeldung",
     formTitle: "Bewerben Sie sich um Ihren Platz.",
     formSubtitle:
-      "Keine Zahlung jetzt — Ihr Platz wird erst nach unserem Gespräch bestätigt. Bewerbungen werden innerhalb eines Werktags geprüft.",
+      "Keine Zahlung jetzt, Ihr Platz wird erst nach unserem Gespräch bestätigt. Bewerbungen werden innerhalb eines Werktags geprüft.",
     formCourse: "Programm",
     formCoursePlaceholder: "Programm auswählen",
     formName: "Vollständiger Name",
@@ -1604,7 +1607,7 @@ const de: Dictionary = {
     formPhone: "Telefon (optional)",
     formCountry: "Land",
     formMessage: "Ihr Hintergrund (optional)",
-    formMessagePlaceholder: "Erzählen Sie uns, wo Sie starten — Kosmetikerin, Tätowiererin, kompletter Neuanfang...",
+    formMessagePlaceholder: "Erzählen Sie uns, wo Sie starten, Kosmetikerin, Tätowiererin, kompletter Neuanfang...",
     formSubmit: "Bewerbung absenden",
     formSubmitting: "Wird gesendet...",
     formNameRequired: "Bitte geben Sie Ihren Namen ein",
@@ -1614,7 +1617,7 @@ const de: Dictionary = {
     confirmTitle: "Bewerbung eingegangen.",
     confirmBody: "Eine Bestätigung ist auf dem Weg in Ihr Postfach. So geht es weiter:",
     confirmSteps: [
-      "Wir prüfen Ihre Bewerbung — in der Regel innerhalb eines Werktags",
+      "Wir prüfen Ihre Bewerbung, in der Regel innerhalb eines Werktags",
       "Wir melden uns persönlich, bestätigen die Termine und reservieren Ihren Platz",
       "Sie erhalten Ihr Onboarding-Paket mit allem für den ersten Tag",
     ],
@@ -1624,7 +1627,7 @@ const de: Dictionary = {
   },
   stonePaper: {
     breadcrumb: "Steinpapier",
-    heroEyebrow: "Golden Bridge — eine Carthage-Division",
+    heroEyebrow: "Carthage, Steinpapier",
     heroTitle1: "Papier, geboren",
     heroTitle2: "aus Stein.",
     heroSubtitle:
@@ -1635,15 +1638,15 @@ const de: Dictionary = {
       { value: "~80 %", label: "Calciumcarbonat" },
       { value: "0", label: "Gefällte Bäume" },
       { value: "0 L", label: "Wasser in der Produktion" },
-      { value: "2–3×", label: "Reißfestigkeit vs. Zellstoffpapier" },
+      { value: "2 bis 3×", label: "Reißfestigkeit vs. Zellstoffpapier" },
     ],
     introEyebrow: "Die Division",
     introTitle: "Industrieverpackung nach Kosmetik-Standard.",
     introP1:
-      "Golden Bridge Industrial Zone ist die Steinpapier-Division von Carthage. Von unserem Sitz in Berlin und dem Produktionsstandort in Luckau fertigen wir mineralbasiertes Papier und Gewebeverpackungen für Landwirtschaft, Bau, Chemie und Lebensmittelindustrie in ganz Europa.",
+      "Die Steinpapier-Division von Carthage fertigt mineralbasiertes Papier und Gewebeverpackungen für Landwirtschaft, Bau, Chemie und Lebensmittelindustrie in ganz Europa, von unserem Sitz in Berlin und dem Produktionsstandort in Luckau.",
     introP2:
-      "Steinpapier besteht zu rund 80 % aus Calciumcarbonat, gebunden mit einem geringen Anteil HDPE-Harz. Das Ergebnis ist ein strahlend weißes, außergewöhnlich glattes Material – von Natur aus wasserfest und reißfest, ganz ohne Beschichtung oder Laminierung.",
-    factoryCaption: "Produktionsstandort — Luckau, Deutschland",
+      "Steinpapier besteht zu rund 80 % aus Calciumcarbonat, gebunden mit einem geringen Anteil HDPE-Harz. Das Ergebnis ist ein strahlend weißes, außergewöhnlich glattes Material, von Natur aus wasserfest und reißfest, ganz ohne Beschichtung oder Laminierung.",
+    factoryCaption: "Produktionsstandort, Luckau, Deutschland",
     productsEyebrow: "Produktlinien",
     productsTitle: "Drei Familien, eine Materialphilosophie.",
     products: [
@@ -1652,8 +1655,8 @@ const de: Dictionary = {
         description:
           "Langlebige, feuchtigkeitsbeständige Säcke für Industrie und Handel. Von Natur aus wasserfest, mit glatter Premium-Oberfläche für exzellente Druckergebnisse.",
         features: [
-          "Von Natur aus wasserfest — ohne Beschichtung",
-          "2–3-fache Reißfestigkeit von Papier",
+          "Von Natur aus wasserfest, ohne Beschichtung",
+          "2 bis 3-fache Reißfestigkeit von Papier",
           "FDA-konformer Lebensmittelkontakt",
           "Offset-, UV-, Digital- & Inkjet-Druck",
         ],
@@ -1686,15 +1689,15 @@ const de: Dictionary = {
     processSteps: [
       {
         title: "Kalkstein-Gewinnung",
-        description: "Calciumcarbonat wird aus Kalkstein gewonnen — einem der häufigsten Minerale der Erde, oft als Verschnitt bestehender Steinbrüche.",
+        description: "Calciumcarbonat wird aus Kalkstein gewonnen, einem der häufigsten Minerale der Erde, oft als Verschnitt bestehender Steinbrüche.",
       },
       {
         title: "Mikronisiertes Pulver",
-        description: "Der Stein wird zu ultrafeinem CaCO₃-Pulver gemahlen — die mineralische Basis für die strahlende Weiße und Glätte des Steinpapiers.",
+        description: "Der Stein wird zu ultrafeinem CaCO₃-Pulver gemahlen, die mineralische Basis für die strahlende Weiße und Glätte des Steinpapiers.",
       },
       {
         title: "HDPE-Bindung",
-        description: "Das Mineralpulver wird mit ~20 % ungiftigem HDPE-Harz gebunden. So entsteht ein flexibler, stabiler Verbund — ganz ohne Wasser oder Bleiche.",
+        description: "Das Mineralpulver wird mit ~20 % ungiftigem HDPE-Harz gebunden. So entsteht ein flexibler, stabiler Verbund, ganz ohne Wasser oder Bleiche.",
       },
       {
         title: "Kalandrieren & Veredelung",
@@ -1708,7 +1711,7 @@ const de: Dictionary = {
     sustainP1:
       "Herkömmliches Papier verbraucht Holz, tausende Liter Wasser und Chlorbleiche. Steinpapier ersetzt all das durch reichlich vorhandenen Kalkstein und einen vollständig recycelbaren Produktionskreislauf.",
     sustainP2:
-      "Am Ende seiner Lebensdauer ist Steinpapier über thermoplastische Recyclingströme wiederverwertbar — und es photodegradiert unter längerer UV-Einstrahlung, ohne Giftstoffe freizusetzen.",
+      "Am Ende seiner Lebensdauer ist Steinpapier über thermoplastische Recyclingströme wiederverwertbar, und es photodegradiert unter längerer UV-Einstrahlung, ohne Giftstoffe freizusetzen.",
     sustainPoints: [
       "Produktion ohne Holz und Wasser",
       "Recycelbar im Thermoplast-Strom",
@@ -1718,9 +1721,9 @@ const de: Dictionary = {
     specsTitle: "Material-Spezifikationen.",
     specs: [
       { label: "Zusammensetzung", value: "~80 % CaCO₃ + ~20 % HDPE" },
-      { label: "Flächengewicht", value: "80 – 300 g/m²" },
-      { label: "Dicke", value: "95 – 350 µm" },
-      { label: "Reißfestigkeit", value: "2–3× Standardpapier" },
+      { label: "Flächengewicht", value: "80 bis 300 g/m²" },
+      { label: "Dicke", value: "95 bis 350 µm" },
+      { label: "Reißfestigkeit", value: "2 bis 3× Standardpapier" },
       { label: "Wasserbeständigkeit", value: "Von Natur aus wasserfest" },
       { label: "Öl-/Fettbeständigkeit", value: "Von Natur aus beständig" },
       { label: "Druckkompatibilität", value: "Offset, UV, Digital, Inkjet" },

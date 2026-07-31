@@ -24,7 +24,7 @@ export function ShopClient({
   categories: Category[]
   initialQuery: string
   initialCategory: string
-  /** "stonepaper" renders the dedicated Golden Bridge shop heading */
+  /** "stonepaper" renders the dedicated Carthage shop heading */
   variant?: "default" | "stonepaper"
 }) {
   const { locale, t } = useLanguage()
@@ -184,7 +184,7 @@ export function ShopClient({
             className={priceInputClass}
             aria-label={`${t.shop.price} ${t.shop.priceMin}`}
           />
-          <span className="text-[#ccc]">–</span>
+          <span className="text-[#ccc]">, </span>
           <input
             type="number"
             min="0"
@@ -339,8 +339,8 @@ export function ShopClient({
               </div>
             ) : (
               <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5 mb-16">
-                {filteredProducts.map((product) => (
-                  <ProductCard key={product.id} product={product} showAddToCart />
+                {filteredProducts.map((product, index) => (
+                  <ProductCard key={product.id} product={product} showAddToCart priority={index === 0} />
                 ))}
               </div>
             )}

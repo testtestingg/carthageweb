@@ -18,7 +18,7 @@ export function ProductBadge({ badge }: { badge: NonNullable<Product["badge"]> }
   )
 }
 
-export function ProductCard({ product, showAddToCart = false }: { product: Product; showAddToCart?: boolean }) {
+export function ProductCard({ product, showAddToCart = false, priority = false }: { product: Product; showAddToCart?: boolean; priority?: boolean }) {
   const { addItem } = useCart()
   const { locale, t } = useLanguage()
   const [added, setAdded] = useState(false)
@@ -47,6 +47,7 @@ export function ProductCard({ product, showAddToCart = false }: { product: Produ
             src={product.image}
             alt={info.name}
             fill
+            priority={priority}
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
             className="object-cover transition-transform duration-300 group-hover:scale-105"
           />

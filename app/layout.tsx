@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     template: "%s | Carthage",
   },
   description:
-    "German industry & production group: professional cosmetics & PMU products, sustainable stone paper by Golden Bridge, and a certified PMU academy in Berlin.",
+    "German industry & production group: professional cosmetics & PMU products, sustainable stone paper by Carthage, and a certified PMU academy in Berlin.",
   keywords:
     "PMU, permanent makeup, cosmetic, pigmentation, needles, stone paper, Carthage, made in Germany",
   alternates: {
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     url: SITE_URL,
     title: "Carthage GmbH - Cosmetics, PMU & Stone Paper | Made in Germany",
     description:
-      "German industry & production group: cosmetics & PMU, stone paper by Golden Bridge, and a certified academy in Berlin.",
+      "German industry & production group: cosmetics & PMU, stone paper by Carthage, and a certified academy in Berlin.",
     images: [{ url: "/logo-carthage.png", width: 512, height: 512, alt: "Carthage GmbH logo" }],
   },
   robots: {
