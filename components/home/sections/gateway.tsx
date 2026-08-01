@@ -2,34 +2,62 @@
 
 import Link from "next/link"
 import Image from "next/image"
-import { MoveUpRight } from "lucide-react"
+import { ArrowRight, MoveUpRight } from "lucide-react"
 import { gsap } from "@/lib/animation/gsap"
 import { useScrollScene } from "@/lib/animation/use-scroll-scene"
 import type { homeContent } from "@/lib/home-content"
 
 type Copy = (typeof homeContent)["en"]
 
+/** One image per division, so the choice reads before the copy does. */
+const BLOCK_MEDIA = [
+  { src: "/stone-paper/paper-3.jpg", alt: "Carthage stone paper rolls, sheets and an open notebook" },
+  { src: "/posters/pmu-application.jpg", alt: "A Carthage cartridge in use during a permanent makeup treatment" },
+]
+
 /**
- * Closing navigation + footer transition (sequence 6).
+ * Closing choice plus the footer transition.
  *
- * The three destinations reveal as masked rows, then the oversized Carthage
- * mark rises into place and settles as the footer is exposed beneath it. The
- * whole block sits on the same ink as the site footer, so the seam between
- * them is invisible — no white gap.
+ * The homepage explains the group; this is where the visitor picks a side.
+ * Two large media blocks, one per division, so the decision is obvious rather
+ * than buried in a list. The shop sits under them as a secondary route, since
+ * it is a commercial destination rather than a division.
+ *
+ * The block sits on the same ink as the site footer, so the seam between them
+ * is invisible.
  */
 export function Gateway({ c }: { c: Copy }) {
   const ref = useScrollScene<HTMLElement>(({ q, root, reduced }) => {
     if (reduced) return
 
     gsap
-      .timeline({ scrollTrigger: { trigger: root, start: "top 72%" } })
+      .timeline({ scrollTrigger: { trigger: root, start: "top 74%" } })
       .from(q(".gateway-title > span > span"), { yPercent: 108, duration: 1, ease: "expo.out", stagger: 0.08 })
-      .from(q(".gateway-row"), { opacity: 0, y: 26, duration: 0.7, stagger: 0.08, ease: "power2.out" }, 0.25)
+      .fromTo(
+        q(".gateway-block"),
+        { clipPath: "inset(0% 0% 100% 0%)", y: 40 },
+        { clipPath: "inset(0% 0% 0% 0%)", y: 0, duration: 1.2, ease: "power3.out", stagger: 0.14 },
+        0.2,
+      )
+      .from(q(".gateway-shop"), { opacity: 0, y: 20, duration: 0.7, ease: "power2.out" }, 0.9)
 
-    // Wordmark settles into place as the footer comes up behind it.
+    // Each block's media drifts as it passes, so the pair does not feel static.
+    q(".gateway-block").forEach((block, i) => {
+      gsap.fromTo(
+        block.querySelector(".gateway-block-media img"),
+        { yPercent: -4 },
+        {
+          yPercent: 4,
+          ease: "none",
+          scrollTrigger: { trigger: block, start: "top bottom", end: "bottom top", scrub: 0.8 },
+        },
+      )
+      gsap.set(block, { transformOrigin: i === 0 ? "left center" : "right center" })
+    })
+
     gsap.fromTo(
       q(".gateway-mark"),
-      { yPercent: 26, scale: 1.06, opacity: 0.55 },
+      { yPercent: 20, scale: 1.05, opacity: 0.6 },
       {
         yPercent: 0,
         scale: 1,
@@ -50,16 +78,42 @@ export function Gateway({ c }: { c: Copy }) {
           </span>
         </h2>
 
-        <nav className="gateway-rows" aria-label={c.gateway.title}>
-          {c.gateway.links.map((link) => (
-            <Link href={link.href} className="gateway-row" key={link.n}>
-              <span className="mono gateway-n">{link.n}</span>
-              <span className="gateway-label">{link.label}</span>
-              <span className="gateway-desc">{link.desc}</span>
-              <MoveUpRight aria-hidden="true" />
+        <div className="gateway-blocks">
+          {c.gateway.blocks.map((block, i) => (
+            <Link href={block.href} key={block.n} className="gateway-block">
+              <span className="gateway-block-media">
+                <Image
+                  src={BLOCK_MEDIA[i].src}
+                  alt={BLOCK_MEDIA[i].alt}
+                  fill
+                  sizes="(max-width: 900px) 100vw, 46vw"
+                  className="object-cover"
+                />
+              </span>
+
+              <span className="gateway-block-copy">
+                <span className="gateway-block-label">
+                  <span className="mono">{block.n}</span>
+                  {block.label}
+                </span>
+                <span className="gateway-block-title">{block.title}</span>
+                <span className="gateway-block-desc">{block.desc}</span>
+                <span className="gateway-block-cta">
+                  {block.cta}
+                  <ArrowRight aria-hidden="true" />
+                </span>
+              </span>
             </Link>
           ))}
-        </nav>
+        </div>
+
+        <p className="gateway-shop">
+          <span>{c.gateway.shopNote}</span>
+          <Link href="/shop" className="link-underline">
+            {c.gateway.shopCta}
+            <MoveUpRight aria-hidden="true" />
+          </Link>
+        </p>
       </div>
 
       <div className="gateway-mark">

@@ -111,13 +111,28 @@ const en = {
     ],
   },
   gateway: {
-    eyebrow: "Continue",
-    title: "Where would you like to go?",
-    links: [
-      { n: "01", label: "Stone Paper", desc: "Material, process and industrial packaging", href: "/stone-paper" },
-      { n: "02", label: "Cosmetics & PMU", desc: "The professional beauty division", href: "/carthage-care" },
-      { n: "03", label: "Shop", desc: "Buy pigments, cartridges, care and stone paper", href: "/shop" },
+    eyebrow: "Two divisions",
+    title: "Which part of Carthage would you like to see?",
+    blocks: [
+      {
+        n: "01",
+        label: "Carthage Stone Paper",
+        title: "Packaging solutions",
+        desc: "Tree free stone paper for notebooks, bags and industrial packaging, produced in Germany.",
+        cta: "Enter Stone Paper",
+        href: "/stone-paper",
+      },
+      {
+        n: "02",
+        label: "Cosmetics & PMU",
+        title: "Cosmetic products",
+        desc: "Pigments, precision cartridge needles and cosmetic care for permanent makeup professionals.",
+        cta: "Enter Cosmetics & PMU",
+        href: "/carthage-care",
+      },
     ],
+    shopNote: "Looking to order directly?",
+    shopCta: "Visit the shop",
   },
 }
 
@@ -219,13 +234,28 @@ const fr: typeof en = {
     ],
   },
   gateway: {
-    eyebrow: "Continuer",
-    title: "Où souhaitez-vous aller ?",
-    links: [
-      { n: "01", label: "Papier de pierre", desc: "Matière, procédé et emballage industriel", href: "/stone-paper" },
-      { n: "02", label: "Cosmétiques & PMU", desc: "La division beauté professionnelle", href: "/carthage-care" },
-      { n: "03", label: "Boutique", desc: "Pigments, cartouches, soins et papier de pierre", href: "/shop" },
+    eyebrow: "Deux divisions",
+    title: "Quelle partie de Carthage souhaitez-vous découvrir ?",
+    blocks: [
+      {
+        n: "01",
+        label: "Carthage Stone Paper",
+        title: "Solutions d’emballage",
+        desc: "Papier de pierre sans arbre pour carnets, sacs et emballage industriel, produit en Allemagne.",
+        cta: "Entrer dans Stone Paper",
+        href: "/stone-paper",
+      },
+      {
+        n: "02",
+        label: "Cosmétiques & PMU",
+        title: "Produits cosmétiques",
+        desc: "Pigments, aiguilles cartouches de précision et soins pour les professionnels du maquillage permanent.",
+        cta: "Entrer dans Cosmétiques & PMU",
+        href: "/carthage-care",
+      },
     ],
+    shopNote: "Vous souhaitez commander directement ?",
+    shopCta: "Visiter la boutique",
   },
 }
 
@@ -327,13 +357,28 @@ const de: typeof en = {
     ],
   },
   gateway: {
-    eyebrow: "Weiter",
-    title: "Wohin möchten Sie?",
-    links: [
-      { n: "01", label: "Steinpapier", desc: "Material, Prozess und Industrieverpackung", href: "/stone-paper" },
-      { n: "02", label: "Kosmetik & PMU", desc: "Der professionelle Beauty Bereich", href: "/carthage-care" },
-      { n: "03", label: "Shop", desc: "Pigmente, Cartridges, Pflege und Steinpapier", href: "/shop" },
+    eyebrow: "Zwei Bereiche",
+    title: "Welchen Teil von Carthage möchten Sie sehen?",
+    blocks: [
+      {
+        n: "01",
+        label: "Carthage Stone Paper",
+        title: "Verpackungslösungen",
+        desc: "Baumfreies Steinpapier für Notizbücher, Taschen und Industrieverpackung, gefertigt in Deutschland.",
+        cta: "Zu Stone Paper",
+        href: "/stone-paper",
+      },
+      {
+        n: "02",
+        label: "Kosmetik & PMU",
+        title: "Kosmetikprodukte",
+        desc: "Pigmente, Präzisions Cartridge Nadeln und Pflegeprodukte für Permanent Make-up Profis.",
+        cta: "Zu Kosmetik & PMU",
+        href: "/carthage-care",
+      },
     ],
+    shopNote: "Möchten Sie direkt bestellen?",
+    shopCta: "Zum Shop",
   },
 }
 
