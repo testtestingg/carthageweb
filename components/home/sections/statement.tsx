@@ -76,7 +76,10 @@ export function Statement({ c }: { c: Copy }) {
             ))}
           </h2>
 
-          <p className="statement-support">{c.statement.body}</p>
+          <div className="statement-support">
+            <p>{c.statement.body}</p>
+            <p>{c.statement.body2}</p>
+          </div>
 
           {/* Spec strip, runs across the column rather than sitting in a
               half-empty side rail. */}

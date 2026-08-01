@@ -98,6 +98,16 @@ export function Hero({ c }: { c: Copy }) {
 
         <p className="hero-body hero-stagger">{c.hero.body}</p>
 
+        {/* Company plate: where the group is based and where it produces. */}
+        <dl className="hero-facts hero-stagger">
+          {c.hero.facts.map(([label, value]) => (
+            <div key={label}>
+              <dt className="mono">{label}</dt>
+              <dd>{value}</dd>
+            </div>
+          ))}
+        </dl>
+
         <div className="hero-divisions hero-stagger">
           <Link href={c.divisions.stone.href}>
             <span className="mono">{c.divisions.stone.index}</span>

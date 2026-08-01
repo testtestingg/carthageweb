@@ -13,10 +13,15 @@ import type { Locale } from "./types"
 
 const en = {
   hero: {
-    eyebrow: "Carthage Group · Made in Germany",
+    eyebrow: "Carthage GmbH · Berlin · Made in Germany",
     // Rendered as individually masked lines. Keep each line short.
     titleLines: ["Two materials.", "One standard."],
-    body: "Carthage is a German production group working in mineral based stone paper and professional cosmetics. Two divisions, built on the same discipline of material and precision.",
+    body: "Carthage GmbH is a German manufacturer working across two industries: mineral stone paper for print and industrial packaging, and professional cosmetics for permanent makeup. Both divisions develop and produce in Germany, and the group runs its own PMU academy in Berlin.",
+    facts: [
+      ["Headquarters", "Berlin, Germany"],
+      ["Cosmetics production", "Germany, ISO & GMP"],
+      ["Stone paper", "Luckau, Germany"],
+    ],
     primary: "Explore the group",
     secondary: "Visit the shop",
     scroll: "Scroll",
@@ -31,10 +36,13 @@ const en = {
     eyebrow: "One group · two divisions",
     // Scrubbed word by word. Keep it one readable sentence.
     lead: "Carthage works at two ends of the same idea: that a finished product is only as good as the material decisions behind it.",
-    body: "One division mills limestone into a tree free paper. The other develops pigments, cartridge needles and care products for permanent makeup professionals. Different industries, one way of working: controlled inputs, measurable outputs, and products designed to be used every day.",
+    body: "One division mills limestone into a tree free paper used for notebooks, bags and industrial packaging. The other develops pigments, cartridge needles and care products for permanent makeup professionals, manufactured in Germany to ISO and GMP certified standards.",
+    body2: "Alongside the two product divisions, Carthage runs a permanent makeup academy in Berlin, where artists train on the same pigments and cartridges the company ships to studios. Product development and education sit in the same building, so what is learned in a course feeds back into what gets made.",
     meta: [
+      ["Company", "Carthage GmbH"],
+      ["Headquarters", "Berlin, Germany"],
       ["Divisions", "Stone Paper · Cosmetics & PMU"],
-      ["Production", "Germany"],
+      ["Standards", "ISO & GMP certified"],
       ["Academy", "Berlin"],
     ],
   },
@@ -121,9 +129,14 @@ const en = {
 
 const fr: typeof en = {
   hero: {
-    eyebrow: "Carthage Group · Fabriqué en Allemagne",
+    eyebrow: "Carthage GmbH · Berlin · Fabriqué en Allemagne",
     titleLines: ["Deux matières.", "Une exigence."],
-    body: "Carthage est un groupe de production allemand actif dans le papier de pierre minéral et les cosmétiques professionnels. Deux divisions, bâties sur la même discipline de la matière et de la précision.",
+    body: "Carthage GmbH est un fabricant allemand actif dans deux industries : le papier de pierre minéral pour l’impression et l’emballage industriel, et les cosmétiques professionnels pour le maquillage permanent. Les deux divisions développent et produisent en Allemagne, et le groupe dirige sa propre académie PMU à Berlin.",
+    facts: [
+      ["Siège", "Berlin, Allemagne"],
+      ["Production cosmétique", "Allemagne, ISO & GMP"],
+      ["Papier de pierre", "Luckau, Allemagne"],
+    ],
     primary: "Découvrir le groupe",
     secondary: "Visiter la boutique",
     scroll: "Défiler",
@@ -137,10 +150,13 @@ const fr: typeof en = {
   statement: {
     eyebrow: "Un groupe · deux divisions",
     lead: "Carthage travaille aux deux extrémités d’une même idée : un produit fini ne vaut que les décisions de matière qui le précèdent.",
-    body: "Une division transforme le calcaire en un papier sans arbre. L’autre développe pigments, aiguilles cartouches et soins pour les professionnels du maquillage permanent. Deux industries, une même méthode : des intrants maîtrisés, des résultats mesurables et des produits pensés pour l’usage quotidien.",
+    body: "Une division transforme le calcaire en un papier sans arbre utilisé pour les carnets, les sacs et l’emballage industriel. L’autre développe pigments, aiguilles cartouches et soins pour les professionnels du maquillage permanent, fabriqués en Allemagne selon des standards certifiés ISO et GMP.",
+    body2: "Aux côtés des deux divisions produit, Carthage dirige une académie de maquillage permanent à Berlin, où les artistes se forment sur les pigments et cartouches que l’entreprise livre aux studios. Développement produit et formation partagent le même lieu : ce qui s’apprend en cours nourrit ce qui se fabrique.",
     meta: [
+      ["Société", "Carthage GmbH"],
+      ["Siège", "Berlin, Allemagne"],
       ["Divisions", "Stone Paper · Cosmétiques & PMU"],
-      ["Production", "Allemagne"],
+      ["Standards", "Certifié ISO & GMP"],
       ["Académie", "Berlin"],
     ],
   },
@@ -227,9 +243,14 @@ const fr: typeof en = {
 
 const de: typeof en = {
   hero: {
-    eyebrow: "Carthage Group · Made in Germany",
+    eyebrow: "Carthage GmbH · Berlin · Made in Germany",
     titleLines: ["Zwei Materialien.", "Ein Anspruch."],
-    body: "Carthage ist eine deutsche Produktionsgruppe für mineralisches Steinpapier und professionelle Kosmetik. Zwei Bereiche, gebaut auf derselben Disziplin aus Material und Präzision.",
+    body: "Die Carthage GmbH ist ein deutscher Hersteller in zwei Industrien: mineralisches Steinpapier für Druck und Industrieverpackung sowie professionelle Kosmetik für Permanent Make-up. Beide Bereiche entwickeln und fertigen in Deutschland, und die Gruppe betreibt eine eigene PMU Academy in Berlin.",
+    facts: [
+      ["Hauptsitz", "Berlin, Deutschland"],
+      ["Kosmetikfertigung", "Deutschland, ISO & GMP"],
+      ["Steinpapier", "Luckau, Deutschland"],
+    ],
     primary: "Die Gruppe entdecken",
     secondary: "Zum Shop",
     scroll: "Scrollen",
@@ -243,10 +264,13 @@ const de: typeof en = {
   statement: {
     eyebrow: "Eine Gruppe · zwei Bereiche",
     lead: "Carthage arbeitet an zwei Enden derselben Idee: Ein fertiges Produkt ist nur so gut wie die Materialentscheidungen dahinter.",
-    body: "Ein Bereich mahlt Kalkstein zu einem baumfreien Papier. Der andere entwickelt Pigmente, Cartridge Nadeln und Pflegeprodukte für Permanent Make-up Profis. Zwei Branchen, eine Arbeitsweise: kontrollierte Eingangsstoffe, messbare Ergebnisse und Produkte für den täglichen Gebrauch.",
+    body: "Ein Bereich mahlt Kalkstein zu einem baumfreien Papier für Notizbücher, Taschen und Industrieverpackung. Der andere entwickelt Pigmente, Cartridge Nadeln und Pflegeprodukte für Permanent Make-up Profis, gefertigt in Deutschland nach ISO und GMP zertifizierten Standards.",
+    body2: "Neben den beiden Produktbereichen betreibt Carthage eine Permanent Make-up Academy in Berlin, in der Artists an denselben Pigmenten und Cartridges arbeiten, die das Unternehmen an Studios liefert. Produktentwicklung und Ausbildung sitzen am selben Ort, sodass Kurserfahrung direkt in die Fertigung zurückfließt.",
     meta: [
+      ["Unternehmen", "Carthage GmbH"],
+      ["Hauptsitz", "Berlin, Deutschland"],
       ["Bereiche", "Stone Paper · Kosmetik & PMU"],
-      ["Produktion", "Deutschland"],
+      ["Standards", "ISO & GMP zertifiziert"],
       ["Academy", "Berlin"],
     ],
   },
