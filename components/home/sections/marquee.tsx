@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { gsap } from "@/lib/animation/gsap"
+import { gsap, ScrollTrigger } from "@/lib/animation/gsap"
 import { useScrollScene } from "@/lib/animation/use-scroll-scene"
 
 /**
@@ -18,7 +18,7 @@ export function Marquee({ items }: { items: string[] }) {
   // after measuring, so an ultra-wide screen never sees a gap at the reset.
   const [runCount, setRunCount] = useState(3)
 
-  const ref = useScrollScene<HTMLDivElement>(({ q, reduced }) => {
+  const ref = useScrollScene<HTMLDivElement>(({ q, root, reduced }) => {
     const track = q(".marquee-track")[0] as HTMLElement
     const run = q(".marquee-run")[0] as HTMLElement
     if (!track || !run) return
@@ -34,12 +34,39 @@ export function Marquee({ items }: { items: string[] }) {
     }
 
     if (reduced) return
-    gsap.to(track, {
+
+    const loop = gsap.to(track, {
       // Travel exactly one run width, so the loop restarts on an identical frame.
       xPercent: -100 / runCount,
       ease: "none",
       duration: 11 * runCount,
       repeat: -1,
+    })
+
+    /*
+     * Scroll velocity drives the belt: fast scrolling speeds it up and leans
+     * the type slightly, then it eases back to its resting pace. Clamped so it
+     * never becomes a blur, and it never reverses.
+     */
+    let idle: number | undefined
+    ScrollTrigger.create({
+      trigger: root,
+      start: "top bottom",
+      end: "bottom top",
+      onUpdate: (self) => {
+        const v = Math.min(Math.abs(self.getVelocity()) / 1400, 3)
+        gsap.to(loop, { timeScale: 1 + v, duration: 0.25, overwrite: true })
+        gsap.to(track, {
+          skewX: gsap.utils.clamp(-6, 6, self.getVelocity() / -420),
+          duration: 0.3,
+          overwrite: "auto",
+        })
+        window.clearTimeout(idle)
+        idle = window.setTimeout(() => {
+          gsap.to(loop, { timeScale: 1, duration: 0.8, overwrite: true })
+          gsap.to(track, { skewX: 0, duration: 0.5, overwrite: "auto" })
+        }, 140)
+      },
     })
   }, [items.join("|"), runCount])
 

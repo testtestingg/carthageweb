@@ -2,6 +2,7 @@
 
 import { SiteShell } from "@/components/site/site-shell"
 import { SmoothScroll } from "@/components/providers/smooth-scroll"
+import { ScrollProgress } from "@/components/providers/scroll-progress"
 import { useLanguage } from "@/context/language-context"
 import { homeContent } from "@/lib/home-content"
 import { Hero } from "@/components/home/sections/hero"
@@ -20,6 +21,7 @@ export function HomeClient() {
   return (
     <SiteShell atmosphere={false}>
       <SmoothScroll />
+      <ScrollProgress />
       {/* `key` on the locale so every GSAP context is rebuilt against the new
           copy, line counts and rail widths change between languages. */}
       <main id="main-content" className="carthage-home" key={locale}>

@@ -64,11 +64,11 @@ export function Gateway({ c }: { c: Copy }) {
 
       <div className="gateway-mark">
         <Image
-          src="/logo-carthage.png"
-          alt="Carthage"
-          width={900}
-          height={900}
-          sizes="(max-width: 900px) 70vw, 460px"
+          src="/product.png"
+          alt="Carthage limited edition PMU lip pigment"
+          width={1024}
+          height={1024}
+          sizes="(max-width: 900px) 62vw, 900px"
           className="gateway-mark-img"
         />
       </div>

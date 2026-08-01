@@ -158,28 +158,13 @@ export function HeroFilm({
       {/* Legibility scrim, two axes so the headline holds on any frame. */}
       <div className="hero-film-scrim" aria-hidden="true" />
 
-      <div className="hero-film-index">
-        {clips.map((clip, i) => (
-          <button
-            key={clip.src}
-            type="button"
-            onClick={() => setCurrent(i)}
-            className={i === current ? "is-active" : ""}
-            aria-current={i === current ? "true" : undefined}
-          >
-            <span className="hero-film-num">{String(i + 1).padStart(2, "0")}</span>
-            <span className="hero-film-rule">
-              <i style={{ animationDuration: `${SEGMENT_MS}ms` }} />
-            </span>
-            <span className="sr-only">{captions[i]?.caption}</span>
-          </button>
-        ))}
-      </div>
-
-      <p className="hero-film-caption" aria-live="polite">
-        <span>{captions[current]?.division}</span>
-        {captions[current]?.caption}
+      {/* The clip index and caption were removed from the design. The current
+          clip is still announced for screen readers, since the films are the
+          only thing distinguishing one hero state from the next. */}
+      <p className="sr-only" aria-live="polite">
+        {captions[current]?.division}: {captions[current]?.caption}
       </p>
+
     </div>
   )
 }

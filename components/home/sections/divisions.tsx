@@ -3,16 +3,26 @@
 import Image from "next/image"
 import Link from "next/link"
 import { MoveUpRight } from "lucide-react"
+import { LazyVideo } from "@/components/home/lazy-video"
 import { gsap } from "@/lib/animation/gsap"
 import { useScrollScene } from "@/lib/animation/use-scroll-scene"
 import type { homeContent } from "@/lib/home-content"
 
 type Copy = (typeof homeContent)["en"]
 
+/**
+ * Stage media per division. The cosmetics panel plays a film rather than a
+ * still, so it carries a poster and is rendered as a <video>.
+ */
 const MEDIA = [
   { src: "/stone-paper/paper-4.jpg", alt: "A stack of Carthage stone paper sheets on a concrete surface" },
-  { src: "/posters/pmu-application.jpg", alt: "A Carthage cartridge in use during a permanent-makeup treatment" },
-]
+  {
+    src: "/video3.mp4",
+    video: true,
+    poster: "/posters/foam.jpg",
+    alt: "Carthage cosmetic formulation, foam dispensing in close up",
+  },
+] as const
 
 /**
  * Sequence 3 — the pinned two-division story.
@@ -143,13 +153,17 @@ export function Divisions({ c }: { c: Copy }) {
           <div className="divisions-stage">
             {MEDIA.map((m, i) => (
               <figure key={m.src} className={`divisions-media divisions-media-${i}`}>
-                <Image
-                  src={m.src}
-                  alt={m.alt}
-                  fill
-                  sizes="(max-width: 900px) 100vw, 46vw"
-                  className="object-cover"
-                />
+                {"video" in m ? (
+                  <LazyVideo src={m.src} poster={m.poster} label={m.alt} className="object-cover" />
+                ) : (
+                  <Image
+                    src={m.src}
+                    alt={m.alt}
+                    fill
+                    sizes="(max-width: 900px) 100vw, 46vw"
+                    className="object-cover"
+                  />
+                )}
               </figure>
             ))}
           </div>
@@ -166,13 +180,16 @@ export function Divisions({ c }: { c: Copy }) {
         {panels.map((panel, i) => (
           <article key={panel.label} className={`divisions-mobile-panel dmp-${i}`}>
             <figure className="divisions-mobile-media">
-              <Image
-                src={MEDIA[i].src}
-                alt={MEDIA[i].alt}
-                fill
-                sizes="100vw"
-                className="object-cover"
-              />
+              {"video" in MEDIA[i] ? (
+                <LazyVideo
+                  src={MEDIA[i].src}
+                  poster={(MEDIA[i] as { poster: string }).poster}
+                  label={MEDIA[i].alt}
+                  className="object-cover"
+                />
+              ) : (
+                <Image src={MEDIA[i].src} alt={MEDIA[i].alt} fill sizes="100vw" className="object-cover" />
+              )}
             </figure>
             <div className="divisions-mobile-copy">
               <p className="divisions-label">
