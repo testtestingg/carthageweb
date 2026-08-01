@@ -189,10 +189,18 @@ export function SiteHeader() {
   }
 
   return (
-    <header className={`site-header fixed top-0 z-[1000] w-full h-16 md:h-[72px] flex justify-between items-center px-4 md:px-12 transition-[background-color,border-color] duration-500 ${transparentHeader ? "site-header-transparent bg-transparent border-b border-transparent" : "bg-[rgba(255,255,255,0.9)] backdrop-blur-xl border-b border-[rgba(0,0,0,0.04)]"}`}>
+    <header
+      className={`site-header fixed top-0 z-[1000] w-full flex justify-between items-center px-4 md:px-12 transition-[background-color,border-color] duration-500 ${
+        cinematicRoute ? "site-header-cinematic" : "h-16 md:h-[72px]"
+      } ${
+        transparentHeader
+          ? "site-header-transparent bg-transparent border-b border-transparent"
+          : "bg-[rgba(255,255,255,0.9)] backdrop-blur-xl border-b border-[rgba(0,0,0,0.04)]"
+      }`}
+    >
       {/* Mobile Menu Button */}
       <button
-        className="md:hidden w-11 h-11 -ml-2 flex items-center justify-center transition-transform hover:scale-110"
+        className="lg:hidden w-11 h-11 -ml-2 flex items-center justify-center transition-transform hover:scale-110"
         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         aria-label={t.nav.openMenu}
         aria-expanded={mobileMenuOpen}
@@ -201,7 +209,7 @@ export function SiteHeader() {
       </button>
 
       {/* Desktop Navigation */}
-      <nav className="hidden md:block">
+      <nav className="hidden lg:block">
         <ul className="flex gap-7 list-none items-center">
           <li className="relative" ref={shopMenuRef}>
             <button
@@ -286,28 +294,33 @@ export function SiteHeader() {
       </nav>
 
       {/* Logo, always links to the Carthage Group homepage.
-          On cinematic routes its size/offset is driven by the hero's scroll
-          progress (see .site-logo-cinematic in globals.css) rather than a
-          class toggle, so it travels smoothly instead of snapping. */}
+
+          Centred at every width by stretching between the header's top and
+          bottom edges, so it is vertically centred inside the frame and can
+          never hang past it. On cinematic routes the header height and the
+          logo height are both driven by the hero's scroll progress, so the
+          bar shrinks around the mark instead of the mark escaping the bar. */}
       <Link
         href="/"
-        className={`absolute left-1/2 -translate-x-1/2 md:relative md:left-auto md:translate-x-0 ${
+        aria-label="Carthage, homepage"
+        className={`site-logo absolute left-1/2 -translate-x-1/2 top-0 bottom-0 flex items-center justify-center ${
           cinematicRoute ? "site-logo-cinematic" : ""
         }`}
       >
         <Image
           src="/logo-carthage.png"
           alt="Carthage"
-          width={128}
-          height={128}
+          width={160}
+          height={160}
           className={cinematicRoute ? "w-auto" : "w-auto h-[52px] md:h-[62px]"}
           priority
         />
       </Link>
 
       <div className="flex gap-3 md:gap-4 items-center">
-        {/* Language Switcher */}
-        <div className="relative" ref={langMenuRef}>
+        {/* Language Switcher. Hidden below sm, where it would push the actions
+            cluster under the centred logo; it moves into the mobile menu. */}
+        <div className="relative hidden sm:block" ref={langMenuRef}>
           <button
             onClick={() => setLangMenuOpen(!langMenuOpen)}
             className="w-11 h-11 flex items-center justify-center gap-1 text-sm font-medium text-[#444] hover:text-black transition-colors uppercase sm:w-auto sm:px-2"
@@ -436,7 +449,7 @@ export function SiteHeader() {
 
       {/* Mobile Navigation Menu */}
       {mobileMenuOpen && !searchOpen && (
-        <div className="absolute top-full left-0 right-0 bg-[rgba(255,255,255,0.98)] backdrop-blur-xl border-b border-[rgba(0,0,0,0.04)] md:hidden">
+        <div className="absolute top-full left-0 right-0 bg-white border-b border-[rgba(0,0,0,0.06)] shadow-[0_20px_40px_rgba(0,0,0,0.06)] lg:hidden">
           <nav className="px-4 py-5">
             <ul className="flex flex-col gap-3 list-none">
               <li>
@@ -474,6 +487,28 @@ export function SiteHeader() {
               <li>{navLink("/academy", t.nav.academy, true)}</li>
               <li>{navLink("/stone-paper", t.nav.stonePaper, true)}</li>
               <li>{navLink("/contact", t.nav.contact, true)}</li>
+              <li className="pt-2 border-t border-[rgba(0,0,0,0.05)] sm:hidden">
+                <span className="flex items-center gap-2 py-2 text-[11px] font-bold uppercase tracking-wider text-[#999]">
+                  <Globe className="w-4 h-4" />
+                  {LOCALE_LABELS[locale]}
+                </span>
+                <div className="flex gap-2 pb-1">
+                  {LOCALES.map((l: Locale) => (
+                    <button
+                      key={l}
+                      onClick={() => {
+                        setLocale(l)
+                        setMobileMenuOpen(false)
+                      }}
+                      className={`min-h-11 px-4 rounded-xl text-sm transition-colors ${
+                        l === locale ? "bg-[#f5f5f5] font-semibold text-black" : "text-[#666] hover:bg-[#fafafa]"
+                      }`}
+                    >
+                      {l.toUpperCase()}
+                    </button>
+                  ))}
+                </div>
+              </li>
               <li className="pt-2 border-t border-[rgba(0,0,0,0.05)]">
                 <Link
                   href="/cart"

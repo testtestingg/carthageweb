@@ -727,34 +727,51 @@
 /*
  * Oversized-logo handover.
  *
- * The hero publishes its scroll progress as --carthage-logo-progress (0 → 1);
- * the logo interpolates from its oversized hero state back into the header
- * bar. Driven by a custom property rather than a class toggle so the movement
- * follows scroll continuously instead of snapping at a threshold.
+ * The header publishes scroll progress as --carthage-logo-progress (0 at the
+ * top of a cinematic route, 1 once scrolled). Both the header frame and the
+ * logo interpolate against it, so the bar shrinks around the mark: the logo
+ * is never taller than the frame and can never hang over its edge.
  *
- * The translate is always <= (height - headerHeight)/2, so the top of the mark
- * can never be clipped by the header edge.
+ * The logo is absolutely centred and stretched between the frame's top and
+ * bottom edges, so it stays vertically centred at every size.
  */
 :root { --carthage-logo-progress: 0; }
-.site-logo-cinematic {
+
+.site-header-cinematic {
   --p: var(--carthage-logo-progress, 0);
-  --logo-h: calc(62px + (1 - var(--p)) * 56px);
-  transform: translateY(calc((1 - var(--p)) * 27px));
-  will-change: transform;
+  /* 150px expanded, 72px compact. */
+  height: calc(72px + (1 - var(--p)) * 78px);
 }
 .site-logo-cinematic img {
-  height: var(--logo-h);
+  /* 118px expanded, 62px compact: always 32px shorter than the frame. */
+  height: calc(62px + (1 - var(--p)) * 56px);
   width: auto;
   filter: drop-shadow(0 5px 18px rgba(0, 0, 0, calc((1 - var(--p)) * 0.25)));
 }
-@media (max-width: 767px) {
-  .site-logo-cinematic {
-    --logo-h: calc(52px + (1 - var(--p)) * 34px);
-    transform: translateY(calc((1 - var(--p)) * 16px));
-  }
+
+/*
+ * The desktop nav runs past the horizontal centre below ~1200px, which would
+ * put it underneath a centred mark. Tighten it so the logo keeps clear space.
+ */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .site-header nav ul { gap: 18px; }
+  .site-header nav a,
+  .site-header nav button { font-size: 12.5px; }
+  .site-header-cinematic { height: calc(72px + (1 - var(--p)) * 54px); }
+  .site-logo-cinematic img { height: calc(58px + (1 - var(--p)) * 38px); }
 }
+
+@media (max-width: 1023px) {
+  .site-header-cinematic { height: calc(68px + (1 - var(--p)) * 52px); }
+  .site-logo-cinematic img { height: calc(54px + (1 - var(--p)) * 40px); }
+}
+@media (max-width: 767px) {
+  .site-header-cinematic { height: calc(64px + (1 - var(--p)) * 44px); }
+  .site-logo-cinematic img { height: calc(52px + (1 - var(--p)) * 32px); }
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .site-logo-cinematic { --p: 1; transform: none; }
+  .site-header-cinematic { --p: 1; }
 }
 
 .gb-site { font-family: var(--font-golden-bridge), var(--font-geist), sans-serif; background: #fff; color: #0d0d0d; }
