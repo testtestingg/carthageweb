@@ -13,9 +13,9 @@ import type { Locale } from "./types"
 
 const en = {
   hero: {
-    eyebrow: "Carthage GmbH · Berlin · Made in Germany",
+    eyebrow: "Carthage GmbH · Berlin",
     // Rendered as individually masked lines. Keep each line short.
-    titleLines: ["Two materials.", "One standard."],
+    titleLines: ["Stone paper and", "professional cosmetics,", "made in Germany."],
     body: "Carthage GmbH is a German manufacturer working across two industries: mineral stone paper for print and industrial packaging, and professional cosmetics for permanent makeup. Both divisions develop and produce in Germany, and the group runs its own PMU academy in Berlin.",
     facts: [
       ["Headquarters", "Berlin, Germany"],
@@ -129,8 +129,8 @@ const en = {
 
 const fr: typeof en = {
   hero: {
-    eyebrow: "Carthage GmbH · Berlin · Fabriqué en Allemagne",
-    titleLines: ["Deux matières.", "Une exigence."],
+    eyebrow: "Carthage GmbH · Berlin",
+    titleLines: ["Papier de pierre et", "cosmétiques professionnels,", "fabriqués en Allemagne."],
     body: "Carthage GmbH est un fabricant allemand actif dans deux industries : le papier de pierre minéral pour l’impression et l’emballage industriel, et les cosmétiques professionnels pour le maquillage permanent. Les deux divisions développent et produisent en Allemagne, et le groupe dirige sa propre académie PMU à Berlin.",
     facts: [
       ["Siège", "Berlin, Allemagne"],
@@ -243,8 +243,8 @@ const fr: typeof en = {
 
 const de: typeof en = {
   hero: {
-    eyebrow: "Carthage GmbH · Berlin · Made in Germany",
-    titleLines: ["Zwei Materialien.", "Ein Anspruch."],
+    eyebrow: "Carthage GmbH · Berlin",
+    titleLines: ["Steinpapier und", "professionelle Kosmetik,", "Made in Germany."],
     body: "Die Carthage GmbH ist ein deutscher Hersteller in zwei Industrien: mineralisches Steinpapier für Druck und Industrieverpackung sowie professionelle Kosmetik für Permanent Make-up. Beide Bereiche entwickeln und fertigen in Deutschland, und die Gruppe betreibt eine eigene PMU Academy in Berlin.",
     facts: [
       ["Hauptsitz", "Berlin, Deutschland"],

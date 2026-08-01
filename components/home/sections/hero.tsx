@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { ArrowDown, ArrowRight, MoveUpRight } from "lucide-react"
+import { ArrowDown, ArrowRight } from "lucide-react"
 import { HeroFilm, type FilmClip } from "@/components/home/hero-film"
 import { gsap } from "@/lib/animation/gsap"
 import { useScrollScene } from "@/lib/animation/use-scroll-scene"
@@ -107,19 +107,6 @@ export function Hero({ c }: { c: Copy }) {
             </div>
           ))}
         </dl>
-
-        <div className="hero-divisions hero-stagger">
-          <Link href={c.divisions.stone.href}>
-            <span className="mono">{c.divisions.stone.index}</span>
-            {c.divisions.stone.label}
-            <MoveUpRight aria-hidden="true" />
-          </Link>
-          <Link href={c.divisions.care.href}>
-            <span className="mono">{c.divisions.care.index}</span>
-            {c.divisions.care.label}
-            <MoveUpRight aria-hidden="true" />
-          </Link>
-        </div>
 
         <div className="hero-actions hero-stagger">
           <button type="button" className="btn btn-light" onClick={() => scrollToTarget("#statement", -40)}>
