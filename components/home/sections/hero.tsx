@@ -1,11 +1,10 @@
 "use client"
 
 import Link from "next/link"
-import { ArrowDown, ArrowRight } from "lucide-react"
+import { ArrowLeft, ArrowRight } from "lucide-react"
 import { HeroFilm, type FilmClip } from "@/components/home/hero-film"
 import { gsap } from "@/lib/animation/gsap"
 import { useScrollScene } from "@/lib/animation/use-scroll-scene"
-import { scrollToTarget } from "@/components/providers/smooth-scroll"
 import type { homeContent } from "@/lib/home-content"
 
 type Copy = (typeof homeContent)["en"]
@@ -84,8 +83,6 @@ export function Hero({ c }: { c: Copy }) {
       </div>
 
       <div className="hero-copy">
-
-
         <h1 id="hero-title" className="hero-title">
           {c.hero.titleLines.map((line) => (
             <span className="hero-line" key={line}>
@@ -97,12 +94,12 @@ export function Hero({ c }: { c: Copy }) {
         <p className="hero-body hero-stagger">{c.hero.body}</p>
 
         <div className="hero-actions hero-stagger">
-          <button type="button" className="btn btn-light" onClick={() => scrollToTarget("#statement", -40)}>
-            {c.hero.primary}
-            <ArrowDown aria-hidden="true" />
-          </button>
-          <Link href="/shop" className="btn btn-ghost">
-            {c.hero.secondary}
+          <Link href="/carthage-care" className="btn btn-ghost">
+            <ArrowLeft aria-hidden="true" />
+            PMU & Cosmetics
+          </Link>
+          <Link href="/stone-paper" className="btn btn-ghost">
+            stone paper
             <ArrowRight aria-hidden="true" />
           </Link>
         </div>
