@@ -4,6 +4,7 @@ import { Footer } from "@/components/golden-bridge/footer"
 import { PageHero } from "@/components/golden-bridge/page-hero"
 import { SectionHeading } from "@/components/golden-bridge/section-heading"
 import { CtaBanner } from "@/components/golden-bridge/cta-banner"
+import { CertificationsStrip } from "@/components/golden-bridge/certifications-strip"
 import { images } from "@/components/golden-bridge/site-config"
 
 export const metadata: Metadata = {
@@ -233,6 +234,8 @@ export default function BagsPage() {
           ))}
         </div>
       </section>
+
+      <CertificationsStrip />
 
       <CtaBanner
         eyebrow="Request Information"

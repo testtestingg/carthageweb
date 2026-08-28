@@ -84,6 +84,9 @@ export const pageImages = {
   contact: {
     hero: "/golden-bridge/image5.png",
   },
+  certifications: {
+    hero: "/golden-bridge/image7.png",
+  },
 } as const
 
 export const navLinks = [
@@ -92,6 +95,7 @@ export const navLinks = [
   { label: "Products", href: "/stone-paper/product" },
   { label: "Process", href: "/stone-paper/process" },
   { label: "Sustainability", href: "/stone-paper/sustainability" },
+  { label: "Certifications", href: "/stone-paper/certifications" },
   { label: "Contact", href: "/stone-paper/contact" },
 ] as const
 
