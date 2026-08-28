@@ -6,38 +6,46 @@ const principles = [
   {
     number: "01",
     title: "High Tear Resistance",
-    description:
+    description: [
       "Our stone paper bags deliver 2-3x the tear resistance of standard paper packaging. PP woven bags withstand heavy loads without splitting, even under rough handling during transport and stacking.",
+    ],
   },
   {
     number: "02",
     title: "Moisture Resistance",
-    description:
+    description: [
       "Stone paper is naturally waterproof, protecting contents from moisture damage without additional coatings. PP woven bags are available with laminated and coated options for enhanced barrier protection.",
+    ],
   },
   {
     number: "03",
     title: "Load Capacity",
-    description:
+    description: [
       "PP woven bags are rated for loads up to 50 kg and beyond, with reinforced seams and customizable denier weight. Stone paper bags provide reliable performance for medium-duty commercial applications.",
+    ],
   },
   {
     number: "04",
     title: "Custom Printing",
-    description:
-      "Both product lines support high-quality custom printing. Stone paper offers a premium smooth surface for offset, UV, and digital print. PP woven bags support flexographic and rotogravure printing.",
+    description: [
+      "Both product lines support high-quality custom printing and customized branding.",
+      "Stone paper provides a smooth, high-quality printing surface suitable for various printing technologies, including offset, UV and compatible digital printing systems, depending on the material specification and ink system.",
+      "PP woven bags can be printed using flexographic printing or, when laminated with a printed BOPP film, high-quality rotogravure printing, allowing detailed graphics, vibrant colors and customized brand designs.",
+    ],
   },
   {
     number: "05",
-    title: "UV &amp; Chemical Resistant",
-    description:
-      "PP woven bags are available with UV-stabilized material for outdoor storage. Stone paper is resistant to oil, grease, and most chemicals, making both solutions suitable for demanding environments.",
+    title: "UV & Chemical Resistant",
+    description: [
+      "PP woven bags can be manufactured with UV-stabilized polypropylene for improved durability during outdoor storage. Stone paper, composed primarily of calcium carbonate (CaCO₃) with a polypropylene binder, provides good resistance to water, oils, grease, and a wide range of commonly encountered chemicals. These properties make both materials suitable for demanding industrial and commercial packaging applications.",
+    ],
   },
   {
     number: "06",
     title: "Recyclable Materials",
-    description:
+    description: [
       "Stone paper is recyclable back into stone paper through standard thermoplastic recycling streams. PP woven bags are made from recyclable polypropylene and offer extended reusability across multiple cycles.",
+    ],
   },
 ]
 
@@ -61,9 +69,11 @@ function PrincipleCard({ principle, index }: { principle: typeof principles[0]; 
         {principle.title}
       </h3>
       <div className="w-8 h-px bg-border mb-5 group-hover:w-12 transition-all duration-500" />
-      <p className="text-sm leading-[1.75] text-muted-foreground max-w-sm">
-        {principle.description}
-      </p>
+      <div className="text-sm leading-[1.75] text-muted-foreground max-w-sm space-y-4">
+        {principle.description.map((paragraph) => (
+          <p key={paragraph}>{paragraph}</p>
+        ))}
+      </div>
     </div>
   )
 }
