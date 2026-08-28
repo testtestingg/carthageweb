@@ -3,7 +3,19 @@
 import { useRef, useState } from "react"
 import { Play, Maximize } from "lucide-react"
 
-export function ProductDemoVideo() {
+interface ProductDemoVideoProps {
+  src?: string
+  eyebrow?: string
+  caption?: string
+  label?: string
+}
+
+export function ProductDemoVideo({
+  src = "/golden-bridge/video2.mp4",
+  eyebrow = "Product Demo",
+  caption = "See how our stone paper performs. Write with pen and experience the difference.",
+  label = "Play product demo video",
+}: ProductDemoVideoProps = {}) {
   const videoRef = useRef<HTMLVideoElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
   const [isPlaying, setIsPlaying] = useState(false)
@@ -61,7 +73,7 @@ export function ProductDemoVideo() {
         onEnded={handleVideoEnded}
         className="w-full aspect-video object-cover opacity-70 transition-all duration-700 group-hover:scale-[1.02] group-hover:opacity-80 cursor-pointer"
       >
-        <source src="/golden-bridge/video2.mp4" type="video/mp4" />
+        <source src={src} type="video/mp4" />
       </video>
       <div className="absolute inset-0 bg-gradient-to-b from-foreground/30 via-foreground/40 to-foreground/70" />
 
@@ -72,16 +84,16 @@ export function ProductDemoVideo() {
             type="button"
             onClick={handleVideoClick}
             className="w-20 h-20 md:w-24 md:h-24 rounded-full border border-background/50 bg-background/5 backdrop-blur-sm flex items-center justify-center group-hover:bg-background group-hover:border-background transition-all duration-500"
-            aria-label="Play product demo video"
+            aria-label={label}
           >
             <Play className="h-6 w-6 md:h-7 md:w-7 text-background group-hover:text-foreground fill-current translate-x-0.5 transition-colors duration-500" />
           </button>
           <div>
             <p className="text-[11px] tracking-[0.3em] uppercase text-background/60 mb-3">
-              Product Demo
+              {eyebrow}
             </p>
             <p className="mt-3 text-sm text-background/55 max-w-md mx-auto">
-              See how our stone paper performs. Write with pen and experience the difference.
+              {caption}
             </p>
           </div>
         </div>

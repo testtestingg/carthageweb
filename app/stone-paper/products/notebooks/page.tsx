@@ -5,6 +5,7 @@ import { PageHero } from "@/components/golden-bridge/page-hero"
 import { SectionHeading } from "@/components/golden-bridge/section-heading"
 import { CtaBanner } from "@/components/golden-bridge/cta-banner"
 import { IndustriesSection } from "@/components/golden-bridge/industries-section"
+import { ProductDemoVideo } from "@/components/golden-bridge/product-demo-video"
 import { images } from "@/components/golden-bridge/site-config"
 
 export const metadata: Metadata = {
@@ -150,6 +151,34 @@ export default function NotebooksPage() {
               </p>
             </div>
           ))}
+        </div>
+
+        {/* The waterproof claim above is the one buyers query most, so the
+            proof sits directly under the specification it belongs to. */}
+        <div className="mt-20 md:mt-28 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+          <div className="lg:col-span-4">
+            <p className="text-[11px] tracking-[0.3em] uppercase text-muted-foreground/50 mb-6">
+              Water Test
+            </p>
+            <h3 className="text-2xl md:text-3xl font-extralight leading-[1.2] tracking-tight text-foreground text-balance">
+              Written on, underwater.
+            </h3>
+            <div className="w-10 h-px bg-border mt-6 mb-6" />
+            <p className="text-sm leading-[1.8] text-muted-foreground font-light">
+              Stone paper carries no wood pulp to swell or tear, so the sheet holds its
+              structure when it is wet. Here a notebook is written on while fully
+              submerged, then carries on taking ink.
+            </p>
+          </div>
+
+          <div className="lg:col-span-7 lg:col-start-6">
+            <ProductDemoVideo
+              src="/golden-bridge/video2.mp4"
+              eyebrow="Water Test"
+              caption="A stone paper notebook written on while fully submerged."
+              label="Play the underwater notebook test"
+            />
+          </div>
         </div>
       </section>
 

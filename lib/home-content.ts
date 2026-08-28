@@ -116,6 +116,7 @@ const en = {
     meta: {
       tuBerlin: "Research university · Berlin",
       fuBerlin: "Research university · Berlin",
+      naturalWorld: "Industrial group · Germany",
       sparkasse: "Retail bank · Berlin",
       leda: "Logistics partner · Qingdao",
     },
@@ -249,6 +250,7 @@ const fr: typeof en = {
     meta: {
       tuBerlin: "Université de recherche · Berlin",
       fuBerlin: "Université de recherche · Berlin",
+      naturalWorld: "Groupe industriel · Allemagne",
       sparkasse: "Banque de détail · Berlin",
       leda: "Partenaire logistique · Qingdao",
     },
@@ -382,6 +384,7 @@ const de: typeof en = {
     meta: {
       tuBerlin: "Technische Universität · Berlin",
       fuBerlin: "Forschungsuniversität · Berlin",
+      naturalWorld: "Industriegruppe · Deutschland",
       sparkasse: "Sparkasse · Berlin",
       leda: "Logistikpartner · Qingdao",
     },
