@@ -47,7 +47,7 @@ export default function PrivacyPage() {
               <p>Lietzenburger Stra&szlig;e 9a</p>
               <p>10789 Berlin, Deutschland</p>
               <p className="mt-2">Telefon: +49 163 6530300</p>
-              <p>E-Mail: info@carthagecare.de</p>
+              <p>E-Mail: info@carthage.de</p>
             </div>
             <p className="text-[15px] text-[#555] leading-relaxed">
               Verantwortliche Stelle ist die nat&uuml;rliche oder juristische Person, die allein oder gemeinsam mit anderen &uuml;ber die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten entscheidet.
