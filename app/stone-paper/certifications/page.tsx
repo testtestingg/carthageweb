@@ -26,7 +26,7 @@ export default function CertificationsPage() {
       <CertificationsHero />
 
       {/* Report cards */}
-      <section className="px-6 pt-20 pb-24 md:px-12 lg:px-20 md:pt-24 md:pb-32">
+      <section className="px-6 pt-24 pb-24 md:px-12 lg:px-20 md:pt-32 md:pb-32">
         <SectionHeading
           eyebrow="SGS Test Reports"
           title="Three reports, issued August 2026."
