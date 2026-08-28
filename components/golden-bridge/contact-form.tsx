@@ -332,7 +332,7 @@ export function ContactForm() {
         <p className="text-[11px] leading-relaxed text-muted-foreground/70 max-w-md">
           By submitting this form you agree that we may contact you about your
           enquiry. We never share your details with third parties. Your message
-          will be sent to info@carthagecare.de.
+          will be sent to info@carthage.de.
         </p>
         <button
           type="submit"
