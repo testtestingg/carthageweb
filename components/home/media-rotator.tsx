@@ -5,7 +5,6 @@ import { prefersReducedMotion } from "@/lib/animation/gsap"
 
 /** Authentic Carthage Care footage, with poster frames pulled from each clip. */
 const CARE_MEDIA = [
-  { src: "/carthage-pmu-application.mp4", poster: "/posters/pmu-application.jpg", label: "Professional permanent-makeup application" },
   { src: "/video1.mp4", poster: "/posters/pigments.jpg", label: "Carthage PMU pigment range" },
   { src: "/carthage-care-01.m4v", poster: "/posters/care-01.jpg", label: "Carthage Academy training in Berlin" },
 ] as const

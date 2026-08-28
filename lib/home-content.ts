@@ -20,9 +20,8 @@ const en = {
     primary: "Explore the group",
     secondary: "Visit the shop",
     clips: [
-      { caption: "Cosmetic formulation", division: "Cosmetics & PMU" },
-      { caption: "Permanent makeup application", division: "Cosmetics & PMU" },
       { caption: "Stone paper production", division: "Stone Paper" },
+      { caption: "Cosmetic formulation", division: "Cosmetics & PMU" },
     ],
   },
   marquee: ["Made in Germany", "Stone paper", "Professional PMU", "Mineral materials", "Precision manufacturing"],
@@ -144,9 +143,8 @@ const fr: typeof en = {
     primary: "Découvrir le groupe",
     secondary: "Visiter la boutique",
     clips: [
-      { caption: "Formulation cosmétique", division: "Cosmétiques & PMU" },
-      { caption: "Application de maquillage permanent", division: "Cosmétiques & PMU" },
       { caption: "Production de papier de pierre", division: "Stone Paper" },
+      { caption: "Formulation cosmétique", division: "Cosmétiques & PMU" },
     ],
   },
   marquee: ["Fabriqué en Allemagne", "Papier de pierre", "PMU professionnel", "Matières minérales", "Fabrication de précision"],
@@ -267,9 +265,8 @@ const de: typeof en = {
     primary: "Die Gruppe entdecken",
     secondary: "Zum Shop",
     clips: [
-      { caption: "Kosmetische Formulierung", division: "Kosmetik & PMU" },
-      { caption: "Permanent Make-up Anwendung", division: "Kosmetik & PMU" },
       { caption: "Steinpapier Produktion", division: "Stone Paper" },
+      { caption: "Kosmetische Formulierung", division: "Kosmetik & PMU" },
     ],
   },
   marquee: ["Made in Germany", "Steinpapier", "Professionelles PMU", "Mineralische Materialien", "Präzisionsfertigung"],

@@ -6,16 +6,13 @@ import { prefersReducedMotion } from "@/lib/animation/gsap"
 export interface FilmClip {
   src: string
   poster: string
-  /** object-position for desktop / mobile crops. */
-  position?: string
-  positionMobile?: string
 }
 
 const SEGMENT_MS = 6800
 const FADE_MS = 1200
 
 /**
- * Cinematic hero film: three Carthage clips shown one at a time.
+ * Cinematic hero film: the Carthage clips shown one at a time.
  *
  * - only the active clip (plus the one about to play) is ever given a `src`,
  *   so a phone never downloads all three at once
@@ -129,11 +126,7 @@ export function HeroFilm({
         <div
           key={clip.src}
           className={`hero-film-layer ${i === current ? "is-active" : ""}`}
-          style={{
-            backgroundImage: `url(${clip.poster})`,
-            ["--pos" as string]: clip.position ?? "center",
-            ["--pos-mobile" as string]: clip.positionMobile ?? clip.position ?? "center",
-          }}
+          style={{ backgroundImage: `url(${clip.poster})` }}
           aria-hidden={i !== current}
         >
           {!stillsOnly && armed.includes(i) && (
