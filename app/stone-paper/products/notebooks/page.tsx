@@ -4,6 +4,7 @@ import { Footer } from "@/components/golden-bridge/footer"
 import { PageHero } from "@/components/golden-bridge/page-hero"
 import { SectionHeading } from "@/components/golden-bridge/section-heading"
 import { CtaBanner } from "@/components/golden-bridge/cta-banner"
+import { IndustriesSection } from "@/components/golden-bridge/industries-section"
 import { images } from "@/components/golden-bridge/site-config"
 
 export const metadata: Metadata = {
@@ -151,6 +152,8 @@ export default function NotebooksPage() {
           ))}
         </div>
       </section>
+
+      <IndustriesSection />
 
       <CtaBanner
         eyebrow="B2B Orders"
