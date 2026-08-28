@@ -191,7 +191,7 @@ export function StonePaperClient() {
               poster="/stone-paper/paper-10.jpg"
               className="w-full rounded-2xl border border-[#e9e5dd] bg-black aspect-video object-cover"
             >
-              <source src="/stone-paper/manufacturing.mp4" type="video/mp4" />
+              <source src="/stone-paper/video.mp4" type="video/mp4" />
             </video>
           </div>
         </div>

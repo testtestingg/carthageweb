@@ -18,16 +18,16 @@ const CLIPS: FilmClip[] = [
     positionMobile: "58% 45%",
   },
   {
+    src: "/stone-paper/video.mp4",
+    poster: "/posters/stone-manufacturing.jpg",
+    position: "50% 42%",
+    positionMobile: "52% 42%",
+  },
+  {
     src: "/carthage-pmu-application.mp4",
     poster: "/posters/pmu-application.jpg",
     position: "50% 40%",
     positionMobile: "45% 40%",
-  },
-  {
-    src: "/stone-paper/manufacturing.mp4",
-    poster: "/posters/stone-manufacturing.jpg",
-    position: "50% 42%",
-    positionMobile: "52% 42%",
   },
 ]
 
