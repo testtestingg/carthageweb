@@ -84,9 +84,6 @@ export const pageImages = {
   contact: {
     hero: "/golden-bridge/image5.png",
   },
-  certifications: {
-    hero: "/golden-bridge/image7.png",
-  },
 } as const
 
 export const navLinks = [

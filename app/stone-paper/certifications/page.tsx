@@ -2,10 +2,9 @@ import type { Metadata } from "next"
 import { ArrowDownToLine, ExternalLink } from "lucide-react"
 import { Navigation } from "@/components/golden-bridge/navigation"
 import { Footer } from "@/components/golden-bridge/footer"
-import { PageHero } from "@/components/golden-bridge/page-hero"
+import { CertificationsHero } from "@/components/golden-bridge/certifications-hero"
 import { SectionHeading } from "@/components/golden-bridge/section-heading"
 import { CtaBanner } from "@/components/golden-bridge/cta-banner"
-import { pageImages } from "@/components/golden-bridge/site-config"
 import {
   certifications,
   technicalDataSheet,
@@ -24,21 +23,10 @@ export default function CertificationsPage() {
     <main>
       <Navigation />
 
-      <PageHero
-        eyebrow="Certifications"
-        title={
-          <>
-            Independently tested.
-            <br className="hidden md:block" /> Documented in full.
-          </>
-        }
-        description="Our stone paper and PP woven composite bag has been tested by SGS, one of the world's largest inspection and certification bodies. Every report below is summarised on this page and available as a complete PDF."
-        image={pageImages.certifications.hero}
-        imageAlt="Carthage stone paper and PP woven composite bag production"
-      />
+      <CertificationsHero />
 
       {/* Report cards */}
-      <section className="px-6 py-24 md:px-12 lg:px-20 md:py-32">
+      <section className="px-6 pt-20 pb-24 md:px-12 lg:px-20 md:pt-24 md:pb-32">
         <SectionHeading
           eyebrow="SGS Test Reports"
           title="Three reports, issued August 2026."
