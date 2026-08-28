@@ -10,6 +10,9 @@ const nextConfig = {
   },
   images: {
     unoptimized: true,
+    // Placeholder sector photography on the notebooks page. Remove this once
+    // the Unsplash URLs in industries-section.tsx are replaced with local files.
+    remotePatterns: [{ protocol: 'https', hostname: 'images.unsplash.com' }],
   },
   async headers() {
     return [

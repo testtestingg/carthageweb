@@ -12,6 +12,7 @@ import { Divisions } from "@/components/home/sections/divisions"
 import { MaterialRail } from "@/components/home/sections/material-rail"
 import { CareShowcase } from "@/components/home/sections/care-showcase"
 import { Philosophy } from "@/components/home/sections/philosophy"
+import { Partners } from "@/components/home/sections/partners"
 import { Gateway } from "@/components/home/sections/gateway"
 
 export function HomeClient() {
@@ -32,6 +33,7 @@ export function HomeClient() {
         <MaterialRail c={c} />
         <CareShowcase c={c} />
         <Philosophy c={c} />
+        <Partners c={c} />
         <Gateway c={c} />
       </main>
     </SiteShell>

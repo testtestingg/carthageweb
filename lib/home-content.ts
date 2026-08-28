@@ -109,6 +109,17 @@ const en = {
       ["Built to be used", "Products are designed for daily professional work, not for a photograph of it."],
     ],
   },
+  partners: {
+    eyebrow: "Partners",
+    title: "The institutions and partners we work with.",
+    body: "Universities and public institutions in Berlin, and the logistics partners who move our material between continents.",
+    meta: {
+      tuBerlin: "Research university · Berlin",
+      fuBerlin: "Research university · Berlin",
+      sparkasse: "Retail bank · Berlin",
+      leda: "Logistics partner · Qingdao",
+    },
+  },
   gateway: {
     eyebrow: "Two divisions",
     title: "Which part of Carthage would you like to see?",
@@ -231,6 +242,17 @@ const fr: typeof en = {
       ["Fait pour servir", "Nos produits sont conçus pour le travail professionnel quotidien, pas pour sa photographie."],
     ],
   },
+  partners: {
+    eyebrow: "Partenaires",
+    title: "Les institutions et partenaires avec qui nous travaillons.",
+    body: "Des universités et institutions publiques à Berlin, et les partenaires logistiques qui acheminent nos matériaux entre les continents.",
+    meta: {
+      tuBerlin: "Université de recherche · Berlin",
+      fuBerlin: "Université de recherche · Berlin",
+      sparkasse: "Banque de détail · Berlin",
+      leda: "Partenaire logistique · Qingdao",
+    },
+  },
   gateway: {
     eyebrow: "Deux divisions",
     title: "Quelle partie de Carthage souhaitez-vous découvrir ?",
@@ -352,6 +374,17 @@ const de: typeof en = {
       ["Kontrollierter Prozess", "Spezifikation vor Dekoration. Dicke, Korngröße, Konsistenz und Finish werden gemessen, nicht geschätzt."],
       ["Zum Arbeiten gebaut", "Produkte für die tägliche professionelle Arbeit, nicht für ihr Foto."],
     ],
+  },
+  partners: {
+    eyebrow: "Partner",
+    title: "Die Institutionen und Partner, mit denen wir arbeiten.",
+    body: "Universitäten und öffentliche Institutionen in Berlin sowie die Logistikpartner, die unser Material zwischen den Kontinenten bewegen.",
+    meta: {
+      tuBerlin: "Technische Universität · Berlin",
+      fuBerlin: "Forschungsuniversität · Berlin",
+      sparkasse: "Sparkasse · Berlin",
+      leda: "Logistikpartner · Qingdao",
+    },
   },
   gateway: {
     eyebrow: "Zwei Bereiche",

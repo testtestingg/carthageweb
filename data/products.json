@@ -55,7 +55,8 @@
           "Vegan & tierversuchsfrei"
         ]
       }
-    }
+    },
+    "priceOnRequest": true
   },
   {
     "id": "v6-pink-silicone-tattoo-needle",
@@ -115,7 +116,8 @@
           "Perfekt für Linien, Schattierungen & Farbfüllung"
         ]
       }
-    }
+    },
+    "priceOnRequest": true
   },
   {
     "id": "v6-pink-needle-pro",
@@ -173,7 +175,8 @@
           "Silikongriff für höchsten Komfort"
         ]
       }
-    }
+    },
+    "priceOnRequest": true
   },
   {
     "id": "glow-tonic-exfoliator",
@@ -212,7 +215,8 @@
         "description": "Professioneller Peeling-Toner, der abgestorbene Hautzellen sanft entfernt und die Poren verfeinert. Entwickelt für Beauty-Profis und ihre Kundinnen.",
         "features": []
       }
-    }
+    },
+    "priceOnRequest": true
   },
   {
     "id": "vitc-booster-brightening",
@@ -251,7 +255,8 @@
         "description": "Hochwirksames Vitamin-C-Serum für strahlende, regenerierte Haut. Entwickelt für die Pflege nach Behandlungen und den täglichen professionellen Gebrauch.",
         "features": []
       }
-    }
+    },
+    "priceOnRequest": true
   },
   {
     "id": "barrier-repair-moisturizer",
@@ -290,7 +295,8 @@
         "description": "Luxuriöse Feuchtigkeitscreme, die die Hautbarriere repariert und stärkt. Ideal für die Regeneration nach Behandlungen und die tägliche Pflege.",
         "features": []
       }
-    }
+    },
+    "priceOnRequest": true
   },
   {
     "id": "soothing-aftercare-oil",
@@ -348,7 +354,8 @@
           "Vegan & tierversuchsfrei"
         ]
       }
-    }
+    },
+    "priceOnRequest": true
   },
   {
     "id": "stone-paper-notebook-a5",
@@ -584,7 +591,8 @@
           "Vegan & tierversuchsfrei"
         ]
       }
-    }
+    },
+    "priceOnRequest": true
   },
   {
     "id": "pmu-repair-balm",
@@ -641,7 +649,8 @@
           "Vegan & tierversuchsfrei"
         ]
       }
-    }
+    },
+    "priceOnRequest": true
   },
   {
     "id": "velvet-night-cream",
@@ -697,7 +706,8 @@
           "Vegan & tierversuchsfrei"
         ]
       }
-    }
+    },
+    "priceOnRequest": true
   },
   {
     "id": "stone-paper-sheets-a4",
@@ -852,6 +862,7 @@
         "description": "Leichter, unsichtbarer Sonnenschutz mit LSF 50. Unverzichtbar zum Schutz frisch behandelter Haut und zum Erhalt der Ergebnisse.",
         "features": []
       }
-    }
+    },
+    "priceOnRequest": true
   }
 ]

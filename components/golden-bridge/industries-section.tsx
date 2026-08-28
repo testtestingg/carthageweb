@@ -19,8 +19,9 @@ interface Industry {
   description: string
   icon: LucideIcon
   /**
-   * Optional photograph. Without one the card falls back to the icon panel, so
-   * imagery can be added per sector later without touching the layout.
+   * Sector photograph. These are Unsplash placeholders standing in until
+   * Carthage's own imagery is available; the icon panel below is the fallback
+   * for any sector left without one.
    */
   image?: string
 }
@@ -31,42 +32,49 @@ const industries: Industry[] = [
     description:
       "Notebooks that survive rain, handling and long shifts on duty, where a soaked or torn page is not an option.",
     icon: Shield,
+    image: "https://images.unsplash.com/photo-1554190798-fb1f4ae5ff6b?auto=format&fit=crop&w=1200&q=70",
   },
   {
     name: "German Army",
     description:
       "Field-grade stationery for training and deployment: water resistant, tear resistant and dependable outdoors.",
     icon: ShieldCheck,
+    image: "https://images.unsplash.com/photo-1598858117468-f5c77292bfa6?auto=format&fit=crop&w=1200&q=70",
   },
   {
     name: "Social Housing",
     description:
       "Durable record keeping for housing and tenancy staff working on site, between properties and in all weather.",
     icon: Home,
+    image: "https://images.unsplash.com/photo-1681751864665-f07e8a462c49?auto=format&fit=crop&w=1200&q=70",
   },
   {
     name: "Schools & Education",
     description:
       "Hard-wearing notebooks for daily classroom use, built to last a full school year of bags, desks and transport.",
     icon: School,
+    image: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=1200&q=70",
   },
   {
     name: "Universities",
     description:
       "Lecture and laboratory notebooks with a smooth writing surface, and a tree-free material story students value.",
     icon: GraduationCap,
+    image: "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1200&q=70",
   },
   {
     name: "Public Institutions",
     description:
       "Supplied to public bodies and agencies that need consistent quality, documented materials and reliable resupply.",
     icon: Landmark,
+    image: "https://images.unsplash.com/photo-1552035496-08efc7baf40e?auto=format&fit=crop&w=1200&q=70",
   },
   {
     name: "Companies & Corporate",
     description:
       "Branded notebooks for corporate identity, employee kits, conferences and client gifts, embossed or printed to order.",
     icon: Briefcase,
+    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=70",
   },
 ]
 

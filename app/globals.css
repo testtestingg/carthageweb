@@ -554,6 +554,67 @@
 .principle-body { color: var(--muted); line-height: 1.78; font-size: 0.97rem; padding-top: 4px; }
 
 /* ============================================================
+   7b — PARTNERS
+   Ivory sits between the paper of Philosophy and the ink of Gateway, so the
+   wall reads as its own step without introducing a new colour.
+   ============================================================ */
+.carthage-home .partners { background: var(--ivory); padding: var(--pad) var(--gutter); }
+.partners-head { display: grid; grid-template-columns: minmax(200px, 1fr) minmax(0, 2.2fr); gap: clamp(32px, 4vw, 64px); }
+.partners-head .eyebrow { color: var(--brass); }
+.partners-head h2 { font-size: clamp(2rem, 3.6vw, 3.3rem); max-width: 22ch; }
+.partners-head p { margin-top: 18px; color: var(--muted); line-height: 1.78; font-size: 0.97rem; max-width: 58ch; }
+
+.partner-grid {
+  margin-top: clamp(40px, 5vw, 68px);
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-top: 1px solid var(--rule);
+  border-left: 1px solid var(--rule);
+  list-style: none;
+}
+.partner {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  height: 100%;
+  min-height: 216px;
+  padding: clamp(24px, 2.6vw, 34px);
+  border-right: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  color: inherit;
+  text-decoration: none;
+  transition: background 0.4s;
+}
+a.partner:hover { background: #fff; }
+.partner-mark { display: flex; align-items: center; min-height: 56px; }
+.partner-mark img {
+  max-height: 56px; max-width: 100%; width: auto;
+  object-fit: contain; object-position: left center;
+  filter: grayscale(1); opacity: 0.74;
+  transition: filter 0.5s, opacity 0.5s;
+}
+a.partner:hover .partner-mark img { filter: none; opacity: 1; }
+.partner-wordmark {
+  font-family: var(--font-display, inherit);
+  font-size: clamp(1.05rem, 1.5vw, 1.28rem);
+  line-height: 1.22; letter-spacing: -0.01em;
+}
+.partner-meta { margin-top: auto; color: var(--muted); }
+.partner-link { display: inline-flex; align-items: center; gap: 7px; color: var(--brass); }
+.partner-link svg { width: 12px; height: 12px; }
+a.partner:hover .partner-link svg { transform: translate(1px, -1px); }
+.partner-link svg { transition: transform 0.3s; }
+
+@media (max-width: 980px) {
+  .partners-head { grid-template-columns: 1fr; gap: 18px; }
+  .partner-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 560px) {
+  .partner-grid { grid-template-columns: 1fr; }
+  .partner { min-height: 168px; }
+}
+
+/* ============================================================
    8 — GATEWAY + FOOTER TRANSITION
    ============================================================ */
 .carthage-home .gateway { position: relative; background: var(--ink); color: var(--ivory); padding: var(--pad) 0 0; overflow: hidden; }
