@@ -185,7 +185,7 @@ export function ContactForm() {
         </div>
         <p className="mt-5 max-w-md text-sm leading-[1.75] text-muted-foreground">
           A member of our team will respond from our Berlin office, usually within one business day.
-          Your enquiry has been sent to info@carthagecare.de.
+          Your enquiry has been sent to info@carthage.de.
         </p>
         <button
           type="button"
