@@ -65,7 +65,7 @@ export default function PrivacyPage() {
               <li><strong>Widerrufs- und Widerspruchsrecht:</strong> Sie k&ouml;nnen eine erteilte Einwilligung jederzeit widerrufen und der Verarbeitung Ihrer Daten jederzeit widersprechen.</li>
             </ul>
             <p className="text-[15px] text-[#555] leading-relaxed mt-4">
-              Um diese Rechte auszu&uuml;ben, kontaktieren Sie uns bitte unter info@carthagecare.de.
+              Um diese Rechte auszu&uuml;ben, kontaktieren Sie uns bitte unter info@carthage.de.
             </p>
           </section>
 
