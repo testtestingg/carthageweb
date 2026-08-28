@@ -51,7 +51,7 @@ const structuredData = {
       name: "Carthage GmbH Cosmetic & Pigmentation",
       url: SITE_URL,
       logo: `${SITE_URL}/logo-carthage.png`,
-      email: "info@carthagecare.de",
+      email: "info@carthage.de",
       address: {
         "@type": "PostalAddress",
         streetAddress: "Lietzenburger Str. 9a",
