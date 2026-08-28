@@ -45,8 +45,8 @@ export default function ImpressumPage() {
               <p className="text-[15px] text-[#555] leading-relaxed">
                 Telefon: +49 163 6530300<br />
                 Telefax: +49 30 34781222<br />
-                E-Mail: <a href="mailto:info@carthagecare.de" className="text-[#c9a96e] hover:underline">info@carthagecare.de</a><br />
-                Website: <a href="https://www.carthagecare.de" target="_blank" rel="noopener noreferrer" className="text-[#c9a96e] hover:underline">www.carthagecare.de</a>
+                E-Mail: <a href="mailto:info@carthage.de" className="text-[#c9a96e] hover:underline">info@carthage.de</a><br />
+                Website: <a href="https://www.carthage.de" target="_blank" rel="noopener noreferrer" className="text-[#c9a96e] hover:underline">www.carthage.de</a>
               </p>
             </div>
           </section>
