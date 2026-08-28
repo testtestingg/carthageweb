@@ -36,6 +36,7 @@ export function ProductForm({ categories, product }: { categories: Category[]; p
   const [id, setId] = useState(product?.id ?? "")
   const [idTouched, setIdTouched] = useState(isEdit)
   const [price, setPrice] = useState(product ? String(product.price) : "")
+  const [priceOnRequest, setPriceOnRequest] = useState(product?.priceOnRequest ?? false)
   const [image, setImage] = useState(product?.image ?? "")
   const [categoryId, setCategoryId] = useState(product?.categoryId ?? categories[0]?.id ?? "")
   const [badge, setBadge] = useState<string>(product?.badge ?? "")
@@ -92,13 +93,17 @@ export function ProductForm({ categories, product }: { categories: Category[]; p
     const priceNumber = Number(price)
     if (!translations.en.name.trim()) return setError("English product name is required")
     if (!id.trim()) return setError("Product ID is required")
-    if (!Number.isFinite(priceNumber) || priceNumber <= 0) return setError("Enter a valid price")
+    // A quote-only product still needs a stored figure for when the flag is
+    // lifted, but the admin does not have to supply one up front.
+    if (!priceOnRequest && (!Number.isFinite(priceNumber) || priceNumber <= 0))
+      return setError("Enter a valid price, or tick \u201cPrice on request\u201d")
     if (!image) return setError("Upload or select a product image")
     if (!categoryId) return setError("Select a category")
 
     const payload = {
       id: id.trim(),
-      price: priceNumber,
+      price: Number.isFinite(priceNumber) && priceNumber > 0 ? priceNumber : 0.01,
+      priceOnRequest,
       image,
       categoryId,
       badge: badge || undefined,
@@ -275,9 +280,21 @@ export function ProductForm({ categories, product }: { categories: Category[]; p
                     step="0.01"
                     value={price}
                     onChange={(e) => setPrice(e.target.value)}
-                    className={inputClass}
+                    disabled={priceOnRequest}
+                    className={`${inputClass} ${priceOnRequest ? "opacity-50 cursor-not-allowed" : ""}`}
                     placeholder="49.00"
                   />
+                  <label className="flex items-center gap-2 mt-2 cursor-pointer">
+                    <input
+                      type="checkbox"
+                      checked={priceOnRequest}
+                      onChange={(e) => setPriceOnRequest(e.target.checked)}
+                      className="w-4 h-4 accent-[#c9a96e]"
+                    />
+                    <span className="text-xs text-[#666]">
+                      Price on request &mdash; hides the price and shows a quote link instead
+                    </span>
+                  </label>
                 </div>
                 <div>
                   <label htmlFor="product-category" className="block text-xs font-medium text-[#666] mb-1.5">

@@ -3,7 +3,7 @@
 import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { ShoppingBag, Check } from "lucide-react"
+import { ShoppingBag, Check, Mail } from "lucide-react"
 import { useCart } from "@/context/cart-context"
 import { useLanguage } from "@/context/language-context"
 import { formatPrice } from "@/lib/format"
@@ -61,13 +61,29 @@ export function ProductCard({ product, showAddToCart = false, priority = false }
               {info.subtitle || " "}
             </span>
           </div>
-          <span className="font-display font-bold text-sm whitespace-nowrap">
-            {formatPrice(product.price, locale)}
+          <span
+            className={`font-display whitespace-nowrap ${
+              product.priceOnRequest
+                ? "text-[11px] font-semibold uppercase tracking-wider text-[#888]"
+                : "font-bold text-sm"
+            }`}
+          >
+            {product.priceOnRequest ? t.shop.priceOnRequest : formatPrice(product.price, locale)}
           </span>
         </div>
       </Link>
 
-      {showAddToCart && (
+      {showAddToCart && product.priceOnRequest && (
+        <Link
+          href={`/contact?subject=quote&product=${encodeURIComponent(product.id)}`}
+          className="w-full mt-3.5 py-2.5 rounded-full text-[13px] font-semibold transition-all duration-300 flex items-center justify-center gap-2 bg-[#111] text-white hover:bg-[#2a2a2a]"
+        >
+          <Mail className="w-4 h-4" />
+          {t.shop.requestQuote}
+        </Link>
+      )}
+
+      {showAddToCart && !product.priceOnRequest && (
         <button
           onClick={handleAdd}
           disabled={!product.inStock}

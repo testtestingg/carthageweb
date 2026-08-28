@@ -15,6 +15,7 @@ export const productInputSchema = z.object({
     .max(100)
     .regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/, "ID must be a lowercase slug (letters, numbers, hyphens)"),
   price: z.number().positive().max(100000),
+  priceOnRequest: z.boolean().optional(),
   image: z
     .string()
     .trim()

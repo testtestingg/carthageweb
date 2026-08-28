@@ -30,6 +30,11 @@ create table if not exists public.products (
   updated_at    timestamptz not null default now()
 );
 
+-- Added after the initial release; `if not exists` keeps this file replayable
+-- against databases created before quote-only products existed.
+alter table public.products
+  add column if not exists price_on_request boolean not null default false;
+
 create table if not exists public.formations (
   id            text primary key,
   image         text not null default '',

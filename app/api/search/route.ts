@@ -28,6 +28,7 @@ export async function GET(request: NextRequest) {
         name: info.name,
         subtitle: info.subtitle,
         price: product.price,
+        priceOnRequest: product.priceOnRequest ?? false,
         image: product.image,
       }
     })

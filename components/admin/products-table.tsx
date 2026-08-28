@@ -119,7 +119,7 @@ export function ProductsTable({ products, categories }: { products: Product[]; c
                   </td>
                   <td className="px-5 py-3 text-[#666] whitespace-nowrap">{categoryName(product.categoryId)}</td>
                   <td className="px-5 py-3 font-display font-semibold whitespace-nowrap">
-                    {formatPrice(product.price, "en")}
+                    {product.priceOnRequest ? "On request" : formatPrice(product.price, "en")}
                   </td>
                   <td className="px-5 py-3 whitespace-nowrap">
                     <div className="flex items-center gap-1.5 flex-wrap">

@@ -110,6 +110,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
               item.product &&
               typeof item.product.id === "string" &&
               typeof item.product.price === "number" &&
+              !item.product.priceOnRequest &&
               item.product.translations,
           )
           dispatch({ type: "LOAD_CART", items })
@@ -130,6 +131,9 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   }, [state.items])
 
   const addItem = useCallback((product: Product, quantity?: number) => {
+    // Quote-only products have no published price, so they can never be
+    // checked out. Guard here as well as in the UI.
+    if (product.priceOnRequest) return
     dispatch({ type: "ADD_ITEM", product, quantity })
   }, [])
 

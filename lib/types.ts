@@ -20,6 +20,12 @@ export interface ProductTranslation {
 export interface Product {
   id: string
   price: number
+  /**
+   * Quote-only product: the storefront hides `price` and asks the visitor to
+   * get in touch instead. `price` is still stored so a figure can be restored
+   * by unticking the flag rather than re-entering it.
+   */
+  priceOnRequest?: boolean
   currency: "EUR"
   image: string
   categoryId: string

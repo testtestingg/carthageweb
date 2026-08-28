@@ -62,6 +62,7 @@ function productFromRow(row: any): Product {
   return {
     id: row.id,
     price: Number(row.price),
+    priceOnRequest: row.price_on_request ?? false,
     currency: row.currency,
     image: row.image,
     categoryId: row.category_id,
@@ -79,6 +80,7 @@ function productToRow(p: Product) {
   return {
     id: p.id,
     price: p.price,
+    price_on_request: p.priceOnRequest ?? false,
     currency: p.currency,
     image: p.image,
     category_id: p.categoryId,

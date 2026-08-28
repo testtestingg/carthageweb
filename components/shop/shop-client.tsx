@@ -55,15 +55,24 @@ export function ShopClient({
     if (categoryId) result = result.filter((p) => p.categoryId === categoryId)
     const min = Number(priceMin)
     const max = Number(priceMax)
-    if (priceMin !== "" && !Number.isNaN(min)) result = result.filter((p) => p.price >= min)
-    if (priceMax !== "" && !Number.isNaN(max)) result = result.filter((p) => p.price <= max)
+    // Quote-only products have no published price, so a price range can only
+    // exclude them rather than match them.
+    if (priceMin !== "" && !Number.isNaN(min))
+      result = result.filter((p) => !p.priceOnRequest && p.price >= min)
+    if (priceMax !== "" && !Number.isNaN(max))
+      result = result.filter((p) => !p.priceOnRequest && p.price <= max)
     if (inStockOnly) result = result.filter((p) => p.inStock)
     switch (sort) {
+      // Quote-only products sort to the end of either price order.
       case "price-asc":
-        result.sort((a, b) => a.price - b.price)
+        result.sort(
+          (a, b) => Number(a.priceOnRequest) - Number(b.priceOnRequest) || a.price - b.price,
+        )
         break
       case "price-desc":
-        result.sort((a, b) => b.price - a.price)
+        result.sort(
+          (a, b) => Number(a.priceOnRequest) - Number(b.priceOnRequest) || b.price - a.price,
+        )
         break
       case "name-asc":
         result.sort((a, b) =>

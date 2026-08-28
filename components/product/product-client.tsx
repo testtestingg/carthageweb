@@ -3,7 +3,7 @@
 import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { ShoppingBag, Plus, Minus, Check } from "lucide-react"
+import { ShoppingBag, Plus, Minus, Check, Mail } from "lucide-react"
 import { SiteShell } from "@/components/site/site-shell"
 import { ProductCard, ProductBadge } from "@/components/site/product-card"
 import { useCart } from "@/context/cart-context"
@@ -90,10 +90,17 @@ export function ProductClient({
             </h1>
             <p className="text-base text-[#888] mb-5">{info.subtitle}</p>
 
-            <div className="flex items-baseline gap-3 mb-6">
-              <span className="font-display text-3xl font-bold">{formatPrice(product.price, locale)}</span>
-              <span className="text-sm text-[#888]">{t.product.inclTax}</span>
-            </div>
+            {product.priceOnRequest ? (
+              <div className="mb-6">
+                <span className="font-display text-3xl font-bold">{t.product.priceOnRequest}</span>
+                <p className="text-sm text-[#888] mt-2 max-w-[460px]">{t.product.priceOnRequestNote}</p>
+              </div>
+            ) : (
+              <div className="flex items-baseline gap-3 mb-6">
+                <span className="font-display text-3xl font-bold">{formatPrice(product.price, locale)}</span>
+                <span className="text-sm text-[#888]">{t.product.inclTax}</span>
+              </div>
+            )}
 
             <p className="text-[15px] leading-relaxed text-[#555] mb-6 max-w-[500px]">{info.description}</p>
 
@@ -110,7 +117,17 @@ export function ProductClient({
               </div>
             )}
 
-            {/* Quantity + Add to Cart */}
+            {/* Quote-only products swap the quantity stepper and cart button for
+                a single route into the contact form. */}
+            {product.priceOnRequest ? (
+              <Link
+                href={`/contact?subject=quote&product=${encodeURIComponent(product.id)}`}
+                className="px-8 py-3.5 rounded-full font-semibold text-[15px] transition-all duration-300 inline-flex items-center justify-center gap-2.5 bg-[#111] text-white hover:translate-y-[-2px] hover:shadow-[0_10px_20px_rgba(0,0,0,0.15)] hover:bg-[#222] w-fit"
+              >
+                <Mail className="w-5 h-5" />
+                {t.product.requestQuote}
+              </Link>
+            ) : (
             <div className="flex flex-col sm:flex-row gap-4 items-stretch sm:items-center">
               <div className="flex items-center gap-3 bg-white border border-[#e5e5e5] rounded-full px-3 py-1.5 w-fit">
                 <button
@@ -153,6 +170,7 @@ export function ProductClient({
                 )}
               </button>
             </div>
+            )}
           </div>
         </div>
 

@@ -16,6 +16,7 @@ interface SearchResult {
   name: string
   subtitle: string
   price: number
+  priceOnRequest?: boolean
   image: string
 }
 
@@ -428,7 +429,15 @@ export function SiteHeader() {
                               <p className="text-sm font-semibold truncate">{r.name}</p>
                               <p className="text-xs text-[#888] truncate">{r.subtitle}</p>
                             </div>
-                            <span className="font-display font-bold text-sm">{formatPrice(r.price, locale)}</span>
+                            <span
+                              className={
+                                r.priceOnRequest
+                                  ? "font-display text-[10px] font-semibold uppercase tracking-wider text-[#888] whitespace-nowrap"
+                                  : "font-display font-bold text-sm"
+                              }
+                            >
+                              {r.priceOnRequest ? t.shop.priceOnRequest : formatPrice(r.price, locale)}
+                            </span>
                           </Link>
                         </li>
                       ))}
