@@ -11,8 +11,18 @@ type Copy = (typeof homeContent)["en"]
 
 /** Authentic Carthage footage — one clip per division. */
 const CLIPS: FilmClip[] = [
-  { src: "/stone-paper/video.mp4", poster: "/posters/stone-manufacturing.jpg" },
-  { src: "/video3.mp4", poster: "/posters/foam.jpg" },
+  {
+    src: "/stone-paper/video.mp4",
+    poster: "/posters/stone-manufacturing.jpg",
+    position: "50% 42%",
+    positionMobile: "52% 42%",
+  },
+  {
+    src: "/video3.mp4",
+    poster: "/posters/foam.jpg",
+    position: "50% 45%",
+    positionMobile: "58% 45%",
+  },
 ]
 
 export function Hero({ c }: { c: Copy }) {

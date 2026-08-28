@@ -6,6 +6,9 @@ import { prefersReducedMotion } from "@/lib/animation/gsap"
 export interface FilmClip {
   src: string
   poster: string
+  /** object-position for desktop / mobile crops. */
+  position?: string
+  positionMobile?: string
 }
 
 const SEGMENT_MS = 6800
@@ -126,7 +129,11 @@ export function HeroFilm({
         <div
           key={clip.src}
           className={`hero-film-layer ${i === current ? "is-active" : ""}`}
-          style={{ backgroundImage: `url(${clip.poster})` }}
+          style={{
+            backgroundImage: `url(${clip.poster})`,
+            ["--pos" as string]: clip.position ?? "center",
+            ["--pos-mobile" as string]: clip.positionMobile ?? clip.position ?? "center",
+          }}
           aria-hidden={i !== current}
         >
           {!stillsOnly && armed.includes(i) && (
