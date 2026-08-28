@@ -10,13 +10,13 @@ export const siteConfig = {
   tagline: "Reliable Industrial Packaging Solutions",
   description:
     "German manufacturer of high-performance stone paper bags and PP woven bags. Durable, moisture-resistant packaging solutions engineered for agriculture, construction, chemicals, and food industries.",
-  url: "https://carthagecare.de",
-  email: "info@carthagecare.de",
+  url: "https://carthage.de",
+  email: "info@carthage.de",
   phone: "+49 30 34781221",
   fax: "+49 30 34781222",
   logo: "/logo-carthage.png",
   managingDirector: "Farhang Yarbakht",
-  managingDirectorEmail: "info@carthagecare.de",
+  managingDirectorEmail: "info@carthage.de",
   headquarters: {
     street: "Lietzenburger Stra\u00dfe 9a",
     city: "10789 Berlin",
