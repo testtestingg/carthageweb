@@ -17,6 +17,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${BASE_URL}/stone-paper/product`, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE_URL}/stone-paper/process`, changeFrequency: "monthly", priority: 0.6 },
     { url: `${BASE_URL}/stone-paper/sustainability`, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${BASE_URL}/stone-paper/certifications`, changeFrequency: "monthly", priority: 0.6 },
     { url: `${BASE_URL}/stone-paper/products/bags`, changeFrequency: "monthly", priority: 0.6 },
     { url: `${BASE_URL}/stone-paper/products/notebooks`, changeFrequency: "monthly", priority: 0.6 },
     { url: `${BASE_URL}/stone-paper/products/pp-woven-bags`, changeFrequency: "monthly", priority: 0.6 },
