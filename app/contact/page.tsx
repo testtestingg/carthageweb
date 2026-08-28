@@ -96,8 +96,8 @@ export default function ContactPage() {
       iconBg: "bg-[#f0fdf4]",
       title: t.contact.phone,
       content: (
-        <a href="tel:+4930123456" className="hover:text-black transition-colors">
-          +49 30 123 456
+        <a href="tel:+493034781221" className="hover:text-black transition-colors">
+          +49 30 34781221
         </a>
       ),
     },
