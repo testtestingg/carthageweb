@@ -115,10 +115,10 @@ export function SiteFooter() {
               </li>
               <li>
                 <a
-                  href="mailto:info@carthagecare.de"
+                  href="mailto:info@carthage.de"
                   className="text-sm text-[#999] hover:text-white transition-colors"
                 >
-                  info@carthagecare.de
+                  info@carthage.de
                 </a>
               </li>
             </ul>
