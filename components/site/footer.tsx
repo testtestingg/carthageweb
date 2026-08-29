@@ -109,8 +109,8 @@ export function SiteFooter() {
               <li className="text-sm text-[#999]">Lietzenburger Str. 9a</li>
               <li className="text-sm text-[#999]">10789 Berlin, Germany</li>
               <li>
-                <a href="tel:+4930123456" className="text-sm text-[#999] hover:text-white transition-colors">
-                  +49 30 123 456
+                <a href="tel:+49034781221" className="text-sm text-[#999] hover:text-white transition-colors">
+                  +49 30 34781221
                 </a>
               </li>
               <li>
