@@ -2,6 +2,7 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Geist, Geist_Mono, Space_Grotesk } from "next/font/google"
 import { cookies } from "next/headers"
+import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 import { CartProvider } from "@/context/cart-context"
 import { LanguageProvider } from "@/context/language-context"
@@ -93,6 +94,8 @@ export default async function RootLayout({
         <LanguageProvider initialLocale={initialLocale}>
           <CartProvider>{children}</CartProvider>
         </LanguageProvider>
+        {/* No-op unless the deployment is on Vercel with Analytics enabled. */}
+        <Analytics />
       </body>
     </html>
   )
