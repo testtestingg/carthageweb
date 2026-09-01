@@ -9,6 +9,7 @@ import {
   clearLoginAttempts,
   isSameOrigin,
   requestIp,
+  AdminStoreUnavailableError,
   SESSION_COOKIE,
   SESSION_COOKIE_OPTIONS,
 } from "@/lib/server/auth"
@@ -48,19 +49,32 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "Invalid request" }, { status: 400 })
   }
 
-  const admin = await getAdminUser()
-  const usernameOk = safeStringEqual(parsed.data.username, admin.username)
-  const passwordOk = await verifyPassword(parsed.data.password, admin.passwordHash)
+  try {
+    const admin = await getAdminUser()
+    const usernameOk = safeStringEqual(parsed.data.username, admin.username)
+    const passwordOk = await verifyPassword(parsed.data.password, admin.passwordHash)
 
-  if (!usernameOk || !passwordOk) {
-    recordFailedLogin(ip)
-    // Deliberately vague: don't reveal which field was wrong
-    return NextResponse.json({ error: "Invalid username or password" }, { status: 401 })
+    if (!usernameOk || !passwordOk) {
+      recordFailedLogin(ip)
+      // Deliberately vague: don't reveal which field was wrong
+      return NextResponse.json({ error: "Invalid username or password" }, { status: 401 })
+    }
+
+    clearLoginAttempts(ip)
+    const token = await createSessionToken(admin.username)
+    const response = NextResponse.json({ ok: true })
+    response.cookies.set(SESSION_COOKIE, token, SESSION_COOKIE_OPTIONS)
+    return response
+  } catch (err) {
+    // Without this the sign-in form shows a bare "Login failed" for what is
+    // really a server misconfiguration, with the cause only in the logs.
+    if (err instanceof AdminStoreUnavailableError) {
+      return NextResponse.json({ error: err.message }, { status: 503 })
+    }
+    console.error("[admin/login] unexpected failure:", err)
+    return NextResponse.json(
+      { error: "Sign-in is temporarily unavailable. Please try again shortly." },
+      { status: 500 },
+    )
   }
-
-  clearLoginAttempts(ip)
-  const token = await createSessionToken(admin.username)
-  const response = NextResponse.json({ ok: true })
-  response.cookies.set(SESSION_COOKIE, token, SESSION_COOKIE_OPTIONS)
-  return response
 }

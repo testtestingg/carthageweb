@@ -19,9 +19,34 @@ function scryptAsync(password: string, salt: Buffer, keylen: number, options: Sc
   })
 }
 
+/**
+ * Serverless hosts mount the bundle read-only, so any write under data/
+ * fails with EROFS/EACCES. Persistence there is a convenience, not a
+ * requirement: losing it costs durability, not the ability to sign in, so a
+ * failed write is logged and swallowed rather than thrown.
+ */
+async function persistBestEffort(what: string, write: () => Promise<void>): Promise<void> {
+  try {
+    await write()
+  } catch (err) {
+    const code = (err as NodeJS.ErrnoException).code
+    console.warn(
+      `[auth] could not persist ${what} (${code ?? "unknown error"}). ` +
+        "Running from memory; set AUTH_SECRET and configure Supabase for a durable admin account.",
+    )
+  }
+}
+
 const DATA_DIR = path.join(process.cwd(), "data")
 const ADMIN_FILE = path.join(DATA_DIR, "admin-user.json")
 const SECRET_FILE = path.join(DATA_DIR, ".auth-secret")
+
+export class AdminStoreUnavailableError extends Error {
+  constructor(message: string) {
+    super(message)
+    this.name = "AdminStoreUnavailableError"
+  }
+}
 
 export const SESSION_COOKIE = "carthage_admin_session"
 const SESSION_TTL_MS = 8 * 60 * 60 * 1000 // 8 hours
@@ -84,7 +109,15 @@ export async function getAdminUser(): Promise<AdminUser> {
   if (isSupabaseConfigured()) {
     const sb = getSupabase()
     const { data, error } = await sb.from("admin_users").select("*").limit(1).maybeSingle()
-    if (error) throw new Error(`Failed to read admin user: ${error.message}`)
+    if (error) {
+      // Almost always means supabase/schema.sql has not been run. Surface it
+      // as its own failure rather than falling back to the documented default
+      // credentials, which would let anyone in whenever the database blips.
+      console.error("[auth] admin_users read failed:", error.message)
+      throw new AdminStoreUnavailableError(
+        "Admin storage is unavailable. Run supabase/schema.sql on the project, then try again.",
+      )
+    }
     if (data) {
       return { username: data.username, passwordHash: data.password_hash, updatedAt: data.updated_at }
     }
@@ -94,7 +127,12 @@ export async function getAdminUser(): Promise<AdminUser> {
       password_hash: user.passwordHash,
       updated_at: user.updatedAt,
     })
-    if (insertError) throw new Error(`Failed to bootstrap admin user: ${insertError.message}`)
+    if (insertError) {
+      console.error("[auth] admin_users bootstrap failed:", insertError.message)
+      throw new AdminStoreUnavailableError(
+        "Admin storage is unavailable. Run supabase/schema.sql on the project, then try again.",
+      )
+    }
     return user
   }
 
@@ -102,10 +140,13 @@ export async function getAdminUser(): Promise<AdminUser> {
     const raw = await fs.readFile(ADMIN_FILE, "utf8")
     return JSON.parse(raw) as AdminUser
   } catch (err: unknown) {
-    if ((err as NodeJS.ErrnoException).code !== "ENOENT") throw err
+    const code = (err as NodeJS.ErrnoException).code
+    if (code !== "ENOENT" && code !== "EACCES") throw err
     const user = await bootstrapAdminUser()
-    await fs.mkdir(DATA_DIR, { recursive: true })
-    await fs.writeFile(ADMIN_FILE, JSON.stringify(user, null, 2), { mode: 0o600 })
+    await persistBestEffort("the admin account", async () => {
+      await fs.mkdir(DATA_DIR, { recursive: true })
+      await fs.writeFile(ADMIN_FILE, JSON.stringify(user, null, 2), { mode: 0o600 })
+    })
     return user
   }
 }
@@ -151,12 +192,24 @@ async function getSessionSecret(): Promise<Buffer> {
   try {
     const raw = await fs.readFile(SECRET_FILE, "utf8")
     cachedSecret = Buffer.from(raw.trim(), "base64")
+    return cachedSecret
   } catch {
-    const secret = randomBytes(48)
+    // No file yet, or nowhere to read one from.
+  }
+
+  const secret = randomBytes(48)
+  await persistBestEffort("the session secret", async () => {
     await fs.mkdir(DATA_DIR, { recursive: true })
     await fs.writeFile(SECRET_FILE, secret.toString("base64"), { mode: 0o600 })
-    cachedSecret = secret
-  }
+  })
+
+  // A random per-instance secret would invalidate every session on each cold
+  // start, so derive a stable one from the bootstrap password when there is
+  // nowhere to persist to. AUTH_SECRET remains the supported production path.
+  const bootstrapPassword = process.env.ADMIN_PASSWORD
+  cachedSecret = bootstrapPassword
+    ? createHmac("sha256", bootstrapPassword).update("carthage-session-secret").digest()
+    : secret
   return cachedSecret
 }
 

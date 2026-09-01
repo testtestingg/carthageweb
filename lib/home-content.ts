@@ -75,11 +75,11 @@ const en = {
     body: "Stone paper replaces wood pulp with mineral powder. The process uses no water, no bleach and no optical brighteners.",
     cta: "The full process",
     steps: [
-      { n: "01", title: "Limestone", body: "High purity calcium carbonate from certified European quarries. Only CaCO₃ of 98% or above enters the line.", image: "/stone-paper/paper-5.jpg", alt: "Raw limestone and calcium carbonate powder" },
-      { n: "02", title: "Micronization", body: "Crushed and milled to a 1 to 3 micron powder. Uniform particle size decides smoothness and printability.", image: "/stone-paper/paper-2.jpg", alt: "Micronized calcium carbonate powder with limestone pebbles" },
-      { n: "03", title: "Compounding", body: "Blended with 18 to 20% food grade HDPE as a binder. No bleaches, acids, solvents or optical brighteners.", image: "/stone-paper/paper-6.jpg", alt: "Stone paper material stored in a production warehouse" },
-      { n: "04", title: "Extrusion", body: "Melted and extruded under thermal control into a continuous film, without water consumption.", image: "/stock/extrusion-line.jpg", alt: "Continuous production line inside an industrial plant" },
-      { n: "05", title: "Calendering", body: "Heated rolls set the final thickness, density and surface finish for industrial printing.", image: "/stock/calendered-surface.jpg", alt: "Smooth calendered sheet surface in raking light" },
+      { n: "01", title: "Limestone", body: "High purity calcium carbonate from certified European quarries. Only CaCO₃ of 98% or above enters the line.", image: "/stock/limestone-quarry.jpg", alt: "Working limestone quarry face" },
+      { n: "02", title: "Micronization", body: "Crushed and milled to a 1 to 3 micron powder. Uniform particle size decides smoothness and printability.", image: "/stock/mineral-powder.jpg", alt: "Micronized calcium carbonate powder" },
+      { n: "03", title: "Compounding", body: "Blended with 18 to 20% food grade HDPE as a binder. No bleaches, acids, solvents or optical brighteners.", image: "/stock/hdpe-pellets.jpg", alt: "Food grade HDPE binder pellets" },
+      { n: "04", title: "Extrusion", body: "Melted and extruded under thermal control into a continuous film, without water consumption.", image: "/stock/extrusion-line.jpg", alt: "Extrusion machinery on a polymer processing line" },
+      { n: "05", title: "Calendering", body: "Heated rolls set the final thickness, density and surface finish for industrial printing.", image: "/stock/calender-rollers.jpg", alt: "Sheet running through calender rollers on a production line" },
       { n: "06", title: "Finished goods", body: "Slit, sheeted and tested for whiteness, basis weight, tensile strength and water resistance.", image: "/stone-paper/paper-1.jpg", alt: "Finished Carthage stone paper notebooks" },
     ],
     proof: {
@@ -209,11 +209,11 @@ const fr: typeof en = {
     body: "Le papier de pierre remplace la pâte de bois par une poudre minérale. Le procédé n’utilise ni eau, ni chlore, ni azurants optiques.",
     cta: "Le procédé complet",
     steps: [
-      { n: "01", title: "Calcaire", body: "Carbonate de calcium de haute pureté issu de carrières européennes certifiées. Seul le CaCO₃ à 98 % ou plus entre en ligne.", image: "/stone-paper/paper-5.jpg", alt: "Calcaire brut et poudre de carbonate de calcium" },
-      { n: "02", title: "Micronisation", body: "Concassé puis broyé en poudre de 1 à 3 microns. La régularité des particules détermine lissé et imprimabilité.", image: "/stone-paper/paper-2.jpg", alt: "Poudre de carbonate de calcium micronisée avec des galets calcaires" },
-      { n: "03", title: "Compoundage", body: "Mélangé à 18 à 20 % de HDPE alimentaire comme liant. Sans chlore, acides, solvants ni azurants optiques.", image: "/stone-paper/paper-6.jpg", alt: "Matière papier de pierre stockée en entrepôt de production" },
+      { n: "01", title: "Calcaire", body: "Carbonate de calcium de haute pureté issu de carrières européennes certifiées. Seul le CaCO₃ à 98 % ou plus entre en ligne.", image: "/stock/limestone-quarry.jpg", alt: "Front de carrière de calcaire en exploitation" },
+      { n: "02", title: "Micronisation", body: "Concassé puis broyé en poudre de 1 à 3 microns. La régularité des particules détermine lissé et imprimabilité.", image: "/stock/mineral-powder.jpg", alt: "Poudre de carbonate de calcium micronisée" },
+      { n: "03", title: "Compoundage", body: "Mélangé à 18 à 20 % de HDPE alimentaire comme liant. Sans chlore, acides, solvants ni azurants optiques.", image: "/stock/hdpe-pellets.jpg", alt: "Granulés de HDPE alimentaire" },
       { n: "04", title: "Extrusion", body: "Fondu et extrudé sous contrôle thermique en un film continu, sans consommation d’eau.", image: "/stock/extrusion-line.jpg", alt: "Ligne de production continue dans une usine industrielle" },
-      { n: "05", title: "Calandrage", body: "Des rouleaux chauffants fixent l’épaisseur, la densité et l’état de surface pour l’impression industrielle.", image: "/stock/calendered-surface.jpg", alt: "Surface de feuille calandrée en lumière rasante" },
+      { n: "05", title: "Calandrage", body: "Des rouleaux chauffants fixent l’épaisseur, la densité et l’état de surface pour l’impression industrielle.", image: "/stock/calender-rollers.jpg", alt: "Feuille passant dans les rouleaux de calandrage" },
       { n: "06", title: "Produits finis", body: "Refendu, mis en feuilles et testé : blancheur, grammage, résistance à la traction et à l’eau.", image: "/stone-paper/paper-1.jpg", alt: "Carnets Carthage en papier de pierre finis" },
     ],
     proof: {
@@ -343,11 +343,11 @@ const de: typeof en = {
     body: "Steinpapier ersetzt Holzzellstoff durch Mineralpulver. Der Prozess kommt ohne Wasser, Bleiche und optische Aufheller aus.",
     cta: "Der gesamte Prozess",
     steps: [
-      { n: "01", title: "Kalkstein", body: "Hochreines Calciumcarbonat aus zertifizierten europäischen Steinbrüchen. Nur CaCO₃ ab 98 % gelangt in die Linie.", image: "/stone-paper/paper-5.jpg", alt: "Roher Kalkstein und Calciumcarbonat Pulver" },
-      { n: "02", title: "Mikronisierung", body: "Gebrochen und zu 1 bis 3 Mikrometer feinem Pulver gemahlen. Die Korngröße bestimmt Glätte und Bedruckbarkeit.", image: "/stone-paper/paper-2.jpg", alt: "Mikronisiertes Calciumcarbonat Pulver mit Kalksteinen" },
-      { n: "03", title: "Compoundierung", body: "Mit 18 bis 20 % lebensmittelechtem HDPE als Binder gemischt. Ohne Bleiche, Säuren, Lösungsmittel und optische Aufheller.", image: "/stone-paper/paper-6.jpg", alt: "Steinpapier Material im Produktionslager" },
+      { n: "01", title: "Kalkstein", body: "Hochreines Calciumcarbonat aus zertifizierten europäischen Steinbrüchen. Nur CaCO₃ ab 98 % gelangt in die Linie.", image: "/stock/limestone-quarry.jpg", alt: "Abbauwand eines Kalksteinbruchs" },
+      { n: "02", title: "Mikronisierung", body: "Gebrochen und zu 1 bis 3 Mikrometer feinem Pulver gemahlen. Die Korngröße bestimmt Glätte und Bedruckbarkeit.", image: "/stock/mineral-powder.jpg", alt: "Mikronisiertes Calciumcarbonat Pulver" },
+      { n: "03", title: "Compoundierung", body: "Mit 18 bis 20 % lebensmittelechtem HDPE als Binder gemischt. Ohne Bleiche, Säuren, Lösungsmittel und optische Aufheller.", image: "/stock/hdpe-pellets.jpg", alt: "Lebensmittelechte HDPE Granulate" },
       { n: "04", title: "Extrusion", body: "Unter thermischer Kontrolle aufgeschmolzen und zu einem endlosen Film extrudiert, ohne Wasserverbrauch.", image: "/stock/extrusion-line.jpg", alt: "Durchgehende Produktionslinie in einem Industriewerk" },
-      { n: "05", title: "Kalandrieren", body: "Beheizte Walzen setzen Enddicke, Dichte und Oberfläche für den industriellen Druck.", image: "/stock/calendered-surface.jpg", alt: "Glatte kalandrierte Oberfläche im Streiflicht" },
+      { n: "05", title: "Kalandrieren", body: "Beheizte Walzen setzen Enddicke, Dichte und Oberfläche für den industriellen Druck.", image: "/stock/calender-rollers.jpg", alt: "Bahn läuft durch Kalanderwalzen" },
       { n: "06", title: "Fertigware", body: "Geschnitten, bogenweise konfektioniert und geprüft: Weißgrad, Flächengewicht, Reiß und Wasserfestigkeit.", image: "/stone-paper/paper-1.jpg", alt: "Fertige Carthage Steinpapier Notizbücher" },
     ],
     proof: {

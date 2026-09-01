@@ -319,7 +319,7 @@
 /* ============================================================
    3 — GROUP STATEMENT
    ============================================================ */
-.carthage-home .statement { background: var(--ivory); padding: var(--pad) 0 clamp(64px, 6vw, 96px); }
+.carthage-home .statement { background: #fff; padding: var(--pad) 0 clamp(64px, 6vw, 96px); }
 .statement-inner {
   display: grid;
   grid-template-columns: minmax(0, 2fr) minmax(230px, 0.82fr);
@@ -371,7 +371,7 @@
 .carthage-home .divisions { position: relative; height: 320svh; }
 .divisions-pin { position: relative; height: 100svh; overflow: hidden; }
 .divisions-ivory, .divisions-ink { position: absolute; inset: 0; }
-.divisions-ivory { background: var(--ivory); }
+.divisions-ivory { background: #fff; }
 .divisions-ink { background: var(--ink); opacity: 0; }
 
 .divisions-grid {
@@ -558,7 +558,7 @@
    Ivory sits between the paper of Philosophy and the ink of Gateway, so the
    wall reads as its own step without introducing a new colour.
    ============================================================ */
-.carthage-home .partners { background: var(--ivory); padding: var(--pad) var(--gutter); }
+.carthage-home .partners { background: #fff; padding: var(--pad) var(--gutter); }
 .partners-head { display: grid; grid-template-columns: minmax(200px, 1fr) minmax(0, 2.2fr); gap: clamp(32px, 4vw, 64px); }
 .partners-head .eyebrow { color: var(--brass); }
 .partners-head h2 { font-size: clamp(2rem, 3.6vw, 3.3rem); max-width: 22ch; }
@@ -802,7 +802,7 @@
   /* pinned division story → vertical sequence */
   .carthage-home .divisions { height: auto; }
   .divisions-pin { display: none; }
-  .divisions-mobile { display: block; background: var(--ivory); padding: var(--pad) var(--gutter); }
+  .divisions-mobile { display: block; background: #fff; padding: var(--pad) var(--gutter); }
   .divisions-mobile-head .eyebrow { color: var(--brass); }
   .divisions-mobile-head h2 { margin-top: 12px; font-size: clamp(1.7rem, 6vw, 2.3rem); }
   .divisions-mobile-panel { margin-top: clamp(34px, 8vw, 52px); }
@@ -906,7 +906,7 @@
      content and hierarchy, just no scrubbed movement. */
   .carthage-home .divisions { height: auto; }
   .divisions-pin { display: none; }
-  .divisions-mobile { display: block; background: var(--ivory); padding: var(--pad) var(--gutter); }
+  .divisions-mobile { display: block; background: #fff; padding: var(--pad) var(--gutter); }
   .divisions-mobile-head h2 { font-size: clamp(1.9rem, 3vw, 2.9rem); margin-top: 14px; }
   .divisions-mobile-media { position: relative; aspect-ratio: 16 / 10; overflow: hidden; clip-path: none !important; }
   .divisions-mobile-media img { width: 100%; height: 100%; object-fit: cover; }
