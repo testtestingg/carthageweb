@@ -41,6 +41,26 @@ const DATA_DIR = path.join(process.cwd(), "data")
 const ADMIN_FILE = path.join(DATA_DIR, "admin-user.json")
 const SECRET_FILE = path.join(DATA_DIR, ".auth-secret")
 
+/** Maps a PostgREST failure onto the specific thing that needs fixing. */
+function adminStoreError(error: { code?: string; message: string }): AdminStoreUnavailableError {
+  if (error.code === "42P01") {
+    return new AdminStoreUnavailableError(
+      "The admin_users table does not exist. Run supabase/schema.sql on the project, then try again.",
+    )
+  }
+  if (error.code === "42501" || error.code === "PGRST301") {
+    return new AdminStoreUnavailableError(
+      "Supabase denied access to admin_users. That table is readable only with the service_role " +
+        "key, so check SUPABASE_SERVICE_ROLE_KEY holds the service_role secret and not the anon key.",
+    )
+  }
+  // Network-level failures arrive with no code, so fall back to the message.
+  const detail = error.code || error.message || "unknown error"
+  return new AdminStoreUnavailableError(
+    `Admin storage is unavailable: ${detail}. Check the Supabase project, then try again.`,
+  )
+}
+
 export class AdminStoreUnavailableError extends Error {
   constructor(message: string) {
     super(message)
@@ -107,16 +127,23 @@ async function bootstrapAdminUser(): Promise<AdminUser> {
 
 export async function getAdminUser(): Promise<AdminUser> {
   if (isSupabaseConfigured()) {
+    // admin_users has RLS on with no policies by design, so only the
+    // service_role key can touch it. The shared client falls back to the anon
+    // key, which reads products fine but is invisible to this table, so check
+    // here rather than letting it surface as a confusing permission error.
+    if (!process.env.SUPABASE_SERVICE_ROLE_KEY) {
+      throw new AdminStoreUnavailableError(
+        "Admin sign-in needs the Supabase service_role key. Set SUPABASE_SERVICE_ROLE_KEY " +
+          "in the deployment environment (Supabase dashboard, Project Settings, API), then redeploy.",
+      )
+    }
     const sb = getSupabase()
     const { data, error } = await sb.from("admin_users").select("*").limit(1).maybeSingle()
     if (error) {
-      // Almost always means supabase/schema.sql has not been run. Surface it
-      // as its own failure rather than falling back to the documented default
-      // credentials, which would let anyone in whenever the database blips.
-      console.error("[auth] admin_users read failed:", error.message)
-      throw new AdminStoreUnavailableError(
-        "Admin storage is unavailable. Run supabase/schema.sql on the project, then try again.",
-      )
+      // Never fall back to the documented default credentials on a database
+      // error: that would let anyone in whenever Supabase blips.
+      console.error("[auth] admin_users read failed:", error.code, error.message)
+      throw adminStoreError(error)
     }
     if (data) {
       return { username: data.username, passwordHash: data.password_hash, updatedAt: data.updated_at }
@@ -128,10 +155,8 @@ export async function getAdminUser(): Promise<AdminUser> {
       updated_at: user.updatedAt,
     })
     if (insertError) {
-      console.error("[auth] admin_users bootstrap failed:", insertError.message)
-      throw new AdminStoreUnavailableError(
-        "Admin storage is unavailable. Run supabase/schema.sql on the project, then try again.",
-      )
+      console.error("[auth] admin_users bootstrap failed:", insertError.code, insertError.message)
+      throw adminStoreError(insertError)
     }
     return user
   }
